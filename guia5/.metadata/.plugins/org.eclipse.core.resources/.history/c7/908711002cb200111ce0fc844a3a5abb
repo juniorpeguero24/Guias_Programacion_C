@@ -1,0 +1,9 @@
+package paquete;
+
+public abstract class Personaje {
+	
+	protected abstract double getArmadura();
+	protected abstract double getAtaqueDistante();
+	protected abstract double getAtaqueCorto();
+	protected abstract Personaje eligeAdversario();
+}

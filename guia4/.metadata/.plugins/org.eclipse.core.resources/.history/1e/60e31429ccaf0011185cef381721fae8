@@ -1,0 +1,46 @@
+package paquete;
+
+public class Categoria {
+	protected String nombreCategoria;
+	protected double sueldo;
+	protected boolean habilitaColectivoLinea;
+	protected boolean habilitaColectivoLarga;
+	protected boolean habilitaCamion;
+	
+	public Categoria(String nombreCategoria, double sueldo, boolean habilitaLinea,
+			boolean habilitaLarga, boolean habilitaCamion) {
+		this.nombreCategoria = nombreCategoria;
+		this.sueldo = sueldo;
+		this.habilitaColectivoLinea = habilitaLinea;
+		this.habilitaColectivoLarga = habilitaLarga;
+		this.habilitaCamion = habilitaCamion;
+	}
+
+	public String getNombreCategoria() {
+		return nombreCategoria;
+	}
+
+	public double getSueldo() {
+		return sueldo;
+	}
+
+	public boolean isHabilitaColectivoLinea() {
+		return habilitaColectivoLinea;
+	}
+
+	public boolean isHabilitaColectivoLarga() {
+		return habilitaColectivoLarga;
+	}
+
+	public boolean isHabilitaCamion() {
+		return habilitaCamion;
+	}
+	
+	@Override
+	public String toString() {
+	    return nombreCategoria + " ($" + sueldo + ") - Habilita: " 
+	           + (habilitaColectivoLinea ? "[Línea] " : "")
+	           + (habilitaColectivoLarga ? "[Larga Dist.] " : "")
+	           + (habilitaCamion ? "[Camión]" : "");
+	}
+}

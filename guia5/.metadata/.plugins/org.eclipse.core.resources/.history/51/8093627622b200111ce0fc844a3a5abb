@@ -1,0 +1,6 @@
+package paquete;
+
+public abstract class Gema {
+	public abstract String combinar(Gema otra);
+	
+}

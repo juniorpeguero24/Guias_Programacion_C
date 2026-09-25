@@ -1,0 +1,19 @@
+package paquete;
+
+public class Arquero extends Personaje{
+	protected int cantFlechas = 20;
+	
+	public Arquero(String nombre, Posicion posicion) {
+		super(nombre, posicion);
+	}
+
+	@Override
+	public boolean ataca(Personaje p) {
+		if (this.posicion.distancia(p.getPosicion()) <= 100 && this.cantFlechas > 0) {
+			p.recibeDanio(15);
+			return true;
+		}
+		return false;
+	}
+	
+}

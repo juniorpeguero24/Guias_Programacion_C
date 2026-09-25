@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="interfaces.Emisor_de_Sonido"/>
+<fullyQualifiedTypeName name="interfaces.Prestable"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="modelo.Unidad"/>
+<fullyQualifiedTypeName name="interfaces.IHostil"/>
+<fullyQualifiedTypeName name="interfaces.IMovible"/>
+<fullyQualifiedTypeName name="interfaces.IPosicionable"/>
+<fullyQualifiedTypeName name="interfaces.Movible"/>
+</qualifiedTypeNameHistroy>

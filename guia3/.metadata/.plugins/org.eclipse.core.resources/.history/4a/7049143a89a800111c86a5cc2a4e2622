@@ -1,0 +1,12 @@
+package paquete;
+
+public class AutomovilAutomatico extends Automovil{
+	
+	public AutomovilAutomatico(String patente,double velmax) {
+		super(patente,velmax);
+	}
+	
+	public AutomovilAutomatico(String patente) {
+		this(patente,160.0);
+	}
+}

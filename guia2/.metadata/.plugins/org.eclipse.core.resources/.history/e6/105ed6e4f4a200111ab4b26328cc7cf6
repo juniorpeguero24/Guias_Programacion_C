@@ -1,0 +1,19 @@
+package paquete;
+
+import java.util.HashMap;
+
+public class Equipo {
+	private String nombre;
+	private HashMap<String,Jugador> jugadores;
+	private int pg,pe,pp,gf,gc;
+	
+	public Equipo(String nombre,int pg,int pe,int pp,int gf,int gc) {
+		jugadores = new HashMap<>();
+		this.nombre=nombre;
+		this.pg=pg;
+		this.pe=pe;
+		this.pp=pp;
+		this.gf=gf;
+		this.gc=gc;
+	}
+}

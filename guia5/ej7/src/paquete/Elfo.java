@@ -1,0 +1,22 @@
+package paquete;
+
+public class Elfo extends Personaje {
+
+	@Override
+	protected double getArmadura() {
+		return 1000;
+	}
+
+	@Override
+	protected double getAtaqueDistante() {
+		return 100;
+	}
+
+	@Override
+	protected double getAtaqueCorto() {
+		return 20;
+	}
+	@Override
+	public String toString() { return "Elfo"; }
+
+}

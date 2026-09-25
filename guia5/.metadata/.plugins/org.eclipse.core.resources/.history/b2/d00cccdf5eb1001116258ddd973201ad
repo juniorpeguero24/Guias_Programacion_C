@@ -1,0 +1,16 @@
+package interfaces;
+
+public abstract class Padre {
+	protected String codigo,titulo,anioDePublicacion;
+
+	public Padre(String codigo, String titulo, String anioDePublicacion) {
+		super();
+		this.codigo = codigo;
+		this.titulo = titulo;
+		this.anioDePublicacion = anioDePublicacion;
+	}
+
+	public Padre() {}
+	
+	
+}

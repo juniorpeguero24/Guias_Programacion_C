@@ -1,0 +1,18 @@
+package paquete;
+
+import java.util.ArrayList;
+
+public class Departamento {
+	private String nombre;
+	private ArrayList<Empleado> empleados;
+	
+	public Departamento(String nombre) {
+		this.nombre=nombre;
+		empleados = new ArrayList<>();
+	}
+	
+	public void agregarEmpelado(Empleado e) {
+		empleados.add(e);
+	}
+	
+}

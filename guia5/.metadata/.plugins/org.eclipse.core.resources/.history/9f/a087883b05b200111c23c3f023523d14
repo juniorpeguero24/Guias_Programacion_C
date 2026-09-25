@@ -1,0 +1,21 @@
+package paquete;
+
+import interfaces.Movible;
+
+public class Dragon extends Personaje {
+
+	public Dragon(String nombre, Movible posicion2) {
+		super(nombre, posicion2);
+	}
+
+	@Override
+	public void abrirCofre(Cofre c) {
+	}
+
+	@Override
+	public boolean ataca(Personaje p) {
+		if (this.distancia(p) <= 50)
+		return false;
+	}
+
+}

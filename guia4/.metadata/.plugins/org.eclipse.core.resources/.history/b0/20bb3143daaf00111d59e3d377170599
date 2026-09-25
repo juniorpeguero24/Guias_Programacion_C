@@ -1,0 +1,34 @@
+package paquete;
+
+public class Posicion {
+	protected double x,y;
+
+	public Posicion(double x, double y) {
+		this.x = x;
+		this.y = y;
+	}
+	//HACE LO MISMO QUE EL CONSTRUCTO O NO? 
+	public void setXY(double x,double y) {
+		this.x = x;
+		this.y = y;
+	}
+	
+	public void incrementaPos(double valorX,double valorY) {
+		this.x += valorX;
+		this.y += valorY;
+	}
+	
+	public double distancia(Posicion p) {
+		double difX = p.x - this.x;
+		double difY = p.y - this.y;
+		return Math.sqrt(Math.exp(p.x-this.x)+Math.exp(p.y-this.y));
+	}
+	
+	public double getX() {
+		return x;
+	}
+
+	public double getY() {
+		return y;
+	}
+}

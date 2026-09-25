@@ -1,0 +1,50 @@
+package paquete;
+
+import java.util.HashMap;
+import java.util.ArrayList;
+
+public class Torneo {
+	private static Torneo instancia=null;
+	private HashMap<String,Equipo> equipos;
+	private ArrayList<Partido> partidos;
+	
+	private Torneo() {
+		equipos=new HashMap<>();
+		partidos=new ArrayList<>();
+	}
+	
+	public static Torneo getInstance() {
+		if (instancia==null) {
+			instancia=new Torneo();
+		}
+		return instancia;
+	}
+	
+	public boolean agregarEquipos(Equipo equipo) {
+		if (!equipos.containsKey(equipo.getNombre())) {
+			equipos.put(equipo.getNombre(),equipo);
+			return true;
+		}
+		return false;
+	}
+	
+	public void eliminarEquipo(String nombre) {
+		equipos.remove(nombre);
+	}
+	
+	public void agregarPartido(Partido partido) {
+		partidos.add(partido);
+	}
+	
+	public void eliminarPartido(Partido partido) {
+		partidos.remove(partido);
+	}
+	
+	public double promedioGolesJugador(String nombre) {
+		for (Equipo eq:equipos.values()) {
+			if (eq.getJugadores().containsKey(nombre)) {
+				return eq.getJugadores().get(nombre).promedioGoles();
+			}
+		}
+	}
+}

@@ -1,0 +1,11 @@
+package paquete;
+
+public class Jugador {
+	private String nombre;
+	private int puntaje;
+	
+	public Jugador(String nom,int pg,int pe) {
+		this.nombre=nom;
+		this.puntaje=pg*3+pe;
+	}
+}

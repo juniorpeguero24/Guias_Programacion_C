@@ -1,0 +1,21 @@
+package paquete;
+
+public class Camion extends Vehiculo{
+	protected double tara,cargaMax;
+	protected Acoplado acoplado;
+	
+	public Camion(String modelo,double tara,double cargaMax) throws Exception {
+		super(modelo);
+		//tengo paja de hacer Throw Excepcion pero suponete que hay
+		this.tara=tara;
+		this.cargaMax=cargaMax;
+		acoplado=null;
+	}
+	
+	public Camion(String modelo,double tara,double cargaMax,Acoplado ) throws Exception {
+		super(modelo);
+		//tengo paja de hacer Throw Excepcion pero suponete que hay
+		this.tara=tara;
+		this.cargaMax=cargaMax;
+	}
+}

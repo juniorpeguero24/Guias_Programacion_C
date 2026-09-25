@@ -1,0 +1,13 @@
+package modelo;
+
+import interfaces.Prestable;
+
+public class Revista extends Padre{
+	public int numero;
+	
+	public Revista(String codigo, String titulo, String anioDePublicacion, int numero) {
+		super(codigo, titulo, anioDePublicacion);
+		this.numero = numero;
+	}
+
+}

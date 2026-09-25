@@ -1,0 +1,9 @@
+package paquete;
+
+import java.util.ArrayList;
+
+public class Directorio extends Elemento{
+	private ArrayList<Elemento> elementos;
+	
+	
+}

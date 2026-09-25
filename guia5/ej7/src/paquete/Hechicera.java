@@ -1,0 +1,21 @@
+package paquete;
+
+public class Hechicera extends Personaje {
+
+	@Override
+	protected double getArmadura() {
+		return 1000;
+	}
+
+	@Override
+	protected double getAtaqueDistante() {
+		return 50;
+	}
+
+	@Override
+	protected double getAtaqueCorto() {
+		return 70;
+	}
+	@Override
+	public String toString() { return "Hechicero"; }
+}

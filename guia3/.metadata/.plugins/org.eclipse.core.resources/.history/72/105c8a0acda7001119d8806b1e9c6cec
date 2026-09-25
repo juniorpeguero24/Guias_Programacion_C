@@ -1,0 +1,7 @@
+package paquete;
+
+public abstract class Cuenta_Bancaria {
+		private final String titular;
+		protected double saldo;
+		
+}

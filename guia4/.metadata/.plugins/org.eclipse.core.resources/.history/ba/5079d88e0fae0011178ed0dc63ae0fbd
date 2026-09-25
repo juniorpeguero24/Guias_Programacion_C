@@ -1,0 +1,86 @@
+package paquete;
+
+import java.util.ArrayList;
+
+public class Empresa {
+	protected ArrayList<Chofer> choferes;
+	protected ArrayList<Vehiculo> vehiculos;
+	protected ArrayList<Categoria> categorias;
+	protected ArrayList<Acoplado> acoplados;
+	
+	public Empresa() {
+		choferes=new ArrayList<>();
+		vehiculos=new ArrayList<>();
+		categorias=new ArrayList<>();
+		acoplados=new ArrayList<>();
+	}
+	
+	public int cuantosChoferesCat(Categoria c) {
+		int tot=0;
+		for (Chofer e: choferes)
+			if (e.getCategoria() == c)
+				tot++;
+		return tot;
+	}
+	
+	public int cuantosChofereSinVeh() {
+		int tot=0;
+		for (Chofer c: choferes)
+			if (c.getVehiculoAsignado() == null)
+				tot++;
+		return tot;
+	}
+	
+	public int cantVehiculos() {
+		return vehiculos.size();
+	}
+	
+	public void agregarChofer(Chofer c) {
+		choferes.add(c);
+	}
+	
+	public void agregarVehiculo(Vehiculo v) {
+		vehiculos.add(v);
+	}
+	
+	public void agregarCategoria(Categoria c) {
+		categorias.add(c);
+	}
+	
+	public void agregarAcoplado(Acoplado a) {
+		acoplados.add(a);
+	}
+	
+	public void eliminarChofer(Chofer c) {
+		choferes.remove(c);
+	}
+	
+	public void eliminarVehiculo(Vehiculo v) {
+		vehiculos.remove(v);
+	}
+	
+	public void eliminarCategoria(Categoria c) {
+		categorias.remove(c);
+	}
+	
+	public void eliminarAcoplado(Acoplado a) {
+		acoplados.remove(a);
+	}
+
+	public ArrayList<Chofer> getChoferes() {
+		return choferes;
+	}
+
+	public ArrayList<Vehiculo> getVehiculos() {
+		return vehiculos;
+	}
+
+	public ArrayList<Categoria> getCategorias() {
+		return categorias;
+	}
+
+	public ArrayList<Acoplado> getAcoplados() {
+		return acoplados;
+	}
+	
+}

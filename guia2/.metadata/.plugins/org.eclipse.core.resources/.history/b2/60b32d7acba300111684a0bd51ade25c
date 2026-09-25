@@ -1,0 +1,59 @@
+package paquete;
+
+public class Partido {
+	private Equipo eq1,eq2;
+	private String fecha;
+	private int r1,r2;
+	
+	public Partido(Equipo eq1,Equipo eq2,String fecha,int r1,int r2) {
+		this.eq1=eq1;
+		this.eq2=eq2;
+		this.fecha=fecha;
+		this.r1=r1;
+		this.r2=r2;
+	}
+	
+	public void agregarJugador(Jugador j,Equipo eq){
+		if (!this.eq1.getJugadores().containsKey(j.getNombre()) && !this.eq2.getJugadores().containsKey(j.getNombre())) {
+			eq.getJugadores().put(j.getNombre(), j);
+		}
+	}
+	
+	public void quitarJugador(Jugador j,Equipo eq) {
+		eq.getJugadores().remove(j.getNombre());
+	}
+
+	public String getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(String fecha) {
+		this.fecha = fecha;
+	}
+
+	public int getR1() {
+		return r1;
+	}
+
+	public void setR1(int r1) {
+		this.r1 = r1;
+	}
+
+	public int getR2() {
+		return r2;
+	}
+
+	public void setR2(int r2) {
+		this.r2 = r2;
+	}
+
+	public Equipo getEq1() {
+		return eq1;
+	}
+
+	public Equipo getEq2() {
+		return eq2;
+	}
+	
+	
+}

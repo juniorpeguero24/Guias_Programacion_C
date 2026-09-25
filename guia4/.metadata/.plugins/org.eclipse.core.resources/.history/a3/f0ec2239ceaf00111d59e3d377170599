@@ -1,0 +1,19 @@
+package paquete;
+
+public abstract class Infusion {
+	
+	public Infusion() {
+	}
+	
+	protected void calentarAgua() {
+		System.out.println("Calentando el agua.");
+	}
+	
+	protected abstract void agregarTipoInfusion();
+	
+	protected abstract void endulzar();
+	
+	protected void tomando() {
+		System.out.println("Tomando bebida.");
+	}
+}

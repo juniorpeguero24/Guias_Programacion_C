@@ -1,0 +1,30 @@
+package paquete;
+
+public abstract class Colectivo extends Vehiculo{
+	protected int cantidadPasajeros;
+	
+	/**Constructor de Colectivo
+	 * 
+	 * <b>pre:<\b> igual que vehiculo pero se agrega cantidad de pasajeros mayor a cero
+	 * <b>post:<\b> creado el colectivo con su cantidad de pasajeros
+	 * 
+	 * @param modelo
+	 * @param cantidadPasajeros
+	 * @throws Exception si cantidad de pasajeros es menor o igual a cero
+	 */
+	public Colectivo(String modelo,int cantidadPasajeros) throws Exception {
+		super(modelo);
+		if (cantidadPasajeros <= 0)
+			throw new Exception("Cantidad de Pasajeros invalida.");
+	}
+
+	public int getCantidadPasajeros() {
+		return cantidadPasajeros;
+	}
+	
+	@Override
+	public String toString() {
+		return modelo + " numero de interno: "+ numeroInterno + "Cantidad de pasajeros: "
+				+ cantidadPasajeros;
+	}
+}

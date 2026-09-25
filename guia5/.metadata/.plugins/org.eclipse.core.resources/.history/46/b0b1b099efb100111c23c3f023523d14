@@ -1,0 +1,61 @@
+package paquete;
+
+import interfaces.Movible;
+
+public abstract class Personaje implements Movible{
+	protected String nombre;
+	protected int vitalidad=500;
+	protected Movible posicion;
+	
+	public Personaje(String nombre, Posicion posicion) {
+		this.nombre = nombre;
+		this.posicion = posicion;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public int getVitalidad() {
+		return vitalidad;
+	}
+	
+	public abstract boolean ataca(Personaje p);
+	
+	public void recibeDanio(int cantidad) {
+		this.vitalidad = Math.max(0, this.vitalidad-cantidad);
+	}
+	
+	@Override
+	public String toString() {
+		return nombre + " HP=" + vitalidad + " Pos=" +posicion;
+	}
+
+	@Override
+	public double getPosx() {
+		return this.posicion.getPosx();
+	}
+
+	@Override
+	public double getPosy() {
+		return this.posicion.getPosy();
+	}
+
+	@Override
+	public void setXY(double x, double y) {
+		this.posicion.setXY(x, y);
+	}
+
+	@Override
+	public void incrementaPos(double x, double y) {
+		this.posicion.incrementaPos(x, y);
+	}
+
+	@Override
+	public double distancia(Movible pos) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	
+}

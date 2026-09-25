@@ -1,0 +1,31 @@
+package modelo;
+
+import interfaces.IMovible;
+import interfaces.IPosicionable;
+
+public abstract class Personaje extends Unidad implements IPosicionable, IMovible {
+	protected int x,y;
+	
+	public Personaje(String equipo, int costo, int energia, int x, int y) {
+		super(equipo, costo, energia);
+		this.x = x;
+		this.y = y;
+	}
+
+	@Override
+	public void mover(int x, int y) {
+		this.x=x;
+		this.y=y;
+	}
+
+	@Override
+	public void recibeDanio(int cantidad) {
+		this.energia -= cantidad;
+	}
+
+	@Override
+	public String toString() {
+		return super.toString()+" Posicion: x=" + x + ", y=" + y;
+	}
+
+}

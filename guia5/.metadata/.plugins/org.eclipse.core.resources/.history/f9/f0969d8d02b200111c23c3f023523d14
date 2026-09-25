@@ -1,0 +1,9 @@
+package paquete;
+
+public class Bendicion extends Cofre {
+
+	@Override
+	public void recibePersonaje(Personaje p) {
+	}
+
+}

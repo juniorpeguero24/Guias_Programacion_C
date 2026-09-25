@@ -1,0 +1,14 @@
+package paquete;
+
+public class Experto extends Permanente{
+	
+	public Experto(String nombre,int legajo,String domicilio,int antiguedad,double sueldoBase) {
+		super(nombre,legajo,domicilio,antiguedad,sueldoBase);
+	}
+	
+	public double calcularSueldoNeto() {
+		sueldoBase *= 0.83; //11% aporte jubilatorio + 6% obra social
+		sueldoBase *= (1.5+1.5*antiguedad);
+		return sueldoBase;
+	}
+}

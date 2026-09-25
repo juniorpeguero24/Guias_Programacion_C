@@ -1,0 +1,23 @@
+package paquete;
+
+public class Cafe extends Infusion{
+	protected boolean amargo;
+	
+	
+	public Cafe(boolean amargo) {
+		super();
+		this.amargo = amargo;
+	}
+
+	@Override
+	protected void agregarTipoInfusion() {
+		System.out.println("Se agrega Cafe Molido a la taza.");
+	}
+
+	@Override
+	protected void endulzar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

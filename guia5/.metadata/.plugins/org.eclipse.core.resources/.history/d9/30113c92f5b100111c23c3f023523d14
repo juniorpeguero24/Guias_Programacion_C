@@ -1,0 +1,6 @@
+package interfaces;
+
+public interface Trabajable {
+	String conMadera(Material mat);
+	String conMetal(Material mat);
+}

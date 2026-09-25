@@ -1,0 +1,21 @@
+package paquete;
+
+public class Madera extends Material {
+	protected String tipo;
+
+	public Madera(String color, String tipo) {
+		super(color);
+		this.tipo = tipo;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	@Override
+	public String toString() {
+		return "Madera tipo=" + tipo + " " +super.toString();
+	}
+	
+	
+}

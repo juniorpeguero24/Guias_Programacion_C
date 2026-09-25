@@ -1,0 +1,31 @@
+package paquete;
+
+public class AutomovilAutomatico extends Automovil{
+	
+	public AutomovilAutomatico(String patente,double velmax) {
+		super(patente,velmax);
+	}
+	
+	public AutomovilAutomatico(String patente) {
+		this(patente,160.0);
+	}
+
+	@Override
+	public void acelerar(double vel) {
+		if (vel>=0) {
+			if ((vel+velocidad) < velocidadMaxima) {
+				velocidad+=vel;
+				if (velocidad > 90)
+					setMarcha(5);
+			}
+		}
+	}
+
+	@Override
+	public void frenar(double vel) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+}

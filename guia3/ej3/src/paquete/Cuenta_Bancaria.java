@@ -1,0 +1,27 @@
+package paquete;
+
+public abstract class Cuenta_Bancaria {
+		private final String titular;
+		protected double saldo;
+		
+		public Cuenta_Bancaria(String titular) {
+			this.titular=titular;
+			this.saldo=0.0;
+		}
+		
+		public void deposito(double ingreso) {
+			if (ingreso > 0)
+				this.saldo += ingreso;
+		}
+		
+		public abstract void extraccion(double importe);
+		
+		public String getTitular() {
+			return titular;
+		}
+
+		public double getSaldo() {
+			return saldo;
+		}
+		
+}

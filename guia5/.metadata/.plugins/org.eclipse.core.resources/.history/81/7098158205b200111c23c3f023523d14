@@ -1,0 +1,26 @@
+package paquete;
+
+import interfaces.Movible;
+
+public class Dragon extends Personaje {
+	protected int poderDeFuego;
+	
+	public Dragon(String nombre, Movible posicion2) {
+		super(nombre, posicion2);
+		this.poderDeFuego=100;
+	}
+
+	@Override
+	public void abrirCofre(Cofre c) {
+		c.afectar(this);
+	}
+
+	@Override
+	public boolean ataca(Personaje p) {
+		if (this.distancia(p) <= 50) {
+			p.recibeDanio(poderDeFuego);
+		}
+		return false;
+	}
+
+}

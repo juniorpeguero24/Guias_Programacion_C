@@ -1,0 +1,32 @@
+package modelo;
+
+import interfaces.IConstruible;
+import interfaces.IMovible;
+
+public abstract class Edificio extends Unidad implements IConstruible{
+	protected int tiempoConstruccion;
+	
+	public Edificio(String equipo, int costo, int energia,int tiempoConstruccion) {
+		super(equipo, costo, energia);
+		this.tiempoConstruccion=tiempoConstruccion;
+	}
+
+	public Edificio() {}
+	
+	@Override
+	public int getTiempoConstruccion() {
+		return this.tiempoConstruccion;
+	}
+
+	@Override
+	public void recibeDanio(int cantidad) {
+		this.energia -= cantidad;
+	}
+
+	@Override
+	public String toString() {
+		return super.toString()+" tiempoConstruccion=" + tiempoConstruccion;
+	}
+
+	
+}

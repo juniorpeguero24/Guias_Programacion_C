@@ -1,0 +1,11 @@
+package paquete;
+
+import java.util.ArrayList;
+
+public class Banco {
+	ArrayList<CuentaBancaria> cuentas;
+	
+	public Banco() {
+		cuentas=new ArrayList<>();
+	}
+}

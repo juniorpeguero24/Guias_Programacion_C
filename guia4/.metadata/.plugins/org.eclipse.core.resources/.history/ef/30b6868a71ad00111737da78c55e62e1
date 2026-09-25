@@ -1,0 +1,13 @@
+package paquete;
+
+public abstract class VehiculoCarga extends Vehiculo{
+	protected double PMA;
+	
+	public VehiculoCarga(String patente,double PMA) throws Exception {
+		super(patente);
+		if (PMA <= 0)
+			throws new Exception("PMA invalido.");
+		this.PMA=PMA;
+	}
+	
+}

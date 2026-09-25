@@ -1,0 +1,12 @@
+package paquete;
+
+import java.util.ArrayList;
+
+public class Directorio extends Elemento{
+	private ArrayList<Elemento> elementos;
+	
+	public Directorio(String nombre,GregorianCalendar fecha) {
+		super(nombre,fecha);
+		tamaño=0;
+	}
+}

@@ -1,0 +1,174 @@
+package paquete;
+
+import java.util.ArrayList;
+
+public class Empresa {
+	protected ArrayList<Chofer> choferes;
+	protected ArrayList<Vehiculo> vehiculos;
+	protected ArrayList<Categoria> categorias;
+	protected ArrayList<Acoplado> acoplados;
+	
+	public Empresa() {
+		choferes=new ArrayList<>();
+		vehiculos=new ArrayList<>();
+		categorias=new ArrayList<>();
+		acoplados=new ArrayList<>();
+		// Creamos las 4 categorias fijas del sistema
+	    categorias.add(new Categoria("Categoría 1", 10000.0, true, false, false));
+	    categorias.add(new Categoria("Categoría 2", 15000.0, true, true, false));
+	    categorias.add(new Categoria("Categoría 3", 15000.0, false, false, true));
+	    categorias.add(new Categoria("Categoría 4", 17000.0, true, true, true));
+	    this.choferes.add(new Chofer("Carlos Gómez", cat1));
+	    this.choferes.add(new Chofer("Martín Rodríguez", cat1));
+	    this.choferes.add(new Chofer("Lucas Benítez", cat2));
+	    this.choferes.add(new Chofer("Esteban Quito", cat2));
+	    this.choferes.add(new Chofer("Gonzalo Fernández", cat3));
+	    this.choferes.add(new Chofer("Facundo Morales", cat3));
+	    this.choferes.add(new Chofer("Matías Rossi", cat4));
+	    this.choferes.add(new Chofer("Federico Domínguez", cat4));
+
+	    // ----------------------------------------------------
+	    // Colectivos (Urbanos y Larga Distancia: Común y Coche Cama)
+	    // ----------------------------------------------------
+	    this.vehiculos.add(new ColectivoUrbano("Mercedes-Benz OH 1621", 28));
+	    this.vehiculos.add(new ColectivoUrbano("Agrale MT 17.0", 32));
+	    this.vehiculos.add(new ColectivoUrbano("Scania K250 UB", 35));
+
+	    // false = servicio común / true = coche cama
+	    this.vehiculos.add(new ColectivoLargaDistancia("Marcopolo Paradiso 1200", 46, false));
+	    this.vehiculos.add(new ColectivoLargaDistancia("Marcopolo Paradiso 1800 DD", 60, true));
+	    this.vehiculos.add(new ColectivoLargaDistancia("Busscar Panorâmico", 50, true));
+
+	    // ----------------------------------------------------
+	    // Camiones (Tara y Carga Máxima en kg)
+	    // ----------------------------------------------------
+	    this.vehiculos.add(new Camion("Iveco Stralis 460", 7200.0, 18000.0));
+	    this.vehiculos.add(new Camion("Scania R500 V8", 8500.0, 26000.0));
+	    this.vehiculos.add(new Camion("Mercedes-Benz Actros 2548", 8100.0, 24000.0));
+	    this.vehiculos.add(new Camion("Volvo FH 540", 9000.0, 30000.0));
+	    this.vehiculos.add(new Camion("Ford Cargo 1722", 6000.0, 12000.0));
+
+	    // ----------------------------------------------------
+	    // Acoplados (ID/Patente, Tara, Carga Máxima, Refrigerado)
+	    // ----------------------------------------------------
+	    // false = tolva/estándar / true = térmico/refrigerado
+	    this.acoplados.add(new Acoplado("AC-101", 3500.0, 14000.0, false));
+	    this.acoplados.add(new Acoplado("AC-102", 4200.0, 16000.0, true));
+	    this.acoplados.add(new Acoplado("AC-103", 5000.0, 22000.0, false));
+	    this.acoplados.add(new Acoplado("AC-104", 4800.0, 19000.0, true));
+	    this.acoplados.add(new Acoplado("AC-105", 3800.0, 15000.0, false));
+	}
+	
+	public int cuantosChoferesCat(Categoria c) {
+		int tot=0;
+		for (Chofer e: choferes)
+			if (e.getCategoria() == c)
+				tot++;
+		return tot;
+	}
+	
+	public int cuantosChofereSinVeh() {
+		int tot=0;
+		for (Chofer c: choferes)
+			if (c.getVehiculoAsignado() == null)
+				tot++;
+		return tot;
+	}
+	
+	public int cantVehiculos() {
+		return vehiculos.size();
+	}
+	
+	public int cantAcoplados() {
+		return acoplados.size();
+	}
+	
+	public void agregarChofer(Chofer c) {
+		choferes.add(c);
+	}
+	
+	public void agregarVehiculo(Vehiculo v) {
+		vehiculos.add(v);
+	}
+	
+	public void agregarCategoria(Categoria c) {
+		categorias.add(c);
+	}
+	
+	public void agregarAcoplado(Acoplado a) {
+		acoplados.add(a);
+	}
+	
+	public void eliminarChofer(Chofer c) {
+		choferes.remove(c);
+	}
+	
+	public void eliminarVehiculo(Vehiculo v) {
+		vehiculos.remove(v);
+	}
+	
+	public void eliminarCategoria(Categoria c) {
+		categorias.remove(c);
+	}
+	
+	public void eliminarAcoplado(Acoplado a) {
+		acoplados.remove(a);
+	}
+	
+	// Vincular chofer a vehiculo validando la compatibilidad
+	public boolean vincularChoferVehiculo(Chofer c, Vehiculo v) {
+	    if (c != null && v != null && v.aceptoChofer(c)) {
+	        c.asignarVehiculo(v);
+	        return true;
+	    }
+	    return false;
+	}
+
+	// Desvincular chofer
+	public void desvincularChofer(Chofer c) {
+	    if (c != null) {
+	        c.desvincularVehiculo();
+	    }
+	}
+
+	// Enganchar acoplado a camion
+	public boolean engancharAcoplado(Camion c, Acoplado a) {
+	    if (c != null && a != null && !a.isEnUso() && c.getAcoplado() == null) {
+	        c.asignarAcoplado(a);
+	        return true;
+	    }
+	    return false;
+	}
+
+	// Desenganchar acoplado
+	public void desengancharAcoplado(Camion c) {
+	    if (c != null) {
+	        c.desacoplar();
+	    }
+	}
+
+	public ArrayList<Chofer> getChoferes() {
+		return choferes;
+	}
+
+	public ArrayList<Vehiculo> getVehiculos() {
+		return vehiculos;
+	}
+
+	public ArrayList<Categoria> getCategorias() {
+		return categorias;
+	}
+
+	public ArrayList<Acoplado> getAcoplados() {
+		return acoplados;
+	}
+
+	@Override
+	public String toString() {
+		return "Empresa [choferes=" + choferes + ", vehiculos=" + vehiculos + ", categorias=" 
+				+ categorias + ", acoplados=" + acoplados + "]";
+	}
+	
+	
+	
+}

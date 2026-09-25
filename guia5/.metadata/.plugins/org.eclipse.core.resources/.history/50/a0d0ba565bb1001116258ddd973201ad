@@ -1,0 +1,14 @@
+package paquete;
+
+public class Animal {
+	public String nombre;
+	public int esperanzaDeVida;
+	public String getNombre() {
+		return nombre;
+	}
+	public int getEsperanzaDeVida() {
+		return esperanzaDeVida;
+	}
+	
+	
+}

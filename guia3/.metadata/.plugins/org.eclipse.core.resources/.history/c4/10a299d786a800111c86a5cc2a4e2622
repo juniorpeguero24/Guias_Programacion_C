@@ -1,0 +1,17 @@
+package paquete;
+
+public abstract class Automovil {
+	private String patente;
+	private double velocidad;
+	private double velocidadMaxima;
+	private int marcha;
+	
+	public Automovil(String patente,double velmax) {
+		this.patente=patente;
+		velocidadMaxima=velmax;
+	}
+	
+	public Automovil(String patente) {
+		Automovil(patente,160);
+	}
+}

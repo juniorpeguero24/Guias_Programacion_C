@@ -1,0 +1,68 @@
+package paquete;
+
+import java.util.ArrayList;
+
+public class Torneo {
+	private static Torneo _instancia=null;
+	private ArrayList<Partido> partidos;
+	
+	private Torneo() {
+		partidos=new ArrayList<>();
+	}
+	
+	public static Torneo getInstancia() {
+		if (_instancia == null) 
+			_instancia = new Torneo();
+		return _instancia;
+	}
+	
+	public void agregarPartido(Partido p) {
+		partidos.add(p);
+		actualizarJugadores(p);
+	}
+	
+	private void actualizarJugadores(Partido p) {
+		if (p.getR1() > p.getR2()) {
+			for(Jugador j:p.getEq1().getJugadores().values()) {
+				j.setPg(j.getPg()+1);
+				j.setPuntaje(j.getPuntaje()+3);
+			}
+			for(Jugador j:p.getEq2().getJugadores().values()) {
+				j.setPg(j.getPp()+1);
+			}
+		}else {
+			if (p.getR1() < p.getR2()) {
+				for(Jugador j:p.getEq2().getJugadores().values()) {
+					j.setPg(j.getPg()+1);
+					j.setPuntaje(j.getPuntaje()+3);
+				}
+				for(Jugador j:p.getEq1().getJugadores().values()) {
+					j.setPg(j.getPp()+1);
+				}
+			}else {
+				for(Jugador j:p.getEq1().getJugadores().values()) {
+					j.setPg(j.getPe()+1);
+					j.setPuntaje(j.getPuntaje()+1);
+				}
+				for(Jugador j:p.getEq2().getJugadores().values()) {
+					j.setPg(j.getPe()+1);
+					j.setPuntaje(j.getPuntaje()+1);
+				}
+			}
+		}
+	}
+	
+	public void historico() {
+		for (Partido p: partidos) {
+			System.out.println(p.getFecha()+" Equipo 1: "+p.getR1()+" Equipo 2: "+p.getR2());
+			System.out.print("Jugadores del equipo 1: ");
+			for (Jugador j: p.getEq1().getJugadores().values())
+				System.out.print(j.getNombre()+" ");
+			System.out.println();
+			System.out.print("Jugadores del equipo 2: ");
+			for (Jugador j: p.getEq1().getJugadores().values())
+				System.out.print(j.getNombre()+" ");
+			System.out.println();
+		}
+	}
+}

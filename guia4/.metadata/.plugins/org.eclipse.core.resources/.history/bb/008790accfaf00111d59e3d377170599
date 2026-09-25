@@ -1,0 +1,15 @@
+package paquete;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Infusion mate = new Mate();
+		Infusion cafeAmargo = new Cafe(true);
+		Infusion cafeDulce = new Cafe(false);
+		
+		mate.preparacion();
+		cafeAmargo.preparacion();
+		cafeDulce.preparacion();
+	}
+
+}

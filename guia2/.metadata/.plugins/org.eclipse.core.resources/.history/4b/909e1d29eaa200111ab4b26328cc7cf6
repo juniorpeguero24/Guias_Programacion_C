@@ -1,0 +1,7 @@
+package paquete;
+
+import java.util.hashmap;
+
+public class Agenda {
+
+}

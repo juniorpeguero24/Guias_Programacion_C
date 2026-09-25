@@ -1,0 +1,285 @@
+package ventana;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.GridLayout;
+import java.awt.FlowLayout;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import javax.swing.border.TitledBorder;
+import javax.swing.JRadioButton;
+import javax.swing.JTabbedPane;
+
+public class VentanaPrincipal extends JFrame {
+
+	private JPanel contentPane;
+	private JPanel panelCentral;
+	private JPanel panelSur;
+	private JPanel panelCreacion;
+	private JPanel panelCrearChofer;
+	private JLabel lblNewLabel;
+	private JTextField textNombre;
+	private JLabel lblNewLabel_1;
+	private JComboBox cmbCategoria;
+	private JPanel panel;
+	private JPanel panel_1;
+	private JLabel lblNewLabel_2;
+	private JButton btnCrearChofer;
+	private JPanel panel_2;
+	private JPanel panel_3;
+	private JPanel panel_4;
+	private JPanel panel_5;
+	private JPanel panelListas;
+	private JPanel panel_Izquierdo;
+	private JPanel panelCrearVehiculo;
+	private JPanel panel_7;
+	private JPanel panel_8;
+	private JLabel label;
+	private JPanel panel_9;
+	private JComboBox cmbTipoVehiculo;
+	private JPanel panel_10;
+	private JLabel label_1;
+	private JPanel panel_11;
+	private JTextField textModelo;
+	private JPanel panel_12;
+	private JLabel label_2;
+	private JPanel panel_13;
+	private JRadioButton radioButtonCocheCama;
+	private JLabel lblSiEsCamion;
+	private JPanel panel_14;
+	private JLabel label_4;
+	private JTextField textTara;
+	private JLabel label_5;
+	private JTextField textCargaMaxima;
+	private JPanel panel_6;
+	private JPanel panel_15;
+	private JPanel panel_16;
+	private JPanel panel_17;
+	private JPanel panel_18;
+	private JLabel lblNewLabel_3;
+	private JPanel panel_19;
+	private JLabel lblNewLabel_4;
+	private JPanel panel_20;
+	private JTextField textNumeroAcoplado;
+	private JLabel lblNewLabel_5;
+	private JRadioButton rdbtnResfrigerado;
+	private JPanel panel_21;
+	private JPanel panel_22;
+	private JPanel panel_23;
+	private JPanel panel_24;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					VentanaPrincipal frame = new VentanaPrincipal();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public VentanaPrincipal() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 907, 635);
+		this.contentPane = new JPanel();
+		this.contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		this.contentPane.setLayout(new BorderLayout(0, 0));
+		setContentPane(this.contentPane);
+		
+		this.panelCentral = new JPanel();
+		this.contentPane.add(this.panelCentral, BorderLayout.CENTER);
+		this.panelCentral.setLayout(new GridLayout(1, 2, 0, 0));
+		
+		this.panel_Izquierdo = new JPanel();
+		this.panelCentral.add(this.panel_Izquierdo);
+		this.panel_Izquierdo.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		this.panelCreacion = new JPanel();
+		this.panel_Izquierdo.add(this.panelCreacion);
+		this.panelCreacion.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		this.panelCrearChofer = new JPanel();
+		this.panelCrearChofer.setBorder(new TitledBorder(null, "Crear Chofer", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		this.panelCreacion.add(this.panelCrearChofer);
+		this.panelCrearChofer.setLayout(new GridLayout(0, 2, 0, 0));
+		
+		this.panel = new JPanel();
+		this.panelCrearChofer.add(this.panel);
+		
+		this.lblNewLabel = new JLabel("Nombre:");
+		this.panel.add(this.lblNewLabel);
+		
+		this.panel_1 = new JPanel();
+		this.panelCrearChofer.add(this.panel_1);
+		
+		this.textNombre = new JTextField();
+		this.panel_1.add(this.textNombre);
+		this.textNombre.setColumns(10);
+		
+		this.panel_2 = new JPanel();
+		this.panelCrearChofer.add(this.panel_2);
+		
+		this.lblNewLabel_1 = new JLabel("Categoria: ");
+		this.panel_2.add(this.lblNewLabel_1);
+		
+		this.panel_3 = new JPanel();
+		this.panelCrearChofer.add(this.panel_3);
+		
+		this.cmbCategoria = new JComboBox();
+		this.panel_3.add(this.cmbCategoria);
+		this.cmbCategoria.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4"}));
+		
+		this.panel_4 = new JPanel();
+		this.panelCrearChofer.add(this.panel_4);
+		
+		this.lblNewLabel_2 = new JLabel("");
+		this.panel_4.add(this.lblNewLabel_2);
+		
+		this.panel_5 = new JPanel();
+		this.panelCrearChofer.add(this.panel_5);
+		
+		this.btnCrearChofer = new JButton("Crear");
+		this.panel_5.add(this.btnCrearChofer);
+		
+		this.panelCrearVehiculo = new JPanel();
+		this.panelCreacion.add(this.panelCrearVehiculo);
+		this.panelCrearVehiculo.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		this.panel_7 = new JPanel();
+		this.panel_7.setBorder(new TitledBorder(null, "Crear Vehiculo", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		this.panelCrearVehiculo.add(this.panel_7);
+		this.panel_7.setLayout(new GridLayout(0, 2, 0, 0));
+		
+		this.panel_8 = new JPanel();
+		this.panel_7.add(this.panel_8);
+		
+		this.label = new JLabel("Tipo: ");
+		this.panel_8.add(this.label);
+		
+		this.panel_9 = new JPanel();
+		this.panel_7.add(this.panel_9);
+		
+		this.cmbTipoVehiculo = new JComboBox();
+		this.cmbTipoVehiculo.setModel(new DefaultComboBoxModel(new String[] {"Colectivo Linea", "Colectivo Larga Distancia", "Camion", "Acoplado"}));
+		this.panel_9.add(this.cmbTipoVehiculo);
+		
+		this.panel_10 = new JPanel();
+		this.panel_7.add(this.panel_10);
+		
+		this.label_1 = new JLabel("Modelo:");
+		this.panel_10.add(this.label_1);
+		
+		this.panel_11 = new JPanel();
+		this.panel_7.add(this.panel_11);
+		
+		this.textModelo = new JTextField();
+		this.textModelo.setColumns(10);
+		this.panel_11.add(this.textModelo);
+		
+		this.panel_12 = new JPanel();
+		this.panel_7.add(this.panel_12);
+		
+		this.label_2 = new JLabel("Si es Larga Distancia:");
+		this.panel_12.add(this.label_2);
+		
+		this.panel_13 = new JPanel();
+		this.panel_7.add(this.panel_13);
+		
+		this.radioButtonCocheCama = new JRadioButton("Coche Cama");
+		this.panel_13.add(this.radioButtonCocheCama);
+		
+		this.panel_6 = new JPanel();
+		this.panel_7.add(this.panel_6);
+		
+		this.lblSiEsCamion = new JLabel("Si es Camion o Acoplado:");
+		this.panel_6.add(this.lblSiEsCamion);
+		
+		this.panel_14 = new JPanel();
+		this.panel_7.add(this.panel_14);
+		this.panel_14.setLayout(new GridLayout(0, 2, 0, 0));
+		
+		this.panel_15 = new JPanel();
+		this.panel_14.add(this.panel_15);
+		
+		this.label_4 = new JLabel("Tara:");
+		this.panel_15.add(this.label_4);
+		
+		this.panel_16 = new JPanel();
+		this.panel_14.add(this.panel_16);
+		
+		this.textTara = new JTextField();
+		this.panel_16.add(this.textTara);
+		this.textTara.setColumns(10);
+		
+		this.panel_17 = new JPanel();
+		this.panel_14.add(this.panel_17);
+		
+		this.label_5 = new JLabel("Carga Maxima:");
+		this.panel_17.add(this.label_5);
+		
+		this.panel_18 = new JPanel();
+		this.panel_14.add(this.panel_18);
+		
+		this.textCargaMaxima = new JTextField();
+		this.panel_18.add(this.textCargaMaxima);
+		this.textCargaMaxima.setColumns(10);
+		
+		this.panel_19 = new JPanel();
+		this.panel_7.add(this.panel_19);
+		
+		this.lblNewLabel_3 = new JLabel("Si es Acoplado:");
+		this.panel_19.add(this.lblNewLabel_3);
+		
+		this.panel_20 = new JPanel();
+		this.panel_7.add(this.panel_20);
+		this.panel_20.setLayout(new GridLayout(0, 2, 0, 0));
+		
+		this.panel_21 = new JPanel();
+		this.panel_20.add(this.panel_21);
+		
+		this.lblNewLabel_4 = new JLabel("Numero Acoplado:");
+		this.panel_21.add(this.lblNewLabel_4);
+		
+		this.panel_22 = new JPanel();
+		this.panel_20.add(this.panel_22);
+		
+		this.textNumeroAcoplado = new JTextField();
+		this.panel_22.add(this.textNumeroAcoplado);
+		this.textNumeroAcoplado.setColumns(10);
+		
+		this.panel_23 = new JPanel();
+		this.panel_20.add(this.panel_23);
+		
+		this.lblNewLabel_5 = new JLabel("Resfrigerado:");
+		this.panel_23.add(this.lblNewLabel_5);
+		
+		this.panel_24 = new JPanel();
+		this.panel_20.add(this.panel_24);
+		
+		this.rdbtnResfrigerado = new JRadioButton("");
+		this.panel_24.add(this.rdbtnResfrigerado);
+		
+		this.panelListas = new JPanel();
+		this.panelCentral.add(this.panelListas);
+		
+		this.panelSur = new JPanel();
+		this.contentPane.add(this.panelSur, BorderLayout.SOUTH);
+	}
+
+}

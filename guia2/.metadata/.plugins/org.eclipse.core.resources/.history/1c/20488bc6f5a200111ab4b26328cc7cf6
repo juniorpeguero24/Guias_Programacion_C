@@ -1,0 +1,6 @@
+package paquete;
+
+public class Partido {
+	private Equipo e1,e2;
+	private String fecha;
+}

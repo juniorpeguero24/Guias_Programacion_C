@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract local variable &apos;boolean1&apos; from expression &apos;(Boolean)null&apos;&#x0D;&#x0A;- Original project: &apos;ej2&apos;&#x0D;&#x0A;- Variable name: &apos;boolean1&apos;&#x0D;&#x0A;- Destination method: &apos;modelo.Libro.devolver()&apos;&#x0D;&#x0A;- Variable expression: &apos;(Boolean)null&apos;&#x0D;&#x0A;- Replace occurrences of expression with variable" description="Extract local variable &apos;boolean1&apos;" final="false" id="org.eclipse.jdt.ui.extract.temp" input="/src&lt;modelo{Libro.java" name="boolean1" replace="true" selection="426 14" stamp="1789515964958" varType="false" version="1.0"/>
+</session>

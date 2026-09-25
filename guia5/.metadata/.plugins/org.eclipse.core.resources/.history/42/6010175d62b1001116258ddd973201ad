@@ -1,0 +1,29 @@
+package modelo;
+
+public class Cancion {
+	private int numeroPista;
+	private String titulo;
+	private double duracion;
+	
+	public Cancion(int numeroPista, String titulo, double duracion) {
+		super();
+		this.numeroPista = numeroPista;
+		this.titulo = titulo;
+		this.duracion = duracion;
+	}
+	
+	public int getNumeroPista() {
+		return numeroPista;
+	}
+	public String getTitulo() {
+		return titulo;
+	}
+	public double getDuracion() {
+		return duracion;
+	}
+
+	@Override
+	public String toString() {
+		return "Cancion [numeroPista=" + numeroPista + ", titulo=" + titulo + ", duracion=" + duracion + "]";
+	}
+}

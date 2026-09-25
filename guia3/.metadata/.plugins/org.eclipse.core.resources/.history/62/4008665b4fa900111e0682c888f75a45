@@ -1,0 +1,8 @@
+package paquete;
+
+public class ArchivoComprimido extends Directorio{
+	
+	public ArchivoComprimido(String nombre,GregorianCalendar fecha,double tasaCompresion) {
+		Super(nombre,fecha)
+	}
+}

@@ -1,0 +1,19 @@
+package paquete;
+
+public class Juguetero extends Artesano{
+
+	public Juguetero(String nombre) {
+		super(nombre);
+	}
+
+	@Override
+	public String conMadera(Material mat) {
+		return "fabrico un muñequito";
+	}
+
+	@Override
+	public String conMetal(Material mat) {
+		return "fabrico un autito";
+	}
+
+}

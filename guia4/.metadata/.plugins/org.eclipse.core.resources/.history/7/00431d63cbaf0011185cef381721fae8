@@ -1,0 +1,31 @@
+package paquete;
+
+import javax.swing.SwingUtilities;
+
+import ventana.VentanaPrincipal;
+
+public class Main {
+    public static void main(String[] args) {
+        // 1. Instanciamos el modelo con datos iniciales
+        Empresa empresa = new Empresa();
+
+        try {
+            // Vehículos
+            empresa.agregarVehiculo(new ColectivoLinea("Mercedes Benz OF1418", 32));
+            empresa.agregarVehiculo(new ColectivoLarga("Scania K400", 45, true));
+            empresa.agregarVehiculo(new Camion("Iveco Stralis", 8.0, 30.0));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+     
+        // 2. Ejecutar la ventana en el hilo de eventos de Swing
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                VentanaPrincipal ventana = new VentanaPrincipal(empresa);
+                ventana.setVisible(true);
+            }
+        });
+    
+    }
+}

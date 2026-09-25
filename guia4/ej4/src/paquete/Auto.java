@@ -1,0 +1,14 @@
+package paquete;
+
+public class Auto extends VehiculoPersonas{
+
+	public Auto(String patente, int plazas) throws Exception {
+		super(patente, plazas);
+	}
+
+	@Override
+	protected double calcularRecargoFijo() {
+		return 0;
+	}
+
+}

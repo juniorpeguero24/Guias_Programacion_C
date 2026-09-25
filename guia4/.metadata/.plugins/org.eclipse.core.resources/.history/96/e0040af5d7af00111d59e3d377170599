@@ -1,0 +1,17 @@
+package paquete;
+
+public class Caballero extends Personaje{
+	
+	public Caballero(String nombre,Posicion posicion) {
+		super(nombre, posicion);
+		this.vitalidad=500;
+	}
+
+	@Override
+	public boolean ataca(Personaje p) {
+		if (this.posicion.distancia(p.getPosicion()) < )
+		
+		return false;
+	}
+	
+}

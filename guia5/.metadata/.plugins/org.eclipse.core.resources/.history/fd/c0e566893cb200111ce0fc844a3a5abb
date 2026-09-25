@@ -1,0 +1,38 @@
+package paquete;
+
+public class PersonajeFactory {
+	public static Personaje crearPersonaje(String tipoPersonaje,String elemento) {
+		Personaje base=null;
+		switch (tipoPersonaje){
+			case "Mago":
+				base = new Mago();
+				break;
+			case "Elfo":
+				base = new Elfo();
+				break;
+			case "Hechicera":
+				base = new Hechicera();
+				break;
+			case "Dragon":
+				base = new Dragon();
+				break;
+			case "Guerrero":
+				base = new Guerrero();
+				break;
+		}
+		if (base == null)
+			return null;
+		switch (elemento) {
+			case "Tierra":
+				return new Tierra(base);
+				break;
+			case "Aire":
+				return new Aire(base);
+			case "Agua":
+				return new Agua(base);
+			case "Fuego":
+				return new Fuego(base);
+		}
+		return null;
+	}
+}

@@ -1,0 +1,14 @@
+package paquete;
+
+public abstract class CuentaBancaria {
+	protected String titular; //quizas persona pero esto si se agranda el sitema
+	protected double saldo=0;
+	
+	public CuentaBancaria(String nombre) {
+		if (nombre != null && nombre != "")
+			titular=nombre;
+		else
+			throw new Exception("Nombre incorrecto");
+	}
+	
+}

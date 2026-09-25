@@ -1,0 +1,34 @@
+package paquete;
+
+import java.util.ArrayList;
+
+public class Departamento {
+	private String nombre;
+	private ArrayList<Empleado> empleados;
+	
+	public Departamento(String nombre) {
+		this.nombre=nombre;
+		empleados = new ArrayList<>();
+	}
+	
+	public void agregarEmpleado(Empleado e) {
+		empleados.add(e);
+	}
+	
+	public void quitarEmpleado(Empleado e) {
+		int i=0;
+		while (i < empleados.size()) 
+			if (empleados.get(i)==e)
+				empleados.remove(i);
+			else
+				i++;
+	}
+	
+	public void imprimirPlanillaSueldos() {
+		System.out.println("Departamento de "+nombre)
+		for (Empleado e : empleados) {
+			System.out.println("Empleado: "+e.getNombre()+" Sueldo Neto: $"+e.calcularSueldoNeto());
+		}
+	}
+	
+}

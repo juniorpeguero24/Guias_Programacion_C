@@ -1,0 +1,94 @@
+package paquete;
+
+import java.util.HashMap;
+import java.util.ArrayList;
+
+public class Torneo {
+	private static Torneo instancia=null;
+	private HashMap<String,Equipo> equipos;
+	private ArrayList<Partido> partidos;
+	
+	private Torneo() {
+		equipos=new HashMap<>();
+		partidos=new ArrayList<>();
+	}
+	
+	public static Torneo getInstance() {
+		if (instancia==null) {
+			instancia=new Torneo();
+		}
+		return instancia;
+	}
+	
+	public boolean agregarEquipos(Equipo equipo) {
+		if (!equipos.containsKey(equipo.getNombre())) {
+			equipos.put(equipo.getNombre(),equipo);
+			return true;
+		}
+		return false;
+	}
+	
+	public void eliminarEquipo(String nombre) {
+		equipos.remove(nombre);
+	}
+	
+	public void agregarPartido(Partido partido) {
+		partidos.add(partido);
+	}
+	
+	public void eliminarPartido(Partido partido) {
+		partidos.remove(partido);
+	}
+	
+	public String masGoles(String j1,String j2) {
+		String jug=" ";
+		Jugador jug1,jug2;
+		jug1=buscarJugador(j1);
+		jug2=buscarJugador(j2);
+		if (jug1 != null && jug2 != null) {
+			if (jug1.getGc()>jug2.getGc()) {
+				jug = jug1.getNombre();
+			}else
+				jug=jug2.getNombre();
+		}
+		return jug;
+	}
+	
+	public String mayorPuntaje(String n1,String n2) {
+		Equipo eq1=buscaEquipo(n1);
+		Equipo eq2=buscaEquipo(n2);
+	}
+	
+	public int puntosEquipo(String nombre) {
+		Equipo e=buscarEquipo(nombre);
+		int pts=0;
+		if (e!=null) {
+			pts=e.getPg()*3 + e.getPe();
+		}
+		return pts;
+	}
+	
+	private Equipo buscarEquipo(String nombre) {
+		Equipo e=null;
+		if (equipos.containsKey(nombre))
+			e=equipos.get(nombre);
+		return e;
+	}
+	
+	public double promedioGolesJugador(String nombre) {
+		double prom=0;
+		Jugador j=buscarJugador(nombre);
+		if (j!=null)
+			prom=j.promedioGoles();
+		return prom;
+	}
+	
+	private Jugador buscarJugador(String nombre) {
+		for (Equipo eq:equipos.values()) {
+			if (eq.getJugadores().containsKey(nombre)) {
+				return eq.getJugadores().get(nombre);
+			}
+		}
+		return null;
+	}
+}

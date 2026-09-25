@@ -1,0 +1,43 @@
+package paquete;
+
+/**
+ * Representa un vehiculo generico dentro del sistema de alquiler de la empresa.
+ * Define la estructura general para el calculo de costos mediante el patron Template Method.
+ * 
+ * @author Chona
+ * @version 1.0
+ */
+
+public abstract class  Vehiculo {
+	protected String patente;
+	protected final double precioBase=500.0;
+	
+	/**
+     * Construye un vehiculo a partir de su identificador unico.
+     * 
+     * <b>Precondicion:</b> La patente no debe ser nula ni ser una cadena vacia.
+     * <b>Postcondicion:</b> Se crea la instancia del vehiculo con la patente asignada.
+     * 
+     * @param patente Identificador alfanumerico del vehiculo.
+     * @throws Exception Si la patente no cumple con el formato o es nula.
+     */
+	
+	public Vehiculo(String patente) throws Exception {
+		if (patente!=null && patente!="")
+			this.patente=patente;
+		else
+			throw new Exception("Patente invalida.");
+	}
+	
+	protected abstract double calcularPrecioDiario();
+	protected abstract double calcularRecargoFijo();
+	
+	public double calcularPrecioAlquiler(int dias) {
+		return (calcularPrecioDiario()*dias)+calcularRecargoFijo();
+	}
+
+	public String getPatente() {
+		return patente;
+	}
+	
+}

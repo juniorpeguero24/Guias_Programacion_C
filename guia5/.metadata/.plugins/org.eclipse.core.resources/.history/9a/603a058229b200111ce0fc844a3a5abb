@@ -1,0 +1,18 @@
+package paquete;
+
+import java.util.ArrayList;
+
+public class Mazo {
+	private static Mazo instancia=null;
+	private ArrayList<Personaje> personajes;
+	
+	private Mazo() {
+		this.personajes = new ArrayList<>();
+	}
+	
+	public static Mazo getInstancia() {
+		if (instancia == null)
+			instancia = new Mazo();
+		return instancia;
+	}
+}

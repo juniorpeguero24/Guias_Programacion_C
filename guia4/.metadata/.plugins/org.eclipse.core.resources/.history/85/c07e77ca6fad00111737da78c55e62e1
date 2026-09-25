@@ -1,0 +1,8 @@
+package paquete;
+
+public abstract class  Vehiculo {
+	protected String patente;
+	protected final double precioBase;
+	
+	
+}

@@ -1,0 +1,30 @@
+package paquete;
+
+public class Aire extends ElementoDecorator {
+
+	public Aire(Personaje personajeEvoltorio) {
+		super(personajeEvoltorio);
+	}
+
+	@Override
+	protected double getArmadura() {
+		return super.getArmadura()*0.9;
+	}
+
+	@Override
+	protected double getAtaqueDistante() {
+		return super.getAtaqueDistante()+10;
+	}
+
+	@Override
+	protected double getAtaqueCorto() {
+		return super.getAtaqueCorto()*1.2;
+	}
+
+	public void invocarHuracan() {
+		System.out.println("Invocando huracan");
+	}
+	
+	@Override
+	public String toString() { return super.toString() + " de Aire"; }
+}

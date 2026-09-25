@@ -1,0 +1,154 @@
+package ventana;
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+import paquete.ColectivoLarga;
+import paquete.ColectivoLinea;
+import paquete.Empresa;
+import paquete.Vehiculo;
+
+import javax.swing.JLabel;
+import java.awt.GridLayout;
+import javax.swing.JTextField;
+import javax.swing.JRadioButton;
+import javax.swing.ButtonGroup;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class DialogAltaColectivo extends JDialog {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private final JPanel contentPanel = new JPanel();
+	private JTextField textCantP;
+	private final ButtonGroup buttonGroup = new ButtonGroup();
+	private JTextField textModelo;
+	private JRadioButton rdbtnColectivoLinea;
+	private JRadioButton rdbtnColectivoLarga;
+	private JRadioButton rdbtnCocheCama;
+
+	/**
+	 * Create the dialog.
+	 */
+	public DialogAltaColectivo(JFrame padre,Empresa empresa) {
+		setBounds(100, 100, 450, 300);
+		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		getContentPane().add(contentPanel, BorderLayout.CENTER);
+		contentPanel.setLayout(new GridLayout(0, 2, 0, 0));
+		{
+			rdbtnColectivoLinea = new JRadioButton("Colectivo Linea");
+			buttonGroup.add(rdbtnColectivoLinea);
+			contentPanel.add(rdbtnColectivoLinea);
+		}
+		{
+			rdbtnColectivoLarga = new JRadioButton("Colectivo Larga Distancia");
+			buttonGroup.add(rdbtnColectivoLarga);
+			contentPanel.add(rdbtnColectivoLarga);
+		}
+		{
+			JPanel panel = new JPanel();
+			contentPanel.add(panel);
+			{
+				JLabel lblNewLabel = new JLabel("Modelo:");
+				panel.add(lblNewLabel);
+			}
+		}
+		{
+			{
+				JPanel panel = new JPanel();
+				contentPanel.add(panel);
+				{
+					textModelo = new JTextField();
+					panel.add(textModelo);
+					textModelo.setColumns(10);
+				}
+			}
+			{
+				JPanel panel = new JPanel();
+				contentPanel.add(panel);
+				{
+					JLabel lblNewLabel_1 = new JLabel("Cantidad de pasajeros:");
+					panel.add(lblNewLabel_1);
+				}
+			}
+			{
+				JPanel panel = new JPanel();
+				contentPanel.add(panel);
+				{
+					textCantP = new JTextField();
+					panel.add(textCantP);
+					textCantP.setColumns(10);
+				}
+			}
+		}
+		{
+			JPanel panel = new JPanel();
+			contentPanel.add(panel);
+			{
+				JLabel lblNewLabel_2 = new JLabel("Si larga distancia: ");
+				panel.add(lblNewLabel_2);
+			}
+		}
+		{
+			JPanel panel = new JPanel();
+			contentPanel.add(panel);
+			{
+				rdbtnCocheCama = new JRadioButton("Coche cama");
+				panel.add(rdbtnCocheCama);
+			}
+		}
+		{
+			JPanel buttonPane = new JPanel();
+			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
+			getContentPane().add(buttonPane, BorderLayout.SOUTH);
+			{
+				JButton okButton = new JButton("OK");
+				okButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						String modelo = textModelo.getText().trim();
+						int cantP = Integer.parseInt(textCantP.getText().trim());
+						Vehiculo nuevo;
+						if (!modelo.isEmpty() && cantP > 0 )
+							if (rdbtnColectivoLinea.isSelected()) {
+								try {
+									nuevo = new ColectivoLinea(modelo,cantP);
+								} catch (Exception e) {
+									e.printStackTrace();
+								}
+							}else
+								if (rdbtnColectivoLarga.isSelected()) {
+									try {
+										Vehiculo nuevo = new ColectivoLarga(modelo,cantP,rdbtnCocheCama.isSelected());
+									} catch (Exception e) {
+										e.printStackTrace();
+									}
+								}
+						if (nuevo != null) {
+							empresa.agregarVehiculo(nuevo);
+							dispose();
+						}
+					}
+				});
+				okButton.setActionCommand("OK");
+				buttonPane.add(okButton);
+				getRootPane().setDefaultButton(okButton);
+			}
+			{
+				JButton cancelButton = new JButton("Cancel");
+				cancelButton.setActionCommand("Cancel");
+				buttonPane.add(cancelButton);
+			}
+		}
+	}
+
+}

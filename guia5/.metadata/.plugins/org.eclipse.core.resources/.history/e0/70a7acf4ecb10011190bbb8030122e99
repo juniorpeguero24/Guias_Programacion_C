@@ -1,0 +1,20 @@
+package modelo;
+
+import interfaces.IHostil;
+
+public class Soldado extends Personaje implements IHostil{
+
+	public Soldado(String equipo, int x, int y) {
+		super(equipo, 100, 500, x, y);
+	}
+
+	@Override
+	public void atacar(Unidad adversario) {
+		adversario.recibeDanio(50);
+	}
+
+	@Override
+	public String toString() {
+		return "Soldado "+super.toString();
+	}
+}

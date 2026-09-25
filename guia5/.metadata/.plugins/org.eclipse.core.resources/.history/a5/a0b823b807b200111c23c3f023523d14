@@ -1,0 +1,26 @@
+package paquete;
+
+public class Maldicion extends Cofre {
+
+	@Override
+	public void afectar(Caballero c) {
+		c.setVitalidad((int)(c.getVitalidad()*0.5));
+	}
+
+	@Override
+	public void afectar(Arquero a) {
+		a.setCantFlechas(0);
+	}
+
+	@Override
+	public void afectar(Guerrero g) {
+		g.setArmadura(Math.max(0, g.getArmadura()-200));
+	}
+
+	@Override
+	public void afectar(Dragon d) {
+		d.setPoderDeFuego((int)(d.getPoderDeFuego()*0.7));
+	}
+	
+	
+}

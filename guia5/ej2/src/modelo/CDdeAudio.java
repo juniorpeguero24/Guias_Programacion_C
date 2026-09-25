@@ -1,0 +1,64 @@
+package modelo;
+
+import java.util.ArrayList;
+
+import interfaces.Prestable;
+
+public class CDdeAudio implements Prestable,Comparable<CDdeAudio> {
+	private String codigo,titulo,interprete;
+	private ArrayList<Cancion> canciones;
+	private boolean prestado;
+	
+	public CDdeAudio(String codigo, String titulo, String interprete, ArrayList<Cancion> canciones) {
+		this.codigo = codigo;
+		this.titulo = titulo;
+		this.interprete = interprete;
+		this.canciones = canciones != null ? canciones : new ArrayList<Cancion>();
+		this.prestado=false;
+	}
+
+	@Override
+	public void prestar() {
+		this.prestado=true;
+	}
+
+	@Override
+	public void devolver() {
+		this.prestado=false;
+	}
+
+	@Override
+	public boolean isPrestado() {
+		return this.prestado;
+	}
+
+	public String getCodigo() {
+		return codigo;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public String getInterprete() {
+		return interprete;
+	}
+
+	public ArrayList<Cancion> getCanciones() {
+		return canciones;
+	}
+
+	@Override
+	public String toString() {
+		return "CDdeAudio [codigo=" + codigo + ", titulo=" + titulo + ", interprete=" + interprete + ", canciones="
+				+ canciones + ", prestado=" + (prestado ? "Si":"No") + "]";
+	}
+
+	@Override
+	public int compareTo(CDdeAudio arg0) {
+		int res = this.interprete.compareTo(arg0.getInterprete());
+		return (res != 0 ? res: (this.titulo.compareTo(arg0.getTitulo())));
+	}
+	
+	
+}

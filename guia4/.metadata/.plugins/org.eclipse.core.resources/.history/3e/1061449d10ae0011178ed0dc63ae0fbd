@@ -1,0 +1,37 @@
+package paquete;
+
+public class Chofer {
+	protected String nombre;
+	protected Categoria categoria;
+	protected Vehiculo vehiculoAsignado=null;
+	
+	public Chofer(String nombre, Categoria categoria) {
+		this.nombre = nombre;
+		this.categoria = categoria;
+	}
+	
+	public void asignarVehiculo(Vehiculo v) {
+		if (v.aceptoChofer(this))
+			vehiculoAsignado=v;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public Vehiculo getVehiculoAsignado() {
+		return vehiculoAsignado;
+	}
+
+	@Override
+	public String toString() {
+		return "Chofer [nombre=" + nombre + ", categoria=" + categoria + 
+				", vehiculoAsignado=" + vehiculoAsignado + "]";
+	}
+	
+	
+}

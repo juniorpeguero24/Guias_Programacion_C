@@ -1,0 +1,22 @@
+package paquete;
+
+import java.util.HashMap;
+import java.util.ArrayList;
+
+public class Torneo {
+	private static Torneo instancia=null;
+	private HashMap<String,Equipo> equipos;
+	private ArrayList<Partido> partidos;
+	
+	private Torneo() {
+		equipos=new HashMap<>();
+		partidos=new ArrayList<>();
+	}
+	
+	public static Torneo getInstance() {
+		if (instancia==null) {
+			instancia=new Torneo();
+		}
+		return instancia;
+	}
+}

@@ -1,0 +1,31 @@
+package modelo;
+
+import interfaces.Prestable;
+
+public class Libro extends Padre implements Prestable{
+	public boolean prestado;
+	
+	public Libro(String codigo, String titulo, String anioDePublicacion) {
+		super(codigo, titulo, anioDePublicacion);
+		this.prestado=null;
+	}
+
+	@Override
+	public void prestar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void devolver() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean isPrestado() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

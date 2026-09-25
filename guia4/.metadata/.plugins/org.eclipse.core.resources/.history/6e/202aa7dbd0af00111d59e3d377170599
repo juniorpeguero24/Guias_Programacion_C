@@ -1,0 +1,76 @@
+package paquete;
+
+import java.awt.EventQueue;
+
+import vista.VentanaCuenta;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Banco banco = new Banco();
+
+        try {
+            // Cajas de Ahorro
+            CajaDeAhorro ca1 = new CajaDeAhorro("Lucía Méndez");
+            ca1.depositar(45000.0);
+
+            CajaDeAhorro ca2 = new CajaDeAhorro("Martín Gómez");
+            ca2.depositar(12000.0);
+
+            // Cuentas Corrientes (tope por defecto de 10000 y tope personalizado)
+            CuentaCorriente cc1 = new CuentaCorriente("Juan Pérez");
+            cc1.depositar(25000.0);
+
+            CuentaCorriente cc2 = new CuentaCorriente("Empresa Transporte SRL", 50000.0);
+            cc2.depositar(80000.0);
+
+            // Cuentas Universitarias
+            CuentaUniversitaria cu1 = new CuentaUniversitaria("Sofía Rossi");
+            cu1.depositar(5000.0);
+
+            CuentaUniversitaria cu2 = new CuentaUniversitaria("Mateo Fernández");
+            cu2.depositar(3500.0);
+
+            // Agregamos al banco
+            banco.agregarCuenta(ca1);
+            banco.agregarCuenta(ca2);
+            banco.agregarCuenta(cc1);
+            banco.agregarCuenta(cc2);
+            banco.agregarCuenta(cu1);
+            banco.agregarCuenta(cu2);
+
+            // Extracciones
+            ca1.extraer(5000.0);
+            cc1.extraer(30000.0); // Usa 5000 de descubierto
+            cu1.extraer(800.0);   // Dentro del límite diario
+            cu1.extraer(500.0);   // Supera el límite diario de 1000
+
+            // Salida por consola
+            for (CuentaBancaria c : banco.getCuentas()) {
+                System.out.println(c);
+            }
+
+        } catch (Exception e) {
+            System.err.println("Error: " + e.getMessage());
+        }
+        
+        
+    }
+    
+    /**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					VentanaCuenta frame = new VentanaCuenta();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+}

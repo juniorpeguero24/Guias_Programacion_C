@@ -1,0 +1,28 @@
+package paquete;
+
+import java.util.ArrayList;
+import java.util.GregorianCalendar;
+
+public class Directorio extends Elemento{
+	private ArrayList<Elemento> elementos;
+	
+	public Directorio(String nombre,GregorianCalendar fecha) {
+		super(nombre,fecha, 0);
+		tamaño=0;
+		elementos=new ArrayList<>();
+	}
+	
+	public void agregarElemento(Elemento e) {
+		elementos.add(e);
+	}
+	
+	public void eliminarElemento(Elemento e) {
+		elementos.remove(e);
+	}
+
+	public ArrayList<Elemento> getElementos() {
+		return elementos;
+	}
+	
+	
+}

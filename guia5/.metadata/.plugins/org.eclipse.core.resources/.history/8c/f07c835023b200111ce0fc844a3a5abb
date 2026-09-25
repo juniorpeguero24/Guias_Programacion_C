@@ -1,0 +1,10 @@
+package paquete;
+
+public abstract class Gema {
+	
+	protected abstract String combinar(Gema otra);
+	protected abstract String combinarConRubi(Gema otra);
+	protected abstract String combinarConZafiro(Zafiro zafiro);
+	protected abstract String combinarConEsmeralda(Esmeralda esmeralda);
+	
+}

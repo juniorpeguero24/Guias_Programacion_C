@@ -1,0 +1,10 @@
+package modelo;
+
+public class Medico extends Personaje {
+	
+	public Medico() {
+		this.costo=40;
+		this.energia=100;
+		
+	}
+}

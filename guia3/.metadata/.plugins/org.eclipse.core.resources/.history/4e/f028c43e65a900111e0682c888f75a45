@@ -1,0 +1,24 @@
+package paquete;
+
+public class Arquero extends Jugador{
+	private double efectividad=0.5;
+	
+	public Arquero(String nombre,double velocidad,double potencia) {
+		super(nombre,velocidad,potencia);
+	}
+	
+	public Arquero(String nombre,double velocidad,double potencia,double efectividad) {
+		super(nombre,velocidad,potencia);
+		this.efectividad=efectividad;
+	}
+	
+	@Override
+	public double getIndiceDefensa() {
+		return 0;
+	}
+
+	@Override
+	public double getIndiceAtaque() {
+		return 0.1*velocidad*potencia;
+	}
+}

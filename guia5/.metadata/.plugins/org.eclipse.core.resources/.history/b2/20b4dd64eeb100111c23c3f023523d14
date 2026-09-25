@@ -1,0 +1,45 @@
+package paquete;
+
+import interfaces.Movible;
+
+public class Posicion implements Movible{
+	protected double x,y;
+
+	public Posicion(double x, double y) {
+		this.x = x;
+		this.y = y;
+	}
+	
+	public void setXY(double x,double y) {
+		this.x = x;
+		this.y = y;
+	}
+	
+	public void incrementaPos(double valorX,double valorY) {
+		this.x += valorX;
+		this.y += valorY;
+	}
+	
+	public double distancia(Posicion p) {
+		return Math.sqrt(Math.pow(p.x-this.x,2)+Math.pow(p.y-this.y,2));
+	}
+	
+	@Override
+	public String toString() {
+		return "Posicion [x=" + x + ", y=" + y + "]";
+	}
+	@Override
+	public double getPosx() {
+		return this.x;
+	}
+	@Override
+	public double getPosy() {
+		return this.y;
+	}
+	@Override
+	public double distancia(Movible pos) {
+		return Math.sqrt(Math.pow(p.x-this.x,2)+Math.pow(p.y-this.y,2));
+	}
+	
+	
+}

@@ -1,0 +1,11 @@
+package modelo;
+
+public class Soldado extends Personaje implements IHostil{
+	
+	public Soldado() {
+		this.costo=100;
+		this.energia=500;
+	}
+	
+	
+}

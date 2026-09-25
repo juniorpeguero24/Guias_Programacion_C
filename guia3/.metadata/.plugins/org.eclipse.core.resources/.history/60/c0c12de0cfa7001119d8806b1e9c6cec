@@ -1,0 +1,14 @@
+package paquete;
+
+public class CajaDeAhorro extends Cuenta_Bancaria{
+	private final int cantExtractMax=10;
+	
+	public CajaDeAhorro(String titular) {
+		super(titular);
+	}
+
+	public int getCantExtractMax() {
+		return cantExtractMax;
+	}
+	
+}

@@ -1,0 +1,19 @@
+package modelo;
+
+import interfaces.IConstruible;
+
+public class Edificio extends Unidad implements IConstruible {
+
+	@Override
+	public int getTiempoConstruccion() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void recibeDanio(int cantidad) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

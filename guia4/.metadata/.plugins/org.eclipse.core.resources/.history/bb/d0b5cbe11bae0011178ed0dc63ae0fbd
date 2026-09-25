@@ -1,0 +1,24 @@
+package paquete;
+
+public class CajaDeAhorro extends CuentaBancaria{
+	protected final int MaxExtracciones=10;
+	protected int extracciones=0;
+	
+	public CajaDeAhorro(String nombre) throws Exception {
+		super(nombre);
+	}
+	
+	@Override
+	protected boolean validaExtraccion(double monto) {
+		return (extracciones <= MaxExtracciones && monto <= saldo);
+	}
+	
+	@Override
+	public void extraer(double monto) {
+		if () {
+			saldo -= monto;
+			extracciones++;
+		}
+	}
+	
+}

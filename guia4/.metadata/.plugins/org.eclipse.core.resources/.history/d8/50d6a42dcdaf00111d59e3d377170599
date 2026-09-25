@@ -1,0 +1,6 @@
+package paquete;
+
+public abstract class Infusion {
+	
+	public Infusion();
+}

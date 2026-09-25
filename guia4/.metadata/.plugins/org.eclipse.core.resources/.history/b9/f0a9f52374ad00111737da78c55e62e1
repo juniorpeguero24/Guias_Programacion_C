@@ -1,0 +1,18 @@
+package paquete;
+
+public abstract class VehiculoCarga extends Vehiculo{
+	protected double PMA;
+	
+	public VehiculoCarga(String patente,double PMA) throws Exception {
+		super(patente);
+		if (PMA <= 0)
+			throw new Exception("PMA invalido.");
+		this.PMA=PMA;
+	}
+	
+	@Override
+	public double calcularPrecioDiario() {
+		return super.precioBase*(1.2*PMA);
+	}
+	
+}

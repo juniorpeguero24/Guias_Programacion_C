@@ -1,0 +1,19 @@
+package paquete;
+
+public class PersonajeFactory {
+	
+	public static Personaje crearPersonaje(String tipo, String nombre, Posicion pos) {
+		switch (tipo) {
+			case "Arquero":
+				return new Arquero(nombre,pos);
+			case "Guerrero":
+				return new Guerrero(nombre,50,pos);
+			case "Caballero":
+				return new Caballero(nombre,pos);
+			case "Dragon":
+				return new Dragon(nombre,pos);
+		}
+		return null;
+	}
+}
+

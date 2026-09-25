@@ -1,0 +1,8 @@
+package paquete;
+
+public class Principiante extends Permanente{
+	
+	public Principiante(String nombre,int legajo,String domicilio,int antiguedad,double sueldoBase) {
+		super(nombre,legajo,domicilio,antiguedad,sueldoBase);
+	}
+}

@@ -1,0 +1,10 @@
+package paquete;
+
+public class PersonajeFactory {
+	public Personaje getPersonaje(String tipoPersonaje) {
+		switch (tipoPersonaje){
+			case "Mago":
+				return new Mago();
+		}
+	}
+}

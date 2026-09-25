@@ -1,0 +1,6 @@
+package paquete;
+
+public class Camion extends Vehiculo{
+	protected double Tara,cargaMax;
+	protected Acoplado acoplado;
+}

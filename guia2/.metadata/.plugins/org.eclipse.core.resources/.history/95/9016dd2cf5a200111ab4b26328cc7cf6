@@ -1,0 +1,31 @@
+package paquete;
+
+import java.util.HashMap;
+
+public class Equipo {
+	private String nombre;
+	private HashMap<String,Jugador> jugadores;
+	private int pg,pe,pp,gf,gc;
+	
+	public Equipo(String nombre,int pg,int pe,int pp,int gf,int gc) {
+		jugadores = new HashMap<>();
+		this.nombre=nombre;
+		this.pg=pg;
+		this.pe=pe;
+		this.pp=pp;
+		this.gf=gf;
+		this.gc=gc;
+	}
+	
+	public boolean agregarJugador(Jugador jugador) {
+		if (!jugadores.containsKey(jugador.getNombre())){
+			jugadores.put(jugador.getNombre(), jugador);
+			return true;
+		}
+		return false;
+	}
+	
+	public void eliminarJugador(String nombre) {
+		jugadores.remove(nombre);
+	}
+}

@@ -1,0 +1,16 @@
+package paquete;
+
+public class Jugador {
+	private String nombre;
+	private String anioNacimiento;
+	private int nroCamiseta,posicion,pj,gc;
+	
+	public Jugador(String nombre,String anio,int nro,int pos,int pj,int gc) {
+		this.nombre=nombre;
+		this.anioNacimiento=anio;
+		this.nroCamiseta=nro;
+		this.posicion=pos;
+		this.pj=pj;
+		this.gc=gc;
+	}
+}

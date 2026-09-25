@@ -1,0 +1,15 @@
+package paquete;
+
+public class Caballero extends Personaje{
+	
+	public Caballero(String nombre, int vitalidad, Posicion posicion) {
+		super(nombre, vitalidad, posicion);
+	}
+
+	@Override
+	public boolean ataca(Personaje p) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+}

@@ -1,0 +1,20 @@
+package paquete;
+
+import java.util.HashMap;
+
+public class Agenda {
+	private HashMap<String,Contacto> contactos;
+	
+	public Agenda() {
+		contactos = new HashMap<>();
+	}
+	
+	public void agregarContacto(String nombre,Contacto contacto) {
+		if (!contactos.containsKey(nombre))
+			contactos.put(nombre, contacto);
+	}
+	
+	public void eliminarContacto(String nombre) {
+		contactos.remove(nombre);
+	}
+}

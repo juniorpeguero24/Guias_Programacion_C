@@ -1,0 +1,38 @@
+package paquete;
+
+public class Partido {
+	private Equipo e1,e2;
+	private String fecha;
+	
+	public Partido(Equipo e1,Equipo e2,String fecha) {
+		this.e1=e1;
+		this.e2=e2;
+		this.fecha=fecha;
+	}
+
+	public Equipo getE1() {
+		return e1;
+	}
+
+	public void setE1(Equipo e1) {
+		this.e1 = e1;
+	}
+
+	public Equipo getE2() {
+		return e2;
+	}
+
+	public void setE2(Equipo e2) {
+		this.e2 = e2;
+	}
+
+	public String getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(String fecha) {
+		this.fecha = fecha;
+	}
+
+	
+}

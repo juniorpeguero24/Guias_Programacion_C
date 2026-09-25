@@ -1,0 +1,16 @@
+package paquete;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Agenda agenda=new Agenda();
+		
+		Contacto c1=new Contacto("Juan","123456");
+		c1.agregarCelular(147852);
+		Contacto c2=new Contacto("Ana","456789");
+		Contacto c3=new Contacto("Pablo","987654");
+		Contacto c4=new Contacto("Carlos","654321");
+		
+	}
+
+}

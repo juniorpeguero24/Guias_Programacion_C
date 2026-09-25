@@ -1,0 +1,8 @@
+package modelo;
+
+public class Soldado extends Personaje {
+	public Soldado() {
+		this.costo=100;
+		this.energia=500;
+	}
+}

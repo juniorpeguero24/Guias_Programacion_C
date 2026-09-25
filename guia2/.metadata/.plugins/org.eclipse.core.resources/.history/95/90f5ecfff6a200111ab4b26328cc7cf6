@@ -1,0 +1,15 @@
+package paquete;
+
+import java.util.HashMap;
+import java.util.ArrayList;
+
+public class Torneo {
+	private static Torneo instancia;
+	private HashMap<String,Equipo> equipos;
+	private ArrayList<Partido> partidos;
+	
+	private Torneo() {
+		equipos=new HashMap<>();
+		partidos=new ArrayList<>();
+	}
+}

@@ -1,0 +1,10 @@
+package paquete;
+
+import interfaces.Trabajable;
+
+public abstract class Artesano implements Trabajable {
+	protected String nombre;
+	
+	
+
+}

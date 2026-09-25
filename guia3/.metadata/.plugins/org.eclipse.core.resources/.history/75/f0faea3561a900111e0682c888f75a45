@@ -1,0 +1,6 @@
+package paquete;
+
+public class Equipo {
+	private String nombre;
+	private ArrayList<Jugador> jugadores;
+}

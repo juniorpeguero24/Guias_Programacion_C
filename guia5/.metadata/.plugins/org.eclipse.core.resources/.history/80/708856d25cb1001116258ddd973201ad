@@ -1,0 +1,22 @@
+package paquete;
+
+import interfaces.Emisor_de_Sonido;
+
+public class Animal{
+	public String nombre;
+	public int esperanzaDeVida;
+	
+	public Animal(String nombre, int esperanzaDeVida) {
+		this.nombre=nombre;
+		this.esperanzaDeVida=esperanzaDeVida;
+	}
+	
+	public String getNombre() {
+		return nombre;
+	}
+	public int getEsperanzaDeVida() {
+		return esperanzaDeVida;
+	}
+	
+	
+}

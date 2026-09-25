@@ -1,0 +1,34 @@
+package paquete;
+
+public class Temporario extends Empleado{
+		private double sueldoPorHora;
+		private int cantHoras;
+		
+		public Temporario(String nombre,int legajo,String domicilio,double sueldo,int cantHoras) {
+			super(nombre,legajo,domicilio);
+			this.sueldoPorHora=sueldo;
+			this.cantHoras=cantHoras;
+		}
+
+		public double calcularSueldoNota() {
+			return sueldoPorHora*cantHoras;
+		}
+		
+		public double getSueldoPorHora() {
+			return sueldoPorHora;
+		}
+
+		public void setSueldoPorHora(double sueldoPorHora) {
+			this.sueldoPorHora = sueldoPorHora;
+		}
+
+		public int getCantHoras() {
+			return cantHoras;
+		}
+
+		public void setCantHoras(int cantHoras) {
+			this.cantHoras = cantHoras;
+		}
+		
+		
+}

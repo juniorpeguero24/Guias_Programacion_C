@@ -1,0 +1,47 @@
+package paquete;
+
+import java.util.HashMap;
+
+public class Agenda {
+	private HashMap<String,Contacto> contactos;
+	
+	public Agenda() {
+		contactos = new HashMap<>();
+	}
+	
+	public boolean agregarContacto(Contacto contacto) {
+		if (!contactos.containsKey(contacto.getNombre())) {
+			contactos.put(contacto.getNombre(),contacto);
+			return true;
+		}
+		return false;
+	}
+	
+	public boolean modificarTelefonoFijo(String nombre, String nuevoTF) {
+		if (contactos.containsKey(nombre)) {
+			Contacto c = contactos.get(nombre);
+			c.setTelefono(nuevoTF);
+			return true;
+		}
+		return false;
+	}
+	
+	public void eliminarContacto(String nombre) {
+		contactos.remove(nombre);
+	}
+	
+	public int cantidadContactos() {
+		return contactos.size();
+	}
+	
+	public Contacto busqueda(String nombre) {
+		return contactos.get(nombre);
+	}
+	
+	public void mostrarContactos() {
+		for(Contacto c: contactos.values()) {
+			System.out.println(i);
+		}
+	}
+	
+}

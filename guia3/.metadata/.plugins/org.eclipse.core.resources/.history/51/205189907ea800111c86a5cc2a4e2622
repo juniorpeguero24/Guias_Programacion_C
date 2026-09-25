@@ -1,0 +1,30 @@
+package paquete;
+
+public abstract class Permanente extends Empleado{
+		private int antiguedad;
+		private double sueldoBase;
+		
+		public Permanente(String nombre,int legajo,String domicilio,int antiguedad,double sueldoBase) {
+			super(nombre,legajo,domicilio);
+			this.antiguedad=antiguedad;
+			this.sueldoBase=sueldoBase;
+		}
+
+		public int getAntiguedad() {
+			return antiguedad;
+		}
+
+		public void setAntiguedad(int antiguedad) {
+			this.antiguedad = antiguedad;
+		}
+
+		public double getSueldoBase() {
+			return sueldoBase;
+		}
+
+		public void setSueldoBase(double sueldoBase) {
+			this.sueldoBase = sueldoBase;
+		}
+		
+		public abstract double calcularSueldoBruto();
+}

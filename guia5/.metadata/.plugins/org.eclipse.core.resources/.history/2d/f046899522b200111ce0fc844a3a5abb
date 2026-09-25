@@ -1,0 +1,8 @@
+package paquete;
+
+public abstract class Gema {
+	
+	protected abstract String combinar(Gema otra);
+	protected abstract void combinarConRubi(Rubi rubi);
+	
+}

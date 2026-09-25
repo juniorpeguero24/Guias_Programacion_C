@@ -1,0 +1,8 @@
+package paquete;
+
+public abstract class Vehiculo {
+	public String patente;
+	public String numeroChasis;
+	public String numeroMotor;
+	public String modelo;
+}

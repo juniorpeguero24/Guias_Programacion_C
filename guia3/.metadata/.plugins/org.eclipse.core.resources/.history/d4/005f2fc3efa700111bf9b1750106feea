@@ -1,0 +1,7 @@
+package paquete;
+
+public class CuentaUniversitaria extends Cuenta_Bancaria{
+	private final int tope=1000;
+	
+	
+}

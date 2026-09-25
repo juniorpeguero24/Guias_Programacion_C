@@ -1,0 +1,31 @@
+package paquete;
+
+import interfaces.Movible;
+
+public class Caballero extends Personaje{
+	
+	public Caballero(String nombre,Movible posicion) {
+		super(nombre, posicion);
+	}
+
+	@Override
+	public boolean ataca(Personaje p) {
+		if (this.distancia(p) <= 10) {
+			p.recibeDanio(10);
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public String toString() {
+		return "Caballero "+super.toString();
+	}
+
+	@Override
+	public void abrirCofre(Cofre c) {
+		c.afectar(this);
+	}
+	
+	
+}

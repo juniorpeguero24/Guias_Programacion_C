@@ -1,0 +1,97 @@
+package paquete;
+
+public class Surtidor {
+	public static int siguienteNro=0;
+	private int nroS,cantGasoil,cantPremium,cantSuper;
+	private int ventGasoil,ventPremium,ventSuper;
+	private final int maximaCarga=20000;
+	
+	public Surtidor() {
+		siguienteNro++;
+		this.nroS=siguienteNro;
+		this.cantGasoil=this.cantPremium=this.cantSuper=maximaCarga;
+		this.ventGasoil=this.ventPremium=this.ventSuper=0;
+	}
+	
+	public boolean extraerGasoil(int litros) {
+		if (litros<this.cantGasoil) {
+			this.cantGasoil -= litros;
+			this.ventGasoil += litros;
+			return true;
+		}else {
+			this.ventGasoil += this.cantGasoil;
+			this.cantGasoil=0;
+			return false;
+		}
+	}
+
+	public boolean extraerPremium(int litros) {
+		if (litros<this.cantPremium) {
+			this.cantPremium -= litros;
+			this.ventPremium += litros;
+			return true;
+		}else {
+			this.ventPremium += this.cantPremium;
+			this.cantPremium=0;
+			return false;
+		}
+	}
+	
+	public boolean extraerSuper(int litros) {
+		if (litros<this.cantSuper) {
+			this.cantSuper-= litros;
+			this.ventSuper += litros;
+			return true;
+		}else {
+			this.ventSuper += this.cantSuper;
+			llenarDepositoSuper();
+			return false;
+		}
+	}
+	
+	public int getCantGasoil() {
+		return cantGasoil;
+	}
+
+	public int getCantPremium() {
+		return cantPremium;
+	}
+
+	public int getCantSuper() {
+		return cantSuper;
+	}
+	
+	public void llenarDepositoGasoil() {
+		this.cantGasoil=maximaCarga;
+	}
+	
+	public void llenarDepositoPremium() {
+		this.cantPremium=maximaCarga;
+	}
+	
+	public void llenarDepositoSuper() {
+		this.cantSuper=maximaCarga;
+	}
+
+	public int getVentGasoil() {
+		return ventGasoil;
+	}
+
+	public int getVentPremium() {
+		return ventPremium;
+	}
+
+	public int getVentSuper() {
+		return ventSuper;
+	}
+
+	public static int getSiguienteNro() {
+		return siguienteNro;
+	}
+
+	public int getNroS() {
+		return nroS;
+	}
+	
+	
+}

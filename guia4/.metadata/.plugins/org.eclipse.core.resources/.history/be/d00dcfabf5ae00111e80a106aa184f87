@@ -1,0 +1,82 @@
+package ventana;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.GridLayout;
+import java.awt.FlowLayout;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+public class VentanaPrincipal extends JFrame {
+
+	private JPanel contentPane;
+	private JPanel panelCentral;
+	private JPanel panelSur;
+	private JPanel panelCreacion;
+	private JPanel panelChofer;
+	private JPanel panelCrearChofer;
+	private JPanel panelCrearVehiculo;
+	private JLabel lblNewLabel;
+	private JTextField textNombre;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					VentanaPrincipal frame = new VentanaPrincipal();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public VentanaPrincipal() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		this.contentPane = new JPanel();
+		this.contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		this.contentPane.setLayout(new BorderLayout(0, 0));
+		setContentPane(this.contentPane);
+		
+		this.panelCentral = new JPanel();
+		this.contentPane.add(this.panelCentral, BorderLayout.CENTER);
+		this.panelCentral.setLayout(new GridLayout(0, 2, 0, 0));
+		
+		this.panelCreacion = new JPanel();
+		this.panelCentral.add(this.panelCreacion);
+		this.panelCreacion.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		this.panelCrearChofer = new JPanel();
+		this.panelCreacion.add(this.panelCrearChofer);
+		this.panelCrearChofer.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		
+		this.lblNewLabel = new JLabel("Nombre:");
+		this.panelCrearChofer.add(this.lblNewLabel);
+		
+		this.textNombre = new JTextField();
+		this.panelCrearChofer.add(this.textNombre);
+		this.textNombre.setColumns(10);
+		
+		this.panelCrearVehiculo = new JPanel();
+		this.panelCreacion.add(this.panelCrearVehiculo);
+		
+		this.panelChofer = new JPanel();
+		this.panelCentral.add(this.panelChofer);
+		
+		this.panelSur = new JPanel();
+		this.contentPane.add(this.panelSur, BorderLayout.SOUTH);
+	}
+
+}

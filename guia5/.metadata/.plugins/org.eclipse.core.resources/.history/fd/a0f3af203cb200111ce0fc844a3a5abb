@@ -1,0 +1,25 @@
+package paquete;
+
+public abstract class ElementoDecorator extends Personaje {
+	protected Personaje envoltorio;
+	
+	public ElementoDecorator(Personaje personajeEvoltorio) {
+		this.envoltorio = personajeEvoltorio;
+	}
+
+	@Override
+	protected double getArmadura() {
+		return envoltorio.getArmadura();
+	}
+
+	@Override
+	protected double getAtaqueDistante() {
+		return envoltorio.getAtaqueDistante();
+	}
+
+	@Override
+	protected double getAtaqueCorto() {
+		return envoltorio.getAtaqueCorto();
+	}
+
+}

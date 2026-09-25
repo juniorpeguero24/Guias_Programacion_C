@@ -1,0 +1,19 @@
+package paquete;
+
+import java.util.ArrayList;
+
+public class Prueba {
+
+	public static void main(String[] args) {
+		Mazo mazo = Mazo.getInstancia();
+		
+		mazo.agregaPersonaje(PersonajeFactory.crearPersonaje("Dragon", "Fuego"));
+		mazo.agregaPersonaje(PersonajeFactory.crearPersonaje("Hechicera", "Aire"));
+		mazo.agregaPersonaje(PersonajeFactory.crearPersonaje("Guerrero", "Tierra"));
+		
+		ArrayList<Personaje> personajes=mazo.getPersonajes();
+		System.out.println("Ataque corto: "+personajes.get(0).getAtaqueCorto());
+		System.out.println(personajes.get(0)+" vs "+personajes.get(0).eligeAdversario());
+	}
+
+}

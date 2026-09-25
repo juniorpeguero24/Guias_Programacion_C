@@ -1,0 +1,45 @@
+package paquete;
+
+public abstract class CuentaBancaria {
+	protected String titular; //quizas persona pero esto si se agranda el sitema
+	protected double saldo=0;
+	
+	public CuentaBancaria(String nombre) throws Exception {
+		if (nombre != null && nombre != "")
+			titular=nombre;
+		else
+			throw new Exception("Nombre incorrecto");
+	}
+	
+	public final boolean extraer(double monto) {
+		if (monto > 0 && validaExtraccion(monto)) {
+			saldo -= monto;
+			notificarExtraccion(monto);
+			return true;
+		}
+		return false;
+	}
+	
+	protected abstract void notificarExtraccion(double monto);
+
+	protected abstract boolean validaExtraccion(double monto);
+	
+	public void depositar(double monto) {
+		saldo+=monto;
+	}
+
+	public String getTitular() {
+		return titular;
+	}
+
+	public double getSaldo() {
+		return saldo;
+	}
+
+	@Override
+	public String toString() {
+		return "Titular=" + titular + ", saldo=" + saldo;
+	}
+	
+	
+}

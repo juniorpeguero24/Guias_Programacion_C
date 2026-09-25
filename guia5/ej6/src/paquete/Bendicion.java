@@ -1,0 +1,28 @@
+package paquete;
+
+public class Bendicion extends Cofre {
+
+	@Override
+	public void afectar(Caballero c) {
+		c.setVitalidad((int)(c.getVitalidad()*1.25));
+	}
+
+	@Override
+	public void afectar(Arquero a) {
+		a.setCantFlechas(a.getCantFlechas()+5);
+	}
+
+	@Override
+	public void afectar(Guerrero g) {
+		g.setArmadura(g.getArmadura()+200);
+	}
+
+	@Override
+	public void afectar(Dragon d) {
+		d.setPoderDeFuego((int)(d.getPoderDeFuego()*1.4));
+		d.setVitalidad(d.getVitalidad()+250);
+	}
+
+	
+
+}

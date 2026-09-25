@@ -1,0 +1,41 @@
+package modelo;
+
+import interfaces.IHostil;
+import interfaces.IMovible;
+import interfaces.IPosicionable;
+
+public abstract class Personaje extends Unidad implements IPosicionable, IHostil, IMovible {
+	
+	public Personaje() {}
+	
+	@Override
+	public void mover(int x, int y) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void atacar(Unidad adversario) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public int getX() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getY() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void recibeDanio(int cantidad) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

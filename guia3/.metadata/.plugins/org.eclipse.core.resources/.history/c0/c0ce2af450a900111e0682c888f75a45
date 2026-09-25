@@ -1,0 +1,20 @@
+package paquete;
+
+public class Link extends Elemento{
+	private Elemento destino;
+	
+	public Link(Elemento e) {
+		super(e.getNombre(),e.getFecha(),1);
+		destino=e;
+	}
+
+	public Elemento getDestino() {
+		return destino;
+	}
+
+	@Override
+	public double getTamaño() {
+		return 1.0;
+	}
+	
+}

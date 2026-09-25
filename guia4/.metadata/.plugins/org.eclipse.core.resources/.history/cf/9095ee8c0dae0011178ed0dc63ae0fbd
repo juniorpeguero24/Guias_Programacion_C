@@ -1,0 +1,10 @@
+package paquete;
+
+import java.util.ArrayList;
+
+public class Empresa {
+	protected ArrayList<Chofer> choferes;
+	protected ArrayList<Vehiculo> vehiculos;
+	protected ArrayList<Categoria> Categorias;
+	protected ArrayList<Acoplado> acoplados;
+}

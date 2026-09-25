@@ -1,0 +1,9 @@
+package paquete;
+
+public class Categoria {
+	protected String nombreCategoria;
+	protected double sueldo;
+	protected boolean habilitaColectivoLinea;
+	protected boolean habilitaColectivoLarga;
+	protected boolean habilitaCamion;
+}

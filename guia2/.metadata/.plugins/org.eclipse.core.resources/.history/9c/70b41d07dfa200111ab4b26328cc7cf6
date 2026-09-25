@@ -1,0 +1,73 @@
+package paquete;
+
+import java.util.ArrayList;
+
+public class Estacion {
+	ArrayList<Surtidor> surtidores;
+	
+	public Estacion() {
+		this.surtidores=new ArrayList<>();
+	}
+	
+	public void agregarSurtidor(Surtidor s) {
+		surtidores.add(s);
+	}
+	
+	public int cantidadSurtidores() {
+		return surtidores.size();
+	}
+	
+	public double cantidadCombustible(String combustible) {
+		double tot=0;
+		switch (combustible) {
+			case "Gasoil":
+				for (Surtidor s:surtidores) {
+					tot += s.getCantGasoil();
+				}
+				break;
+			case "Premium":
+				for (Surtidor s:surtidores) {
+					tot += s.getCantPremium();
+				}
+				break;
+			case "Super":
+				for (Surtidor s:surtidores) {
+					tot += s.getCantSuper();
+				}
+				break;		
+		}
+		return tot;
+	}
+	
+	public int mayorCantVentas(String combustible) {
+		int max=-1,maxS=0;
+		
+		switch (combustible) {
+			case "Gasoil":
+				for (Surtidor s:surtidores) {
+					if (s.getVentGasoil()>max) {
+						max=s.getVentGasoil();
+						maxS=s.getNroS();
+					}
+				}
+				break;
+			case "Premium":
+				for (Surtidor s:surtidores) {
+					if (s.getCantPremium()()>max) {
+						max=s.getCantPremium();
+						maxS=s.getNroS();
+					}
+				}
+				break;
+			case "Super":
+				for (Surtidor s:surtidores) {
+					if (s.getCantSuper()>max) {
+						max=s.getCantSuper();
+						maxS=s.getNroS();
+					}
+				}
+				break;		
+		}
+		return tot;
+	}
+}

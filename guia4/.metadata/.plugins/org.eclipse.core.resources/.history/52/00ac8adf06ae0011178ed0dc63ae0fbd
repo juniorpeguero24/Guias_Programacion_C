@@ -1,0 +1,37 @@
+package paquete;
+
+public abstract class Vehiculo {
+	public static int siguienteNumero=0;
+	protected int numeroInterno;
+	protected String modelo;
+	
+	/**Constructor de Vehiculo
+	 * 
+	 * <b>Pre:<\b> Modelo es distinto de NULL y vacio.
+	 * <b>Post:<\b> Se ha creado un nuevo vehiculo con modelo y numero de interno.
+	 * 
+	 * @param modelo
+	 */
+	public Vehiculo(String modelo) throws Exception{
+		if (modelo != null && modelo != "") {
+			this.modelo=modelo;
+			numeroInterno=++siguienteNumero;
+		}else
+			throw new Exception("Modelo vacio");
+	}
+	
+	public abstract boolean aceptoChofer(Chofer c)
+
+	public int getNumeroInterno() {
+		return numeroInterno;
+	}
+
+	public String getModelo() {
+		return modelo;
+	}
+	
+	@Override
+	public String toString() {
+		return modelo + " numero de interno: "+ numeroInterno;
+	}
+}

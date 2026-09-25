@@ -1,0 +1,22 @@
+package paquete;
+
+import java.util.GregorianCalendar;
+
+public class Link extends Elemento{
+	private Elemento destino;
+	
+	public Link(String nombre, GregorianCalendar fechaCreacion, Elemento destino) {
+	    super(nombre, fechaCreacion,);
+	    this.destino = destino;
+	}
+
+	public Elemento getDestino() {
+		return destino;
+	}
+
+	@Override
+	public double getTamaño() {
+		return 1.0;
+	}
+	
+}

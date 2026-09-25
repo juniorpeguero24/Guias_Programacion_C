@@ -1,0 +1,11 @@
+package paquete;
+
+public class Camion extends Vehiculo{
+	protected double Tara,cargaMax;
+	protected Acoplado acoplado;
+	
+	public Camion(String modelo) throws Exception {
+		super(modelo);
+		// TODO Auto-generated constructor stub
+	}
+}

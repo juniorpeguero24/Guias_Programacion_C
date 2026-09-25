@@ -1,0 +1,74 @@
+package paquete;
+
+public class Jugador {
+	private String nombre;
+	private int puntaje,pg,pe,pp;
+	
+	public Jugador(String nom,int pg,int pe,int pp) {
+		this.nombre=nom;
+		this.pg=pg;
+		this.pe=pe;
+		this.pp=pp;
+		this.puntaje=pg*3+pe;
+	}
+	
+	public Jugador(String nom){
+		this.nombre=nom;
+		this.pg=this.pe=this.pp=this.puntaje=0;
+	}
+
+	
+	public int getPg() {
+		return pg;
+	}
+
+
+
+	public void setPg(int pg) {
+		this.pg = pg;
+	}
+
+
+
+	public int getPe() {
+		return pe;
+	}
+
+
+
+	public void setPe(int pe) {
+		this.pe = pe;
+	}
+
+
+
+	public int getPp() {
+		return pp;
+	}
+
+
+
+	public void setPp(int pp) {
+		this.pp = pp;
+	}
+
+
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public int getPuntaje() {
+		return puntaje;
+	}
+
+	public void setPuntaje(int puntaje) {
+		this.puntaje = puntaje;
+	}
+	
+	
+}

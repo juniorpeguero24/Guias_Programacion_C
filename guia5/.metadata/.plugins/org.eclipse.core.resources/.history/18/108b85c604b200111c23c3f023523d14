@@ -1,0 +1,10 @@
+package paquete;
+
+public class Maldicion extends Cofre {
+
+	@Override
+	public void recibePersonaje(Personaje p) {
+		p.recibeMaldicion();
+	}
+
+}

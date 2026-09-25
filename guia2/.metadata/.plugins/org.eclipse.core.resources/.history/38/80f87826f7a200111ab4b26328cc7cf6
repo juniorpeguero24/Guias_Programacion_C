@@ -1,0 +1,65 @@
+package paquete;
+
+public class Jugador {
+	private String nombre;
+	private String anioNacimiento;
+	private int nroCamiseta,posicion,pj,gc;
+	
+	public Jugador(String nombre,String anio,int nro,int pos,int pj,int gc) {
+		this.nombre=nombre;
+		this.anioNacimiento=anio;
+		this.nroCamiseta=nro;
+		this.posicion=pos;
+		this.pj=pj;
+		this.gc=gc;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getAnioNacimiento() {
+		return anioNacimiento;
+	}
+
+	public void setAnioNacimiento(String anioNacimiento) {
+		this.anioNacimiento = anioNacimiento;
+	}
+
+	public int getNroCamiseta() {
+		return nroCamiseta;
+	}
+
+	public void setNroCamiseta(int nroCamiseta) {
+		this.nroCamiseta = nroCamiseta;
+	}
+
+	public int getPosicion() {
+		return posicion;
+	}
+
+	public void setPosicion(int posicion) {
+		this.posicion = posicion;
+	}
+
+	public int getPj() {
+		return pj;
+	}
+
+	public void setPj(int pj) {
+		this.pj = pj;
+	}
+
+	public int getGc() {
+		return gc;
+	}
+
+	public void setGc(int gc) {
+		this.gc = gc;
+	}
+	
+}

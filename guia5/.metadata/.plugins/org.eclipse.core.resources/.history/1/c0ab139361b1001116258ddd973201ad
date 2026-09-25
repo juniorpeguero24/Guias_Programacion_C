@@ -1,0 +1,25 @@
+package modelo;
+
+import interfaces.Prestable;
+
+public class CDdeAudio implements Prestable {
+
+	@Override
+	public void prestar() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void devolver() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public boolean isPrestado() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

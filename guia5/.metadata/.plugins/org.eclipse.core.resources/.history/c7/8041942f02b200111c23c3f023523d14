@@ -1,0 +1,12 @@
+package paquete;
+
+public abstract class Cofre {
+
+	public void recibePersonaje(Personaje personaje) {
+		
+	}
+	
+	public abstract void recibeGuerrero(Personaje p);
+	public abstract void recibeCaballero(Personaje p);
+	public abstract void recibeArquero(Personaje p);
+}

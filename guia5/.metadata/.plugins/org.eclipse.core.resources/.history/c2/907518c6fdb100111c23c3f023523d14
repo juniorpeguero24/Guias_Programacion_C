@@ -1,0 +1,26 @@
+package paquete;
+
+public abstract class Artesano{
+	protected String nombre;
+	
+	public Artesano(String nombre) {
+		this.nombre = nombre;
+	}
+	
+	public String conMadera(Material mat) {
+		return null;
+	}
+	
+	public String conMetal(Material mat) {
+		return null;
+	}
+
+	public String trabajar(Material mat) {
+		return mat.recibir(this);
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+}

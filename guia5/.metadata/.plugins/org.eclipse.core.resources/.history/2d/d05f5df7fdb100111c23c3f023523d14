@@ -1,0 +1,15 @@
+package paquete;
+
+public class Joyero extends Artesano {
+
+	@Override
+	public String conMadera(Material mat) {
+		return null;
+	}
+
+	@Override
+	public String conMetal(Material mat) {
+		return null;
+	}
+
+}

@@ -1,0 +1,18 @@
+package paquete;
+
+public abstract class  Vehiculo {
+	protected String patente;
+	protected final double precioBase=500.0;
+	
+	public Vehiculo(String patente) throws Exception {
+		if (patente!=null && patente!="")
+			this.patente=patente;
+		else
+			throw new Exception("Patente invalida.");
+	}
+
+	public String getPatente() {
+		return patente;
+	}
+	
+}

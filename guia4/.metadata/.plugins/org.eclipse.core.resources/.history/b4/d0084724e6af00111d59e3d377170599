@@ -1,0 +1,254 @@
+package vista;
+
+import java.awt.BorderLayout;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+import paquete.Personaje;
+import paquete.PersonajeFactory;
+import paquete.Posicion;
+
+import javax.swing.JScrollPane;
+import javax.swing.JList;
+import javax.swing.JOptionPane;
+import javax.swing.DefaultListModel;
+import javax.swing.JButton;
+import java.awt.GridLayout;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JTextArea;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.awt.event.ActionEvent;
+
+public class VentanaPrincipal extends JFrame implements ActionListener {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private JPanel panelPersonajes;
+	private JPanel panelAcciones;
+	private JScrollPane scrollPaneL1;
+	private JPanel panel;
+	private JScrollPane scrollPaneL2;
+	private JButton btnAtacar;
+	private JList<Personaje> listL1;
+	private JList<Personaje> listL2;
+	private DefaultListModel<Personaje> modeloPersonaje;
+	private JPanel panelCreaPersonaje;
+	private JLabel lblNewLabel;
+	private JTextField textNombre;
+	private JButton btnArquero;
+	private JButton btnGuerrero;
+	private JButton btnCaballero;
+	private JPanel panel_1;
+	private JPanel panel_2;
+	private JPanel panel_3;
+	private JPanel panel_4;
+	private JPanel panelPosicion;
+	private JLabel lblNewLabel_1;
+	private JTextField textX;
+	private JLabel lblNewLabel_2;
+	private JTextField textY;
+	private JButton btnMover;
+	private JPanel panel_5;
+	private JPanel panel_6;
+	private JPanel panel_7;
+	private JPanel panel_8;
+	private JPanel panel_9;
+	private JPanel panel_10;
+	private JPanel panelDetalles;
+	private JTextArea textAreaDetalles;
+	
+	/**
+	 * Create the frame.
+	 */
+	public VentanaPrincipal(ArrayList<Personaje> personajes) {
+		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 605, 409);
+		this.contentPane = new JPanel();
+		this.contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		this.contentPane.setLayout(new BorderLayout(0, 0));
+		setContentPane(this.contentPane);
+		
+		this.panelPersonajes = new JPanel();
+		this.contentPane.add(this.panelPersonajes, BorderLayout.CENTER);
+		
+		// 1. Instanciar el modelo
+		this.modeloPersonaje = new DefaultListModel<Personaje>();
+		this.panelPersonajes.setLayout(new GridLayout(0, 3, 0, 0));
+
+		// 2. Instanciar Lista 1, asociar modelo y envolver en ScrollPane
+		this.listL1 = new JList<Personaje>(this.modeloPersonaje);
+		this.scrollPaneL1 = new JScrollPane(this.listL1);
+		this.panelPersonajes.add(this.scrollPaneL1);
+		
+		this.panel = new JPanel();
+		this.panelPersonajes.add(this.panel);
+		
+		this.btnAtacar = new JButton("Atacar");
+		this.btnAtacar.addActionListener(this);
+		this.panel.add(this.btnAtacar);
+		
+		// 3. Instanciar Lista 2, asociar modelo y envolver en ScrollPane
+		this.listL2 = new JList<Personaje>(this.modeloPersonaje);
+		this.scrollPaneL2 = new JScrollPane(this.listL2);
+		this.panelPersonajes.add(this.scrollPaneL2);
+		
+		this.panelAcciones = new JPanel();
+		this.contentPane.add(this.panelAcciones, BorderLayout.EAST);
+		this.panelAcciones.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		this.panelCreaPersonaje = new JPanel();
+		this.panelAcciones.add(this.panelCreaPersonaje);
+		this.panelCreaPersonaje.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		this.panel_1 = new JPanel();
+		this.panelCreaPersonaje.add(this.panel_1);
+		
+		this.lblNewLabel = new JLabel("Nombre:");
+		this.panel_1.add(this.lblNewLabel);
+		
+		this.textNombre = new JTextField();
+		this.panel_1.add(this.textNombre);
+		this.textNombre.setColumns(10);
+		
+		this.panel_2 = new JPanel();
+		this.panelCreaPersonaje.add(this.panel_2);
+		
+		this.btnArquero = new JButton("Arquero");
+		this.btnArquero.addActionListener(this);
+		this.panel_2.add(this.btnArquero);
+		
+		this.panel_3 = new JPanel();
+		this.panelCreaPersonaje.add(this.panel_3);
+		
+		this.btnGuerrero = new JButton("Guerrero");
+		this.btnGuerrero.addActionListener(this);
+		this.panel_3.add(this.btnGuerrero);
+		
+		this.panel_4 = new JPanel();
+		this.panelCreaPersonaje.add(this.panel_4);
+		
+		this.btnCaballero = new JButton("Caballero");
+		this.btnCaballero.addActionListener(this);
+		this.panel_4.add(this.btnCaballero);
+		
+		this.panelPosicion = new JPanel();
+		this.panelAcciones.add(this.panelPosicion);
+		this.panelPosicion.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		this.panel_10 = new JPanel();
+		this.panelPosicion.add(this.panel_10);
+		this.panel_10.setLayout(new GridLayout(0, 2, 0, 0));
+		
+		this.panel_5 = new JPanel();
+		this.panel_10.add(this.panel_5);
+		
+		this.lblNewLabel_1 = new JLabel("X:");
+		this.panel_5.add(this.lblNewLabel_1);
+		
+		this.panel_6 = new JPanel();
+		this.panel_10.add(this.panel_6);
+		
+		this.textX = new JTextField();
+		this.panel_6.add(this.textX);
+		this.textX.setColumns(10);
+		
+		this.panel_7 = new JPanel();
+		this.panel_10.add(this.panel_7);
+		
+		this.lblNewLabel_2 = new JLabel("Y:");
+		this.panel_7.add(this.lblNewLabel_2);
+		
+		this.panel_8 = new JPanel();
+		this.panel_10.add(this.panel_8);
+		
+		this.textY = new JTextField();
+		this.panel_8.add(this.textY);
+		this.textY.setColumns(10);
+		
+		this.panel_9 = new JPanel();
+		this.panelPosicion.add(this.panel_9);
+		
+		this.btnMover = new JButton("Mover");
+		this.btnMover.addActionListener(this);
+		this.panel_9.add(this.btnMover);
+		
+		this.panelDetalles = new JPanel();
+		this.contentPane.add(this.panelDetalles, BorderLayout.SOUTH);
+		this.panelDetalles.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		this.textAreaDetalles = new JTextArea();
+		this.panelDetalles.add(this.textAreaDetalles);
+		
+		if (personajes != null)
+			for (Personaje p: personajes)
+				this.modeloPersonaje.addElement(p);
+	}
+
+	public void actionPerformed(ActionEvent arg0) {
+		String cmd = arg0.getActionCommand();
+		
+		if ("Atacar".equals(cmd)) this.atacar();
+		else if ("Arquero".equals(cmd) || "Guerrero".equals(cmd) || "Caballero".equals(cmd)) this.crearPersonaje(cmd);
+		else if ("Mover".equals(cmd)) this.mover();
+	}
+
+	private void mover() {
+		Personaje p1 = this.listL1.getSelectedValue();
+		Personaje p2 = this.listL2.getSelectedValue();
+		Personaje obj;
+		
+		if (p1 == null && p2 == null)
+			this.textAreaDetalles.append("Debe seleccionar un personaje.\n");
+		else
+			if (p1 != null && p2 != null)
+				this.textAreaDetalles.append("Debe seleccionar un personaje.\n");
+			else{
+				if (p1 != null)
+					obj = p1;
+				else
+					obj = p2;
+				double x = Double.parseDouble(this.textX.getText().trim());
+				double y = Double.parseDouble(this.textY.getText().trim());
+				obj.getPosicion().incrementaPos(x, y);
+				
+			}
+	}
+
+	private void atacar() {
+		Personaje p1 = this.listL1.getSelectedValue();
+		Personaje p2 = this.listL2.getSelectedValue();
+		
+		if (p1 != null && p2 != null && p1 != p2)
+			if (p1.ataca(p1))
+				this.textAreaDetalles.append(p1.getNombre()+" ataco con exito a "+p2.getNombre()+".\n");
+			else
+				this.textAreaDetalles.append(p1.getNombre()+" no pudo realizar el ataque.\n");
+		else
+			this.textAreaDetalles.append("Seleccione personajes distintos en ambas listas.");
+	}
+
+	private void crearPersonaje(String cmd) {
+		String nombre = this.textNombre.getText().trim();
+		
+		if (nombre.isEmpty())
+			JOptionPane.showMessageDialog(this, "Debe ingresar el nombre", "Aviso", JOptionPane.WARNING_MESSAGE);
+		else 
+			try {
+				Posicion pos = new Posicion(0,0);
+				Personaje nuevo = PersonajeFactory.crearPersonaje(cmd, nombre, pos);
+				this.modeloPersonaje.addElement(nuevo);
+				this.textAreaDetalles.append(cmd+" "+nombre+" creado con exito.\n");
+				this.textNombre.setText("");
+			}catch (Exception e) {
+				JOptionPane.showConfirmDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+			}
+	}
+
+}

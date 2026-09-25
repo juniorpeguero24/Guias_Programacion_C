@@ -1,0 +1,9 @@
+package paquete;
+
+public class Archivo extends Elemento{
+	
+	public Archivo(String nombre,GregorianCalendar fecha,double tamaño) {
+		super(nombre,fecha,tamaño);
+	}
+	
+}

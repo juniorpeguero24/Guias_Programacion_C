@@ -1,0 +1,132 @@
+package ventana;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.GridLayout;
+import java.awt.FlowLayout;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import javax.swing.border.TitledBorder;
+
+public class VentanaPrincipal extends JFrame {
+
+	private JPanel contentPane;
+	private JPanel panelCentral;
+	private JPanel panelSur;
+	private JPanel panelCreacion;
+	private JPanel panelChofer;
+	private JPanel panelCrearChofer;
+	private JPanel panelCrearVehiculo;
+	private JLabel lblNewLabel;
+	private JTextField textNombre;
+	private JLabel lblNewLabel_1;
+	private JComboBox cmbCategoria;
+	private JPanel panel;
+	private JPanel panel_1;
+	private JLabel lblNewLabel_2;
+	private JButton btnCrearChofer;
+	private JPanel panel_2;
+	private JPanel panel_3;
+	private JPanel panel_4;
+	private JPanel panel_5;
+	private JPanel panelAcciones;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					VentanaPrincipal frame = new VentanaPrincipal();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public VentanaPrincipal() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 496, 427);
+		this.contentPane = new JPanel();
+		this.contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		this.contentPane.setLayout(new BorderLayout(0, 0));
+		setContentPane(this.contentPane);
+		
+		this.panelCentral = new JPanel();
+		this.contentPane.add(this.panelCentral, BorderLayout.CENTER);
+		this.panelCentral.setLayout(new GridLayout(3, 2, 0, 0));
+		
+		this.panelCreacion = new JPanel();
+		this.panelCentral.add(this.panelCreacion);
+		this.panelCreacion.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		this.panelCrearChofer = new JPanel();
+		this.panelCrearChofer.setBorder(new TitledBorder(null, "Crear Chofer", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		this.panelCreacion.add(this.panelCrearChofer);
+		this.panelCrearChofer.setLayout(new GridLayout(0, 2, 0, 0));
+		
+		this.panel = new JPanel();
+		this.panelCrearChofer.add(this.panel);
+		
+		this.lblNewLabel = new JLabel("Nombre:");
+		this.panel.add(this.lblNewLabel);
+		
+		this.panel_1 = new JPanel();
+		this.panelCrearChofer.add(this.panel_1);
+		
+		this.textNombre = new JTextField();
+		this.panel_1.add(this.textNombre);
+		this.textNombre.setColumns(10);
+		
+		this.panel_2 = new JPanel();
+		this.panelCrearChofer.add(this.panel_2);
+		
+		this.lblNewLabel_1 = new JLabel("Categoria: ");
+		this.panel_2.add(this.lblNewLabel_1);
+		
+		this.panel_3 = new JPanel();
+		this.panelCrearChofer.add(this.panel_3);
+		
+		this.cmbCategoria = new JComboBox();
+		this.panel_3.add(this.cmbCategoria);
+		this.cmbCategoria.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4"}));
+		
+		this.panel_4 = new JPanel();
+		this.panelCrearChofer.add(this.panel_4);
+		
+		this.lblNewLabel_2 = new JLabel("");
+		this.panel_4.add(this.lblNewLabel_2);
+		
+		this.panel_5 = new JPanel();
+		this.panelCrearChofer.add(this.panel_5);
+		
+		this.btnCrearChofer = new JButton("Crear");
+		this.panel_5.add(this.btnCrearChofer);
+		
+		this.panelCrearVehiculo = new JPanel();
+		this.panelCreacion.add(this.panelCrearVehiculo);
+		
+		this.panelChofer = new JPanel();
+		this.panelCentral.add(this.panelChofer);
+		
+		this.panelAcciones = new JPanel();
+		this.panelCentral.add(this.panelAcciones);
+		
+		this.panelSur = new JPanel();
+		this.contentPane.add(this.panelSur, BorderLayout.SOUTH);
+	}
+
+}

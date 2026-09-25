@@ -1,0 +1,8 @@
+package paquete;
+
+public abstract class CofreMagico {
+	
+	protected void recibir(Personaje p) {
+		
+	}
+}

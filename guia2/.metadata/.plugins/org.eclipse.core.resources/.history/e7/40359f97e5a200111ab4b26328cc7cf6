@@ -1,0 +1,33 @@
+package paquete;
+
+//import java.util.ArrayList;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		Estacion estacion=new Estacion();
+		
+		Surtidor s1=new Surtidor();
+		Surtidor s2=new Surtidor();
+		Surtidor s3=new Surtidor();
+		
+		estacion.agregarSurtidor(s1);
+		estacion.agregarSurtidor(s2);
+		estacion.agregarSurtidor(s3);
+		
+		System.out.println("a) Cantidad total de surtidores: "+estacion.cantidadSurtidores());
+		
+		s1.extraerSuper(60);
+		s2.extraerGasoil(80);
+		s2.extraerPremium(120);
+		s3.extraerSuper(200);
+		s1.extraerGasoil(21000);
+		
+		System.out.println("b) Cantidad de existencia de Super en litros: "+estacion.cantidadCombustible("Super"));
+		System.out.println("b) Cantidad de existencia de Gasoil en litros: "+estacion.cantidadCombustible("Gasoil"));
+		System.out.println("b) Cantidad de existencia de Premium en litros: "+estacion.cantidadCombustible("Premium"));
+		
+		//estacion.cantidadSurtidores()
+	}
+
+}

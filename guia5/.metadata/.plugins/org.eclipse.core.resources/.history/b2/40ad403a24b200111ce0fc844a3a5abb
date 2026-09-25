@@ -1,0 +1,31 @@
+package paquete;
+
+public class Diamante extends Gema {
+
+	@Override
+	protected String combinar(Gema otra) {
+		return otra.combinarConDiamante(this);
+	}
+
+	@Override
+	protected String combinarConRubi(Gema otra) {
+		return "Tormenta de rayos";
+	}
+
+	@Override
+	protected String combinarConZafiro(Zafiro zafiro) {
+		return "Granizo asesino";
+	}
+
+	@Override
+	protected String combinarConEsmeralda(Esmeralda esmeralda) {
+		return "Vientos venenosos";
+	}
+
+	@Override
+	protected String combinarConDiamante(Diamante diamante) {
+		return "Congelamiento";
+	}
+
+	
+}

@@ -1,0 +1,16 @@
+package paquete;
+
+public class Mate extends Infusion{
+
+	@Override
+	protected void agregarTipoInfusion() {
+		System.out.println("Se agrega Yerba Mate.");
+	}
+
+	@Override
+	protected void endulzar() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

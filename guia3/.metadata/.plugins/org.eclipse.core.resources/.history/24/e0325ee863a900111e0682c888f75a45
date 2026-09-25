@@ -1,0 +1,10 @@
+package paquete;
+
+public class Delantero extends Jugador{
+	public final String tipo="Delantero";
+	
+	public Delantero(String nombre,double velocidad,double potencia) {
+		super(nombre,velocidad,potencia);
+	}
+	
+}

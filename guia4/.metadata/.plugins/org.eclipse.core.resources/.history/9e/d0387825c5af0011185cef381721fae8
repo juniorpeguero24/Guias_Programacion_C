@@ -1,0 +1,191 @@
+package ventana;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.GridLayout;
+import java.awt.FlowLayout;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
+import javax.swing.JButton;
+import javax.swing.border.TitledBorder;
+
+import paquete.Acoplado;
+import paquete.Chofer;
+import paquete.Empresa;
+import paquete.Vehiculo;
+
+import javax.swing.JRadioButton;
+import java.awt.event.ActionListener;
+import java.util.Iterator;
+import java.awt.event.ActionEvent;
+import javax.swing.JList;
+import javax.swing.JTextArea;
+import javax.swing.JTextPane;
+
+public class VentanaPrincipal extends JFrame {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private Empresa empresa;
+	private JPanel panelAcciones;
+	private JPanel panelChoferes;
+	private JPanel panelVehiculos;
+	private JPanel panelCreacion;
+	private JButton btnCrearChofer;
+	private JButton btnCrearColectivo;
+	private JButton btnCrearCamion;
+	private JButton btnCrearAcoplado;
+	private JList<Chofer> listChoferes;
+	private JList<Vehiculo> listVehiculos;
+	private JList<Acoplado> listAcoplados;
+	private DefaultListModel<Chofer> modeloChoferes;
+	private DefaultListModel<Vehiculo> modeloVehiculo;
+	private DefaultListModel<Acoplado> modeloAcoplado;
+
+	/**
+	 * Launch the application.
+	 */
+	/*
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					VentanaPrincipal frame = new VentanaPrincipal();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+*/
+	/**
+	 * Create the frame.
+	 */
+	public VentanaPrincipal(Empresa empresa) {
+		this.empresa = empresa;
+		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 907, 635);
+		this.contentPane = new JPanel();
+		this.contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		this.contentPane.setLayout(new BorderLayout(0, 0));
+		setContentPane(this.contentPane);
+		
+		panelAcciones = new JPanel();
+		contentPane.add(panelAcciones, BorderLayout.WEST);
+		
+		panelCreacion = new JPanel();
+		panelAcciones.add(panelCreacion);
+		panelCreacion.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		btnCrearChofer = new JButton("Crear Chofer");
+		btnCrearChofer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				DialogAltaChofer dialog = new DialogAltaChofer(VentanaPrincipal.this, empresa);
+		        dialog.setVisible(true);
+		        
+		        actualizarListaChoferes();
+			}
+		});
+		panelCreacion.add(btnCrearChofer);
+		
+		btnCrearColectivo = new JButton("Crear Colectivo");
+		btnCrearColectivo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				DialogAltaColectivo dialog = new DialogAltaColectivo(VentanaPrincipal.this,empresa);
+				dialog.setModal(true);
+				dialog.setVisible(true);
+				actualizarListaVehiculos();
+			}
+		});
+		panelCreacion.add(btnCrearColectivo);
+		
+		btnCrearCamion = new JButton("Crear Camion");
+		btnCrearCamion.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				DialogAltaCamion dialog = new DialogAltaCamion(VentanaPrincipal.this,empresa);
+				dialog.setModal(true);
+				dialog.setVisible(true);
+				actualizarListaVehiculos();
+			}
+		});
+		panelCreacion.add(btnCrearCamion);
+		
+		btnCrearAcoplado = new JButton("Crear Acoplado");
+		btnCrearAcoplado.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				DialogAltaAcoplado dialog = new DialogAltaAcoplado(VentanaPrincipal.this,empresa);
+				dialog.setModal(true);
+				dialog.setVisible(true);
+				actualizarListaAcoplados();
+			}
+		});
+		panelCreacion.add(btnCrearAcoplado);
+		
+		panelChoferes = new JPanel();
+		contentPane.add(panelChoferes, BorderLayout.CENTER);
+		
+		listChoferes = new JList<Chofer>();
+		panelChoferes.add(listChoferes);
+		
+		panelVehiculos = new JPanel();
+		contentPane.add(panelVehiculos, BorderLayout.EAST);
+		panelVehiculos.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		listVehiculos = new JList<Vehiculo>();
+		panelVehiculos.add(listVehiculos);
+		
+		listAcoplados = new JList<Acoplado>();
+		panelVehiculos.add(listAcoplados);
+		
+		this.modeloChoferes = new DefaultListModel<Chofer>();
+		this.listChoferes.setModel(modeloChoferes);
+		this.modeloVehiculo = new DefaultListModel<Vehiculo>();
+		this.listVehiculos.setModel(modeloVehiculo);
+		this.modeloAcoplado = new DefaultListModel<Acoplado>();
+		this.listAcoplados.setModel(modeloAcoplado);
+		
+		this.actualizarListaChoferes();
+	    this.actualizarListaVehiculos();
+	    this.actualizarListaAcoplados();
+	}
+
+	protected void actualizarListaAcoplados() {
+		this.modeloAcoplado.clear();
+		Iterator<Acoplado> it = this.empresa.getAcoplados().iterator();
+		while (it.hasNext())
+			this.modeloAcoplado.addElement(it.next());
+		this.repaint();
+	}
+
+	protected void actualizarListaVehiculos() {
+		this.modeloVehiculo.clear();
+		Iterator<Vehiculo> it = this.empresa.getVehiculos().iterator();
+		while (it.hasNext())
+			this.modeloVehiculo.addElement(it.next());
+		this.repaint();
+		
+	}
+
+	protected void actualizarListaChoferes() {
+		this.modeloChoferes.clear();
+		Iterator<Chofer> it = this.empresa.getChoferes().iterator();
+		
+		while (it.hasNext())
+			this.modeloChoferes.addElement(it.next());
+		this.repaint();
+		
+	}
+
+}

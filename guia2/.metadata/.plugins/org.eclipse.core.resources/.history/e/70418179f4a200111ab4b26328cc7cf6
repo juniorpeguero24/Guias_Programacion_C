@@ -1,0 +1,10 @@
+package paquete;
+
+import java.util.HashMap;
+
+public class Equipo {
+	private String nombre;
+	private HashMap<String,Jugador> jugadores;
+	private int pg,pe,pp,gf,gc;
+	
+}

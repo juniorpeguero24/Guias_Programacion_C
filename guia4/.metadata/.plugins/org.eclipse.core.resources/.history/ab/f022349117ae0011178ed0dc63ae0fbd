@@ -1,0 +1,7 @@
+package paquete;
+
+public class CuentaBancaria {
+	protected String titular; //quizas persona pero esto si se agranda el sitema
+	protected double saldo=0;
+	
+}

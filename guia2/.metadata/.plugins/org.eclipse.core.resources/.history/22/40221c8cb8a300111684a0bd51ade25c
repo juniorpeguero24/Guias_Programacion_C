@@ -1,0 +1,18 @@
+package paquete;
+
+import java.util.ArrayList;
+
+public class Torneo {
+	private static Torneo _instancia=null;
+	private ArrayList<Partido> partidos;
+	
+	private Torneo() {
+		partidos=new ArrayList<>();
+	}
+	
+	public static Torneo getInstancia() {
+		if (_instancia == null) 
+			_instancia == new Torneo();
+		return _instancia;
+	}
+}

@@ -1,0 +1,23 @@
+package paquete;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Agenda agenda=new Agenda();
+		
+		Contacto c1=new Contacto("Juan","123456");
+		c1.agregarCelular("147852");
+		Contacto c2=new Contacto("Ana","456789");
+		c2.agregarCelular("852147");
+		Contacto c3=new Contacto("Pablo","987654");
+		c3.agregarCelular("258963");
+		Contacto c4=new Contacto("Carlos","654321");
+		c4.agregarCelular("963258");
+		
+		agenda.agregarContacto(c1.getNombre(), c1);
+		agenda.agregarContacto(c2.getNombre(), c2);
+		agenda.agregarContacto(c3.getNombre(), c3);
+		agenda.agregarContacto(c4.getNombre(), c4);
+	}
+
+}

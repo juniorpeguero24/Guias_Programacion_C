@@ -1,0 +1,25 @@
+package paquete;
+
+//import java.util.ArrayList;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		Estacion estacion=new Estacion();
+		
+		Surtidor s1=new Surtidor();
+		Surtidor s2=new Surtidor();
+		Surtidor s3=new Surtidor();
+		
+		estacion.agregarSurtidor(s1);
+		estacion.agregarSurtidor(s2);
+		estacion.agregarSurtidor(s3);
+		
+		System.out.println("a) Cantidad total de surtidores: "+estacion.surtidores.size());
+		
+		s1.extraerSuper(60);
+		
+		System.out.println("b) Cantidad de existencia de Super en litros: "+estacion.cantidadCombustible("Super"));
+	}
+
+}

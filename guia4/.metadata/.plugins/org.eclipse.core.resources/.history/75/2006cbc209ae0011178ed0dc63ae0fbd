@@ -1,0 +1,34 @@
+package paquete;
+
+public class Acoplado {
+	public int tara, cargaMaxima,numeroAcoplado;
+	public boolean refrigerado,enUso=false;
+	
+	public Acoplado(int tara, int cargaMaxima, int numeroAcoplado, boolean refrigerado) {
+		this.tara = tara;
+		this.cargaMaxima = cargaMaxima;
+		this.numeroAcoplado = numeroAcoplado;
+		this.refrigerado = refrigerado;
+	}
+
+	public int getTara() {
+		return tara;
+	}
+
+	public int getCargaMaxima() {
+		return cargaMaxima;
+	}
+
+	public int getNumeroAcoplado() {
+		return numeroAcoplado;
+	}
+
+	public boolean isRefrigerado() {
+		return refrigerado;
+	}
+
+	public boolean isEnUso() {
+		return enUso;
+	}
+	
+}

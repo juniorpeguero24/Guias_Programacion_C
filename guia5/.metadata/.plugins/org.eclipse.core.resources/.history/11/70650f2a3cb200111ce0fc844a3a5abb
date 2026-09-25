@@ -1,0 +1,27 @@
+package paquete;
+
+public class Fuego extends ElementoDecorator {
+
+	public Fuego(Personaje personajeEvoltorio) {
+		super(personajeEvoltorio);
+	}
+
+	@Override
+	protected double getArmadura() {
+		return super.getArmadura()*0.5;
+	}
+
+	@Override
+	protected double getAtaqueDistante() {
+		return super.getAtaqueDistante()*1.7;
+	}
+
+	@Override
+	protected double getAtaqueCorto() {
+		return super.getAtaqueCorto()*1.8;
+	}
+	
+	public void incendiar() {
+		System.out.println("Incendiando");
+	}
+}

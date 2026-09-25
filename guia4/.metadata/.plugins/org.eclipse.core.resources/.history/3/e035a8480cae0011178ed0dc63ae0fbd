@@ -1,0 +1,17 @@
+package paquete;
+
+public class ColectivoLinea extends Colectivo{
+
+	public ColectivoLinea(String modelo, int cantidadPasajeros) throws Exception {
+		super(modelo, cantidadPasajeros);
+	}
+	
+	@Override
+	public boolean aceptoChofer(Chofer c) {
+		if (c == null || c.getCategoria() == null)
+			return false;
+		return c.getCategoria().isHabilitaColectivoLinea();
+	}
+	
+
+}

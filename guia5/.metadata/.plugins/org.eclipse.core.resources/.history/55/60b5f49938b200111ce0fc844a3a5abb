@@ -1,0 +1,13 @@
+package paquete;
+
+public class Prueba {
+
+	public static void main(String[] args) {
+		Mazo mazo = Mazo.getInstancia();
+		
+		mazo.agregaPersonaje(PersonajeFactory.crearPersonaje("Dragon", "Fuego"));
+		mazo.agregaPersonaje(PersonajeFactory.crearPersonaje("Hechicera", "Aire"));
+		mazo.agregaPersonaje(PersonajeFactory.crearPersonaje("Guerrero", "Tierra"));
+	}
+
+}

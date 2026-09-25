@@ -1,0 +1,27 @@
+package paquete;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Departamento d1=new Departamento("Mantenimiento");
+		Departamento d2=new Departamento("Contabilidad");
+		
+		Empleado e1=new Intermedio("Juan Perez",1234,"Matheu 2343",7,12000);
+		Empleado e2=new Temporario("Julio Garcia",3209,"Colon 5561",80,160);
+		Empleado e3=new Temporario("Martin Rodriguez",3210,"Mitre 3451",70,100);
+		Empleado e4=new Experto("Mara Anchorena",9876,"Luro 3489",18,13000);
+		Empleado e5=new Principiante("Sandra Fernandez",1276,"Cordoba 3843",6,11500);
+		Empleado e6=new Principiante("Luis Gomez",1544,"Luis Gomez",2,10500);
+		Empleado e7=new Intermedio("Lucas Benitez",1634,"Castelli 4563",12,12000);
+		
+		d1.agregarEmpleado(e1);
+		d1.agregarEmpleado(e2);
+		d1.agregarEmpleado(e3);
+		
+		d2.agregarEmpleado(e4);
+		d2.agregarEmpleado(e5);
+		d2.agregarEmpleado(e6);
+		d2.agregarEmpleado(e7);
+	}
+
+}

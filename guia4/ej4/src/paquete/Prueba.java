@@ -1,0 +1,43 @@
+package paquete;
+
+import java.util.ArrayList;
+
+public class Prueba {
+
+	public static void main(String[] args) {
+			ArrayList<Vehiculo> vehiculos=new ArrayList<>();
+			int diasAlquiler = 5;
+			
+			try {
+	            // 1. Autos (patente, plazas)
+	            vehiculos.add(new Auto("AA111AA", 5));
+	            vehiculos.add(new Auto("AB222BB", 4));
+	            vehiculos.add(new Auto("AC333CC", 2));
+
+	            // 2. Combis (patente, plazas)
+	            vehiculos.add(new Combi("AD444DD", 8));
+	            vehiculos.add(new Combi("AE555EE", 12));
+
+	            // 3. Camionetas de carga (patente, PMA en toneladas)
+	            vehiculos.add(new CamionetaCarga("AF666FF", 1.5));
+	            vehiculos.add(new CamionetaCarga("AG777GG", 2.0));
+	            vehiculos.add(new CamionetaCarga("AH888HH", 3.5));
+
+	            // 4. Camiones (patente, PMA en toneladas)
+	            vehiculos.add(new Camion("AI999II", 6.0));
+	            vehiculos.add(new Camion("AJ000JJ", 10.0));
+
+	            System.out.println("=== PRESUPUESTO DE ALQUILER POR " + diasAlquiler + " DÍAS ===");
+	            for (Vehiculo v : vehiculos) {
+	                double precio = v.calcularPrecioAlquiler(diasAlquiler);
+	                System.out.println("Vehículo Patente: " + v.getPatente() 
+	                                   + " | Tipo: " + v.getClass().getSimpleName() 
+	                                   + " | Total Alquiler: $" + precio);
+	            }
+
+	        } catch (Exception e) {
+	            System.err.println("Error al cargar la flota: " + e.getMessage());
+	        }
+	}
+
+}

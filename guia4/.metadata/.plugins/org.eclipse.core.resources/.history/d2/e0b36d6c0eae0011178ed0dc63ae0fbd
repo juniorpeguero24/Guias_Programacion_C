@@ -1,0 +1,33 @@
+package paquete;
+
+import java.util.ArrayList;
+
+public class Empresa {
+	protected ArrayList<Chofer> choferes;
+	protected ArrayList<Vehiculo> vehiculos;
+	protected ArrayList<Categoria> categorias;
+	protected ArrayList<Acoplado> acoplados;
+	
+	public Empresa() {
+		choferes=new ArrayList<>();
+		vehiculos=new ArrayList<>();
+		categorias=new ArrayList<>();
+		acoplados=new ArrayList<>();
+	}
+	
+	public void agregarChofer(Chofer c) {
+		choferes.add(c);
+	}
+	
+	public void agregarVehiculo(Vehiculo v) {
+		vehiculos.add(v);
+	}
+	
+	public void agregarCategoria(Categoria c) {
+		categorias.add(c);
+	}
+	
+	public void agregarAcoplado(Acoplado a) {
+		acoplados.add(a)
+	}
+}

@@ -1,0 +1,14 @@
+package modelo;
+
+public class Medico extends Personaje {
+	
+	public Medico() {
+		this.costo=40;
+		this.energia=100;
+	}
+	
+	@Override
+	public void recibeDanio(int cantidad) {
+		this.energia -= (cantidad*1.5);
+	}
+}

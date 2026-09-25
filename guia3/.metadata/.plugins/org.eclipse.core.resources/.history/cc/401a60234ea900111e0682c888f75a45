@@ -1,0 +1,6 @@
+package paquete;
+
+public class Link extends Elemento{
+	private Elemento destino;
+
+}

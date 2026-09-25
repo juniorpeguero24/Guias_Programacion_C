@@ -1,0 +1,299 @@
+package ventana;
+
+import java.awt.BorderLayout;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.GridLayout;
+import javax.swing.DefaultListModel;
+import javax.swing.JButton;
+
+import paquete.Acoplado;
+import paquete.Camion;
+import paquete.Chofer;
+import paquete.Empresa;
+import paquete.Vehiculo;
+
+import java.awt.event.ActionListener;
+import java.util.Iterator;
+import java.awt.event.ActionEvent;
+import javax.swing.JList;
+import javax.swing.JTextArea;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.event.ListSelectionEvent;
+
+public class VentanaPrincipal extends JFrame implements ActionListener, ListSelectionListener {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private Empresa empresa;
+	private JPanel panelAcciones;
+	private JPanel panelChoferes;
+	private JPanel panelVehiculos;
+	private JPanel panelCreacion;
+	private JButton btnCrearChofer;
+	private JButton btnCrearColectivo;
+	private JButton btnCrearCamion;
+	private JButton btnCrearAcoplado;
+	private JList<Chofer> listChoferes;
+	private JList<Vehiculo> listVehiculos;
+	private JList<Acoplado> listAcoplados;
+	private DefaultListModel<Chofer> modeloChoferes;
+	private DefaultListModel<Vehiculo> modeloVehiculo;
+	private DefaultListModel<Acoplado> modeloAcoplado;
+	private JPanel panelAccion;
+	private JButton btnVincular;
+	private JButton btnDesvincular;
+	private JButton btnEnganchar;
+	private JButton btnDesenganchar;
+	private JPanel panel;
+	private JPanel panel_1;
+	private JPanel panel_2;
+	private JPanel panel_3;
+	private JTextArea textAreaDetalles;
+
+	/**
+	 * Launch the application.
+	 */
+	/*
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					VentanaPrincipal frame = new VentanaPrincipal();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+*/
+	/**
+	 * Create the frame.
+	 */
+	public VentanaPrincipal(Empresa empresa) {
+		this.empresa = empresa;
+		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 907, 635);
+		this.contentPane = new JPanel();
+		this.contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		this.contentPane.setLayout(new BorderLayout(0, 0));
+		setContentPane(this.contentPane);
+		
+		panelAcciones = new JPanel();
+		contentPane.add(panelAcciones, BorderLayout.WEST);
+		panelAcciones.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		panelCreacion = new JPanel();
+		panelAcciones.add(panelCreacion);
+		panelCreacion.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		btnCrearChofer = new JButton("Crear Chofer");
+		this.btnCrearChofer.addActionListener(this);
+		panelCreacion.add(btnCrearChofer);
+		
+		btnCrearColectivo = new JButton("Crear Colectivo");
+		this.btnCrearColectivo.addActionListener(this);
+		panelCreacion.add(btnCrearColectivo);
+		
+		btnCrearCamion = new JButton("Crear Camion");
+		this.btnCrearCamion.addActionListener(this);
+		panelCreacion.add(btnCrearCamion);
+		
+		btnCrearAcoplado = new JButton("Crear Acoplado");
+		this.btnCrearAcoplado.addActionListener(this);
+		panelCreacion.add(btnCrearAcoplado);
+		
+		panelAccion = new JPanel();
+		panelAcciones.add(panelAccion);
+		panelAccion.setLayout(new GridLayout(0, 2, 0, 0));
+		
+		panel = new JPanel();
+		panelAccion.add(panel);
+		
+		btnVincular = new JButton("Vincular");
+		this.btnVincular.addActionListener(this);
+		panel.add(btnVincular);
+		
+		panel_1 = new JPanel();
+		panelAccion.add(panel_1);
+		
+		btnDesvincular = new JButton("Desvincular");
+		this.btnDesvincular.addActionListener(this);
+		panel_1.add(btnDesvincular);
+		
+		panel_2 = new JPanel();
+		panelAccion.add(panel_2);
+		
+		btnEnganchar = new JButton("Enganchar");
+		this.btnEnganchar.addActionListener(this);
+		panel_2.add(btnEnganchar);
+		
+		panel_3 = new JPanel();
+		panelAccion.add(panel_3);
+		
+		btnDesenganchar = new JButton("Desenganchar");
+		this.btnDesenganchar.addActionListener(this);
+		panel_3.add(btnDesenganchar);
+		
+		panelChoferes = new JPanel();
+		contentPane.add(panelChoferes, BorderLayout.CENTER);
+		
+		listChoferes = new JList<Chofer>();
+		this.listChoferes.addListSelectionListener(this);
+		panelChoferes.add(listChoferes);
+		
+		panelVehiculos = new JPanel();
+		contentPane.add(panelVehiculos, BorderLayout.EAST);
+		panelVehiculos.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		listVehiculos = new JList<Vehiculo>();
+		this.listVehiculos.addListSelectionListener(this);
+		panelVehiculos.add(listVehiculos);
+		
+		listAcoplados = new JList<Acoplado>();
+		this.listAcoplados.addListSelectionListener(this);
+		panelVehiculos.add(listAcoplados);
+		
+		this.modeloChoferes = new DefaultListModel<Chofer>();
+		this.listChoferes.setModel(modeloChoferes);
+		this.modeloVehiculo = new DefaultListModel<Vehiculo>();
+		this.listVehiculos.setModel(modeloVehiculo);
+		this.modeloAcoplado = new DefaultListModel<Acoplado>();
+		this.listAcoplados.setModel(modeloAcoplado);
+		
+		this.textAreaDetalles = new JTextArea();
+		this.contentPane.add(this.textAreaDetalles, BorderLayout.SOUTH);
+		
+		this.actualizarListaChoferes();
+	    this.actualizarListaVehiculos();
+	    this.actualizarListaAcoplados();
+	}
+
+	protected void actualizarListaAcoplados() {
+		this.modeloAcoplado.clear();
+		Iterator<Acoplado> it = this.empresa.getAcoplados().iterator();
+		while (it.hasNext())
+			this.modeloAcoplado.addElement(it.next());
+		this.repaint();
+	}
+
+	protected void actualizarListaVehiculos() {
+		this.modeloVehiculo.clear();
+		Iterator<Vehiculo> it = this.empresa.getVehiculos().iterator();
+		while (it.hasNext())
+			this.modeloVehiculo.addElement(it.next());
+		this.repaint();
+		
+	}
+
+	protected void actualizarListaChoferes() {
+		this.modeloChoferes.clear();
+		Iterator<Chofer> it = this.empresa.getChoferes().iterator();
+		
+		while (it.hasNext())
+			this.modeloChoferes.addElement(it.next());
+		this.repaint();
+		
+	}
+
+	public void actionPerformed(ActionEvent e) {
+		if (e.getActionCommand().equals("Vincular")) this.vincular();
+		else if (e.getActionCommand().equals("Desvincular")) this.desvincular();
+		else if (e.getActionCommand().equals("Enganchar")) this.enganchar();
+		else if (e.getActionCommand().equals("Desenganchar")) this.desenganchar();
+		else if (e.getActionCommand().equals("Crear Chofer")) this.altaChofer();
+		else if (e.getActionCommand().equals("Crear Colectivo")) this.altaColectivo();
+		else if (e.getActionCommand().equals("Crear Camion")) this.altaCamion();
+		else if (e.getActionCommand().equals("Crear Acoplado")) this.altaAcoplado();
+		
+		this.actualizarListaChoferes();
+	    this.actualizarListaVehiculos();
+	    this.actualizarListaAcoplados();
+	}
+
+	public void altaAcoplado() {
+		DialogAltaAcoplado dialog = new DialogAltaAcoplado(VentanaPrincipal.this,empresa);
+		dialog.setModal(true);
+		dialog.setVisible(true);
+		actualizarListaAcoplados();
+	}
+	
+	public void altaCamion() {
+		DialogAltaCamion dialog = new DialogAltaCamion(VentanaPrincipal.this,empresa);
+		dialog.setModal(true);
+		dialog.setVisible(true);
+		actualizarListaVehiculos();
+	}
+	
+	public void altaColectivo() {
+		DialogAltaColectivo dialog = new DialogAltaColectivo(VentanaPrincipal.this,empresa);
+		dialog.setModal(true);
+		dialog.setVisible(true);
+		actualizarListaVehiculos();
+	}
+	
+	public void altaChofer() {
+		DialogAltaChofer dialog = new DialogAltaChofer(VentanaPrincipal.this, empresa);
+		dialog.setModal(true);
+        dialog.setVisible(true);
+        actualizarListaChoferes();
+	}
+	
+	private void desenganchar() {
+		Camion v = (Camion) this.listVehiculos.getSelectedValue();
+		
+		if (v != null ) {
+			empresa.desengancharAcoplado(v);
+			this.textAreaDetalles.append("Camion desacoplado con exito.\n");
+		}
+		
+	}
+
+	private void enganchar() {
+		Camion v = (Camion) this.listVehiculos.getSelectedValue();
+		Acoplado a = this.listAcoplados.getSelectedValue();
+		
+		if (v != null && a != null) {
+			if (empresa.engancharAcoplado(v, a))
+				this.textAreaDetalles.append("Camion acoplado con exito.\n");
+			else
+				this.textAreaDetalles.append("No se acoplo.\n");
+		}
+	}
+
+	private void desvincular() {
+		Chofer chofer = this.listChoferes.getSelectedValue();
+		
+		if (chofer != null) {
+			empresa.desvincularChofer(chofer);;
+			this.textAreaDetalles.append("Se desvinculo con exito.\n");		
+		}
+	}
+
+	private void vincular() {
+		Chofer chofer = this.listChoferes.getSelectedValue();
+		Vehiculo veh = this.listVehiculos.getSelectedValue();
+		
+		if (chofer != null && veh != null) {
+			if (empresa.vincularChoferVehiculo(chofer, veh))
+				this.textAreaDetalles.append("Se vinculo con exito.\n");
+			else
+				this.textAreaDetalles.append("No se pudo vincular.\n");		
+		}
+	}
+	/*
+	public void valueChanged(ListSelectionEvent arg0) {
+		Chofer chofer = this.listChoferes.getSelectedValue();
+		
+	}*/
+
+	@Override
+	public void valueChanged(ListSelectionEvent e) {
+	}
+}

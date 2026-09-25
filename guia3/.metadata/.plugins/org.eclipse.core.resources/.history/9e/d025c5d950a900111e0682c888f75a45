@@ -1,0 +1,23 @@
+package paquete;
+
+import java.util.ArrayList;
+import java.util.GregorianCalendar;
+
+public class ArchivoComprimido extends Directorio{
+	private double tasaCompresion;
+	
+	public ArchivoComprimido(String nombre,GregorianCalendar fecha,double tasaCompresion) {
+		super(nombre,fecha);
+		this.tasaCompresion=tasaCompresion;
+		elementos=new ArrayList<>();
+	}
+
+	public double getTasaCompresion() {
+		return tasaCompresion;
+	}
+
+	public void setTasaCompresion(double tasaCompresion) {
+		this.tasaCompresion = tasaCompresion;
+	}
+	
+}

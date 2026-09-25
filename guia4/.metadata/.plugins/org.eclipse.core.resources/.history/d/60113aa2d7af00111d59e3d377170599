@@ -1,0 +1,38 @@
+package paquete;
+
+public abstract class Personaje {
+	protected String nombre;
+	protected int vitalidad;
+	protected Posicion posicion;
+	
+	public Personaje(String nombre, int vitalidad, Posicion posicion) {
+		super();
+		this.nombre = nombre;
+		this.posicion = posicion;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public int getVitalidad() {
+		return vitalidad;
+	}
+
+	public Posicion getPosicion() {
+		return posicion;
+	}
+	
+	public abstract boolean ataca(Personaje p);
+	
+	public void recibeDanio(int cantidad) {
+		this.vitalidad -= cantidad;
+	}
+	
+	@Override
+	public String toString() {
+		return nombre + " vitalidad=" + vitalidad;
+	}
+	
+	
+}

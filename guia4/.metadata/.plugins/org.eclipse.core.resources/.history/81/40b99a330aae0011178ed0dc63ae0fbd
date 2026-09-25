@@ -1,0 +1,18 @@
+package paquete;
+
+public class Chofer {
+	protected String nombre;
+	protected Categoria categoria;
+	protected Vehiculo vehiculoAsignado;
+	
+	public Chofer(String nombre, Categoria categoria, Vehiculo vehiculoAsignado) {
+		this.nombre = nombre;
+		this.categoria = categoria;
+		this.vehiculoAsignado = vehiculoAsignado;
+	}
+	
+	public Chofer(String nombre, Categoria categoria) {
+		this.nombre = nombre;
+		this.categoria = categoria;
+	}
+}

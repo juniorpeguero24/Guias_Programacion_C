@@ -1,0 +1,20 @@
+package paquete;
+
+public class CuentaUniversitaria extends CuentaBancaria{	
+	private final double MAXDIARIO=1000.0;
+	protected double retirado=0;
+	
+	public CuentaUniversitaria(String nombre) throws Exception {
+		super(nombre);
+		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public void extraer(double monto) {
+		if ((retirado + monto) <= MAXDIARIO && monto <= saldo) {
+			saldo -= monto;
+			retirado += monto;
+		}
+	}
+	
+	
+}

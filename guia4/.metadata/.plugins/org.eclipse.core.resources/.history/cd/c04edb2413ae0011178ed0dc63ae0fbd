@@ -1,0 +1,135 @@
+package paquete;
+
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.DefaultListModel;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.ListSelectionModel;
+
+public class VentanaPrincipal extends JFrame {
+
+    // Referencia al modelo de negocio
+    private Empresa empresa;
+
+    // Componentes de la interfaz
+    private JList<Chofer> listaChoferes;
+    private DefaultListModel<Chofer> modeloChoferes;
+
+    private JList<Vehiculo> listaVehiculos;
+    private DefaultListModel<Vehiculo> modeloVehiculos;
+
+    private JButton btnVincular;
+    private JButton btnDesvincular;
+
+    public VentanaPrincipal(Empresa empresa) {
+        super("Gestión de Empresa de Transporte");
+        this.empresa = empresa;
+
+        // Configuración básica de la ventana
+        this.setSize(750, 450);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setLocationRelativeTo(null); // Centrar en pantalla
+        this.setLayout(new BorderLayout(10, 10));
+
+        // 1. Inicializar modelos y listas
+        modeloChoferes = new DefaultListModel<>();
+        for (Chofer c : empresa.getChoferes()) {
+            modeloChoferes.addElement(c);
+        }
+        listaChoferes = new JList<>(modeloChoferes);
+        listaChoferes.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+
+        modeloVehiculos = new DefaultListModel<>();
+        for (Vehiculo v : empresa.getVehiculos()) {
+            modeloVehiculos.addElement(v);
+        }
+        listaVehiculos = new JList<>(modeloVehiculos);
+        listaVehiculos.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+
+        // 2. Panel central con las dos listas
+        JPanel panelListas = new JPanel(new GridLayout(1, 2, 10, 10));
+
+        JPanel panelColChoferes = new JPanel(new BorderLayout());
+        panelColChoferes.add(new JLabel("Choferes:"), BorderLayout.NORTH);
+        panelColChoferes.add(new JScrollPane(listaChoferes), BorderLayout.CENTER);
+
+        JPanel panelColVehiculos = new JPanel(new BorderLayout());
+        panelColVehiculos.add(new JLabel("Vehículos:"), BorderLayout.NORTH);
+        panelColVehiculos.add(new JScrollPane(listaVehiculos), BorderLayout.CENTER);
+
+        panelListas.add(panelColChoferes);
+        panelListas.add(panelColVehiculos);
+        this.add(panelListas, BorderLayout.CENTER);
+
+        // 3. Panel inferior con botones
+        JPanel panelBotones = new JPanel();
+        btnVincular = new JButton("Vincular Chofer a Vehículo");
+        btnDesvincular = new JButton("Desvincular Chofer");
+
+        panelBotones.add(btnVincular);
+        panelBotones.add(btnDesvincular);
+        this.add(panelBotones, BorderLayout.SOUTH);
+
+        // 4. Configurar eventos de los botones
+        configurarEventos();
+    }
+
+    private void configurarEventos() {
+        // Evento Vincular
+        btnVincular.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Chofer choferSeleccionado = listaChoferes.getSelectedValue();
+                Vehiculo vehiculoSeleccionado = listaVehiculos.getSelectedValue();
+
+                if (choferSeleccionado == null || vehiculoSeleccionado == null) {
+                    JOptionPane.showMessageDialog(VentanaPrincipal.this, 
+                        "Debe seleccionar un chofer y un vehículo de las listas.", 
+                        "Aviso", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
+
+                // Delegamos la validación a la clase Empresa
+                boolean exito = empresa.vincularChoferVehiculo(choferSeleccionado, vehiculoSeleccionado);
+
+                if (exito) {
+                    JOptionPane.showMessageDialog(VentanaPrincipal.this, 
+                        "Chofer asignado con éxito.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+                    listaChoferes.repaint(); // Redibuja para refrescar el toString()
+                } else {
+                    JOptionPane.showMessageDialog(VentanaPrincipal.this, 
+                        "El chofer no cuenta con la categoría requerida para este vehículo.", 
+                        "Asignación rechazada", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        });
+
+        // Evento Desvincular
+        btnDesvincular.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Chofer choferSeleccionado = listaChoferes.getSelectedValue();
+
+                if (choferSeleccionado == null) {
+                    JOptionPane.showMessageDialog(VentanaPrincipal.this, 
+                        "Seleccione un chofer para desvincular.", 
+                        "Aviso", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
+
+                empresa.desvincularChofer(choferSeleccionado);
+                JOptionPane.showMessageDialog(VentanaPrincipal.this, 
+                    "Chofer desvinculado de su vehículo.", "Información", JOptionPane.INFORMATION_MESSAGE);
+                listaChoferes.repaint();
+            }
+        });
+    }
+}

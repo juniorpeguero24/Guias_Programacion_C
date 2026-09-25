@@ -1,0 +1,45 @@
+package paquete;
+
+import javax.swing.SwingUtilities;
+
+public class Main {
+    public static void main(String[] args) {
+        // 1. Instanciamos el modelo con datos iniciales
+        Empresa empresa = new Empresa();
+
+        // Categorías
+        Categoria cat1 = new Categoria("Cat 1 (Línea)", 10000.0, true, false, false);
+        Categoria cat2 = new Categoria("Cat 2 (Línea y Larga)", 15000.0, true, true, false);
+        Categoria cat3 = new Categoria("Cat 3 (Camión)", 15000.0, false, false, true);
+        Categoria cat4 = new Categoria("Cat 4 (Todos)", 17000.0, true, true, true);
+
+        empresa.agregarCategoria(cat1);
+        empresa.agregarCategoria(cat2);
+        empresa.agregarCategoria(cat3);
+        empresa.agregarCategoria(cat4);
+
+        // Choferes
+        empresa.agregarChofer(new Chofer("Juan Pérez", cat1));
+        empresa.agregarChofer(new Chofer("Carlos Gómez", cat2));
+        empresa.agregarChofer(new Chofer("Roberto Sánchez", cat3));
+        empresa.agregarChofer(new Chofer("Lucía Torres", cat4));
+
+        try {
+            // Vehículos
+            empresa.agregarVehiculo(new ColectivoLinea("Mercedes Benz OF1418", 32));
+            empresa.agregarVehiculo(new ColectivoLarga("Scania K400", 45, true));
+            empresa.agregarVehiculo(new Camion("Iveco Stralis", 8.0, 30.0));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // 2. Ejecutar la ventana en el hilo de eventos de Swing
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                VentanaPrincipal ventana = new VentanaPrincipal(empresa);
+                ventana.setVisible(true);
+            }
+        });
+    }
+}

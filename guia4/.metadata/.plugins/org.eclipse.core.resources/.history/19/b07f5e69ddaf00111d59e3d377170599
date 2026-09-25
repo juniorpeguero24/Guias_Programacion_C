@@ -1,0 +1,91 @@
+package vista;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+import paquete.Personaje;
+
+import javax.swing.JScrollPane;
+import javax.swing.JList;
+import javax.swing.DefaultListModel;
+import javax.swing.JButton;
+
+public class VentanaPrincipal extends JFrame {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private JPanel panelPersonajes;
+	private JPanel panelAcciones;
+	private JScrollPane scrollPaneL1;
+	private JPanel panel;
+	private JScrollPane scrollPaneL2;
+	private JButton btnAtacar;
+	private JList<Personaje> listL1;
+	private JList<Personaje> listL2;
+	private DefaultListModel<Personaje> modeloPersonaje;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					VentanaPrincipal frame = new VentanaPrincipal();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public VentanaPrincipal() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		this.contentPane = new JPanel();
+		this.contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		this.contentPane.setLayout(new BorderLayout(0, 0));
+		setContentPane(this.contentPane);
+		
+		this.panelPersonajes = new JPanel();
+		this.contentPane.add(this.panelPersonajes, BorderLayout.CENTER);
+		
+		this.scrollPaneL1 = new JScrollPane(this.listL1);
+		this.panelPersonajes.add(this.scrollPaneL1);
+		
+		this.listL1 = new JList<Personaje>();
+		this.panelPersonajes.add(this.listL1);
+		
+		this.panel = new JPanel();
+		this.panelPersonajes.add(this.panel);
+		
+		this.btnAtacar = new JButton("Atacar");
+		this.panel.add(this.btnAtacar);
+		
+		this.scrollPaneL2 = new JScrollPane(this.listL2);
+		this.panelPersonajes.add(this.scrollPaneL2);
+		
+		this.listL2 = new JList<Personaje>();
+		this.panelPersonajes.add(this.listL2);
+		
+		this.panelAcciones = new JPanel();
+		this.contentPane.add(this.panelAcciones, BorderLayout.EAST);
+		
+		this.modeloPersonaje = new DefaultListModel<Personaje>();
+		this.listL1.setModel(modeloPersonaje);
+		this.listL2.setModel(modeloPersonaje);
+		
+	}
+
+}

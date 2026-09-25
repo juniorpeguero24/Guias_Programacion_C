@@ -1,0 +1,24 @@
+package paquete;
+
+import java.util.ArrayList;
+
+public class Banco {
+	ArrayList<CuentaBancaria> cuentas;
+	
+	public Banco() {
+		cuentas=new ArrayList<>();
+	}
+	
+	public void agregarCuenta(CuentaBancaria c) {
+		cuentas.add(c);
+	}
+	
+	public void eliminarCuenta(CuentaBancaria c) {
+		cuentas.remove(c);
+	}
+
+	public ArrayList<CuentaBancaria> getCuentas() {
+		return cuentas;
+	}
+	
+}

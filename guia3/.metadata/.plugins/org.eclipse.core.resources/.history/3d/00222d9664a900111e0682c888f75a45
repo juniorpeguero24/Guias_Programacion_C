@@ -1,0 +1,22 @@
+package paquete;
+
+public class Delantero extends Jugador{
+	public final String tipo="Delantero";
+	
+	public Delantero(String nombre,double velocidad,double potencia) {
+		super(nombre,velocidad,potencia);
+	}
+
+	@Override
+	public double getIndiceDefensa() {
+		return velocidad*0.5;
+	}
+
+	@Override
+	public double getIndiceAtaque() {
+		return velocidad*potencia;
+	}
+	
+	
+	
+}

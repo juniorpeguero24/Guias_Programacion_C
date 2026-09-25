@@ -1,0 +1,19 @@
+package paquete;
+
+public class Cafe extends Infusion{
+	protected boolean amargo;
+	
+	
+	@Override
+	protected void agregarTipoInfusion() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected void endulzar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

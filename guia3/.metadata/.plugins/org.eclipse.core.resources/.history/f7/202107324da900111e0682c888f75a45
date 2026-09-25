@@ -1,0 +1,13 @@
+package paquete;
+
+import java.util.GregorianCalendar;
+
+public class Archivo extends Elemento{
+	private GregorianCalendar fechaModificacion;
+	
+	public Archivo(String nombre,GregorianCalendar fechaCreacion,GregorianCalendar fechaModificacion,double tamaño) {
+		super(nombre,fecha,tamaño);
+		this.fechaModificacion=fechaModificacion
+	}
+	
+}

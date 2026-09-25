@@ -1,0 +1,129 @@
+package ventana;
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+import paquete.Camion;
+import paquete.Empresa;
+import paquete.Vehiculo;
+
+import java.awt.GridLayout;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class DialogAltaCamion extends JDialog {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private final JPanel contentPanel = new JPanel();
+	private JTextField textModelo;
+	private JTextField textTara;
+	private JTextField textCargaMax;
+
+	/**
+	 * Create the dialog.
+	 */
+	public DialogAltaCamion(JFrame padre,Empresa empresa) {
+		setBounds(100, 100, 450, 300);
+		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		getContentPane().add(contentPanel, BorderLayout.CENTER);
+		contentPanel.setLayout(new GridLayout(0, 2, 0, 0));
+		{
+			JPanel panel = new JPanel();
+			contentPanel.add(panel);
+			{
+				JLabel lblNewLabel = new JLabel("Modelo:");
+				panel.add(lblNewLabel);
+			}
+		}
+		{
+			JPanel panel = new JPanel();
+			contentPanel.add(panel);
+			{
+				textModelo = new JTextField();
+				panel.add(textModelo);
+				textModelo.setColumns(10);
+			}
+		}
+		{
+			JPanel panel = new JPanel();
+			contentPanel.add(panel);
+			{
+				JLabel lblNewLabel_1 = new JLabel("Tara:");
+				panel.add(lblNewLabel_1);
+			}
+		}
+		{
+			JPanel panel = new JPanel();
+			contentPanel.add(panel);
+			{
+				textTara = new JTextField();
+				panel.add(textTara);
+				textTara.setColumns(10);
+			}
+		}
+		{
+			JPanel panel = new JPanel();
+			contentPanel.add(panel);
+			{
+				JLabel lblNewLabel_3 = new JLabel("Carga maxima:");
+				panel.add(lblNewLabel_3);
+			}
+		}
+		{
+			JPanel panel = new JPanel();
+			contentPanel.add(panel);
+			{
+				textCargaMax = new JTextField();
+				panel.add(textCargaMax);
+				textCargaMax.setColumns(10);
+			}
+		}
+		{
+			JPanel buttonPane = new JPanel();
+			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
+			getContentPane().add(buttonPane, BorderLayout.SOUTH);
+			{
+				JButton okButton = new JButton("OK");
+				okButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						String modelo = textModelo.getText().trim();
+						double tara = Double.parseDouble(textTara.getText().trim());
+						double cargaMax= Double.parseDouble(textCargaMax.getText().trim());
+						
+						if (!modelo.isEmpty() && tara > 0 && cargaMax > 0) {
+							try {
+								Vehiculo nuevo = new Camion(modelo,tara,cargaMax);
+								empresa.agregarVehiculo(nuevo);
+								dispose();
+							} catch (Exception e1) {
+								e1.printStackTrace();
+							}
+							
+						}
+					}
+				});
+				okButton.setActionCommand("OK");
+				buttonPane.add(okButton);
+				getRootPane().setDefaultButton(okButton);
+			}
+			{
+				JButton cancelButton = new JButton("Cancel");
+				cancelButton.setActionCommand("Cancel");
+				buttonPane.add(cancelButton);
+			}
+		}
+	}
+
+}

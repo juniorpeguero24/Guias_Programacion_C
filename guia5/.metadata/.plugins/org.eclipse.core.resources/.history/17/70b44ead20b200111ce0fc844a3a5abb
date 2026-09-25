@@ -1,0 +1,6 @@
+package paquete;
+
+public class Rubi extends Gema {
+	public String rubiRubi(Personaje p) {return ""}
+	
+}

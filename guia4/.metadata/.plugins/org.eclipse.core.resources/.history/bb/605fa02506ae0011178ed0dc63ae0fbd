@@ -1,0 +1,19 @@
+package paquete;
+
+public abstract class Vehiculo {
+	public static int siguienteNumero=0;
+	protected int numeroInterno;
+	protected String modelo;
+	
+	/**
+	 * 
+	 * @param modelo
+	 */
+	public Vehiculo(String modelo) throws Exception{
+		
+		this.modelo=modelo;
+		numeroInterno=++siguienteNumero;
+	}
+	
+	
+}

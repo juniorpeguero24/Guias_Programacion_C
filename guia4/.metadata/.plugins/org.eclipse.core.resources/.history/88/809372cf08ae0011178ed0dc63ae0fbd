@@ -1,0 +1,10 @@
+package paquete;
+
+public class ColectivoLarga extends Colectivo{
+	public boolean cocheCama;
+	
+	public ColectivoLarga(String modelo, int cantidadPasajeros) throws Exception {
+		super(modelo, cantidadPasajeros);
+	}
+	
+}

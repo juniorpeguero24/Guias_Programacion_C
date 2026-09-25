@@ -1,0 +1,28 @@
+package paquete;
+
+public class Principiante extends Permanente{
+	
+	public Principiante(String nombre,int legajo,String domicilio,int antiguedad,double sueldoBase) {
+		super(nombre,legajo,domicilio,antiguedad,sueldoBase);
+	}
+
+	@Override
+	public double calcularSueldoBruto() {
+		if (antiguedad() >= 20)
+			sueldoBase *= 1.2;
+		else
+			if (antiguedad() >= 15)
+				sueldoBase *= 1.15;
+			else
+				if (antiguedad() >= 10)
+					sueldoBase *= 1.1;
+				else
+					if (antiguedad() >= 5)
+						sueldoBase *= 1.07;
+					else 
+						if (antiguedad() >= 2)
+							sueldoBase *= 1.05;
+	}
+	
+	
+}

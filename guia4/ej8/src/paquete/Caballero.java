@@ -1,0 +1,24 @@
+package paquete;
+
+public class Caballero extends Personaje{
+	
+	public Caballero(String nombre,Posicion posicion) {
+		super(nombre, posicion);
+	}
+
+	@Override
+	public boolean ataca(Personaje p) {
+		if (this.posicion.distancia(p.getPosicion()) <= 10) {
+			p.recibeDanio(10);
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public String toString() {
+		return "Caballero "+super.toString();
+	}
+	
+	
+}

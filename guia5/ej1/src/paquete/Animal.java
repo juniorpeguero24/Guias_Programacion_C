@@ -1,0 +1,22 @@
+package paquete;
+
+public abstract class Animal{
+	public String nombre;
+	public int esperanzaDeVida;
+	
+	public Animal(String nombre, int esperanzaDeVida) {
+		this.nombre=nombre;
+		this.esperanzaDeVida=esperanzaDeVida;
+	}
+	
+	public Animal() {}
+	
+	public String getNombre() {
+		return nombre;
+	}
+	public int getEsperanzaDeVida() {
+		return esperanzaDeVida;
+	}
+	
+	
+}

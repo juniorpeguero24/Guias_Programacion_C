@@ -1,0 +1,25 @@
+package paquete;
+
+import interfaces.Trabajable;
+
+public abstract class Artesano implements Trabajable {
+	protected String nombre;
+
+	@Override
+	public String conMadera(Material mat) {
+		return null;
+	}
+
+	@Override
+	public String conMetal(Material mat) {
+		return null;
+	}
+
+	@Override
+	public String trabajar(Material mat) {
+		return null;
+	}
+	
+	
+
+}

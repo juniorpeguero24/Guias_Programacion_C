@@ -1,0 +1,13 @@
+package paquete;
+
+public class Partido {
+	private Equipo e1,e2;
+	private String fecha;
+	
+	public Partido(Equipo e1,Equipo e2,String fecha) {
+		this.e1=e1;
+		this.e2=e2;
+		this.fecha=fecha;
+	}
+	
+}

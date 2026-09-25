@@ -1,0 +1,10 @@
+package paquete;
+
+import java.util.GregorianCalendar;
+
+public class Elemento {
+	private String nombre;
+	private GregorianCalendar fecha;
+	protected double tamaño;
+	
+}

@@ -1,0 +1,14 @@
+package paquete;
+
+public class Dragon extends Personaje {
+
+	@Override
+	public void abrirCofre(Cofre c) {
+	}
+
+	@Override
+	public boolean ataca(Personaje p) {
+		return false;
+	}
+
+}

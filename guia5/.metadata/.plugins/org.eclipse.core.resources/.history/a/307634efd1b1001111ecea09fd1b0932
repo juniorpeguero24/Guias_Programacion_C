@@ -1,0 +1,8 @@
+package modelo;
+
+import interfaces.IHostil;
+
+public class TorretaVigilancia extends Edificio implements IHostil{
+	
+	
+}

@@ -1,0 +1,32 @@
+package paquete;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Torneo torneo=Torneo.getInstance();
+		
+		Equipo e1=new Equipo("Boca",1,1,0,3,2);
+		Equipo e2=new Equipo("River",1,0,1,4,3);
+		Equipo e3=new Equipo("Racing",0,1,1,2,4);
+		
+		Jugador j1=new Jugador("Cavani","1997",10,9,10,8);
+		Jugador j2=new Jugador("Zenon","2001",22,8,12,3);
+		Jugador j3=new Jugador("Borja","1993",9,9,10,10);
+		Jugador j4=new Jugador("Echeverri","2006",19,10,8,2);
+		Jugador j5=new Jugador("Martinez","1992",9,9,11,7);
+		
+		e1.agregarJugador(j1);e1.agregarJugador(j2);
+		e2.agregarJugador(j3);e2.agregarJugador(j4);
+		e3.agregarJugador(j5);
+		
+		Partido p1=new Partido(e1,e2,"2026-04-15");
+		Partido p2=new Partido(e2,e3,"2026-04-22");
+		Partido p3=new Partido(e3,e1,"2026-04-29");
+		
+		torneo.agregarEquipos(e1);torneo.agregarEquipos(e2);torneo.agregarEquipos(e3);
+		torneo.agregarPartido(p1);torneo.agregarPartido(p2);torneo.agregarPartido(p3);
+		
+		System.out.println("Promedio de goles de Cavani: "+torneo.promedioGolesJugador("Cavani"));
+	}
+
+}

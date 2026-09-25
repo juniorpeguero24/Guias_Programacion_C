@@ -1,0 +1,6 @@
+package paquete;
+
+public class Acoplado {
+	public int tara, cargaMaxima,numeroAcoplado;
+	public boolean refrigerado,enUso;
+}

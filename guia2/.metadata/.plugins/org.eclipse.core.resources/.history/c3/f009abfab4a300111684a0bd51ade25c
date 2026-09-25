@@ -1,0 +1,6 @@
+package paquete;
+
+public class Partido {
+	private Equipo eq1,eq2;
+	private GregorianCalendar fecha;
+}

@@ -1,0 +1,16 @@
+package paquete;
+
+public class Arquero extends Personaje{
+
+	public Arquero(String nombre, Posicion posicion) {
+		super(nombre, posicion);
+		this.vitalidad=500;
+	}
+
+	@Override
+	public boolean ataca(Personaje p) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+}

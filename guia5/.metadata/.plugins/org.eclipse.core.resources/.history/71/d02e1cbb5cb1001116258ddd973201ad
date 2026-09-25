@@ -1,0 +1,21 @@
+package paquete;
+
+import interfaces.Emisor_de_Sonido;
+
+public class Animal implements Emisor_de_Sonido{
+	public String nombre;
+	public int esperanzaDeVida;
+	
+	public String getNombre() {
+		return nombre;
+	}
+	public int getEsperanzaDeVida() {
+		return esperanzaDeVida;
+	}
+	@Override
+	public void emiteSonido() {
+		System.out.println("Hace sonido.");
+	}
+	
+	
+}

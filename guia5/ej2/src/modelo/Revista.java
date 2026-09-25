@@ -1,0 +1,21 @@
+package modelo;
+
+public class Revista extends Padre{
+	private int numero;
+	
+	public Revista(String codigo, String titulo, String anioDePublicacion, int numero) {
+		super(codigo, titulo, anioDePublicacion);
+		this.numero = numero;
+	}
+	
+	public int getNumero() {
+		return numero;
+	}
+
+	@Override
+	public String toString() {
+		return "Revista ["+super.toString()+" numero=" + numero + "]";
+	}
+
+	
+}

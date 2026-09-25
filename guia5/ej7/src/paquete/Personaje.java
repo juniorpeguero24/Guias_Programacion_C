@@ -1,0 +1,16 @@
+package paquete;
+
+public abstract class Personaje {
+	
+	protected abstract double getArmadura();
+	protected abstract double getAtaqueDistante();
+	protected abstract double getAtaqueCorto();
+	
+	public Personaje eligeAdversario() {
+		Mazo m = Mazo.getInstancia();
+		Personaje p=m.obtenerAdversarioAlAzar(this);
+		if (p != null)
+			return p;
+		return null;
+	}
+}

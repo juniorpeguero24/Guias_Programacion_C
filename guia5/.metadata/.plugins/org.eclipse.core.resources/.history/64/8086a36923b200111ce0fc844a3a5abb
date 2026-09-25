@@ -1,0 +1,26 @@
+package paquete;
+
+public class Esmeralda extends Gema {
+
+	@Override
+	protected String combinar(Gema otra) {
+		return otra.combinarConEsmeralda(this);
+	}
+
+	@Override
+	protected String combinarConRubi(Gema otra) {
+		return "Terremoto";
+	}
+
+	@Override
+	protected String combinarConZafiro(Zafiro zafiro) {
+		return "Huracan";
+	}
+
+	@Override
+	protected String combinarConEsmeralda(Esmeralda esmeralda) {
+		return "Niebla desoladora";
+	}
+
+	
+}

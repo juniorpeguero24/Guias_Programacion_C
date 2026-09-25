@@ -1,0 +1,26 @@
+package modelo;
+
+import interfaces.IHostil;
+
+public class TorretaVigilancia extends Edificio implements IHostil{
+
+	public TorretaVigilancia(String equipo, int costo, int energia, int tiempoConstruccion) {
+		super(equipo, 500, 3000, 60);
+	}
+	public TorretaVigilancia() {
+		this.costo=200;
+		this.energia=2000;
+		this.tiempoConstruccion=40;
+	}
+	
+	@Override
+	public void atacar(Unidad adversario) {
+		adversario.recibeDanio(10);
+	}
+
+	@Override
+	public String toString() {
+		return "TorretaVigilancia "+super.toString();
+	}
+	
+}

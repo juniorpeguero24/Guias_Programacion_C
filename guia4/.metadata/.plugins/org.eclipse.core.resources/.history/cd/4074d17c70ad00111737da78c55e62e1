@@ -1,0 +1,12 @@
+package paquete;
+
+public abstract class VehiculoPersonas extends Vehiculo{
+	protected int plazas;
+	
+	public VehiculoPersonas(String patente,int plazas) throws Exception {
+		if (plazas <= 0)
+			throw new Exception("Numero invalido de plazas.");
+		super(patente);
+		this.plazas=plazas;
+	}
+}

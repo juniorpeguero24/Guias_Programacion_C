@@ -1,0 +1,12 @@
+package paquete;
+
+public abstract class Vehiculo {
+	public static int siguienteNumero=0;
+	protected int numeroInterno;
+	protected String modelo;
+	
+	public Vehiculo(String modelo) {
+		this.modelo=modelo;
+		numeroInterno=++siguienteNumero;
+	}
+}

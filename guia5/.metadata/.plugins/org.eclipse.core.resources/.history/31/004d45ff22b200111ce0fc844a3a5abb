@@ -1,0 +1,20 @@
+package paquete;
+
+public class Esmeralda extends Gema {
+
+	@Override
+	public String rubiRubi(Personaje p) {
+		return null;
+	}
+
+	@Override
+	public String rubiZafiro(Personaje p) {
+		return null;
+	}
+
+	@Override
+	public String rubiEsmeralda(Personaje p) {
+		return null;
+	}
+
+}

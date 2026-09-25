@@ -1,0 +1,10 @@
+package paquete;
+
+public class Prueba {
+
+	public static void main(String[] args) {
+		Mazo mazo = Mazo.getInstancia();
+		mazo.agregaPersonaje(crearPersonaje("Dragon","Fuego"));
+	}
+
+}

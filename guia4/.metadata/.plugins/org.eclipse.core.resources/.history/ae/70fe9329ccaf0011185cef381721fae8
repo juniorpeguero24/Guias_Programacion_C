@@ -1,0 +1,59 @@
+package paquete;
+
+import javax.swing.SwingUtilities;
+import java.util.ArrayList;
+import ventana.VentanaPrincipal;
+
+public class Main {
+    public static void main(String[] args) {
+        Empresa empresa = new Empresa();
+
+        // 1. Choferes (usando las 4 categorías que ya inicializa Empresa en su constructor)
+        ArrayList<Categoria> cats = empresa.getCategorias();
+        empresa.agregarChofer(new Chofer("Carlos Gómez", cats.get(0)));
+        empresa.agregarChofer(new Chofer("Martín Rodríguez", cats.get(0)));
+        empresa.agregarChofer(new Chofer("Lucas Benítez", cats.get(1)));
+        empresa.agregarChofer(new Chofer("Esteban Quito", cats.get(1)));
+        empresa.agregarChofer(new Chofer("Gonzalo Fernández", cats.get(2)));
+        empresa.agregarChofer(new Chofer("Facundo Morales", cats.get(2)));
+        empresa.agregarChofer(new Chofer("Matías Rossi", cats.get(3)));
+        empresa.agregarChofer(new Chofer("Federico Domínguez", cats.get(3)));
+
+        // 2. Acoplados: (int tara, int cargaMaxima, int numeroAcoplado, boolean refrigerado)
+        empresa.agregarAcoplado(new Acoplado(4, 18, 101, false));
+        empresa.agregarAcoplado(new Acoplado(5, 22, 102, true));
+        empresa.agregarAcoplado(new Acoplado(4, 15, 103, false));
+        empresa.agregarAcoplado(new Acoplado(6, 25, 104, true));
+        empresa.agregarAcoplado(new Acoplado(3, 12, 105, false));
+
+        // 3. Vehículos (ColectivoLinea, ColectivoLarga y Camion manejan excepciones)
+        try {
+            // ColectivoLinea(String modelo, int cantidadPasajeros)
+            empresa.agregarVehiculo(new ColectivoLinea("Mercedes Benz OF1418", 32));
+            empresa.agregarVehiculo(new ColectivoLinea("Agrale MT 17.0", 28));
+            empresa.agregarVehiculo(new ColectivoLinea("Scania K250 UB", 35));
+
+            // ColectivoLarga(String modelo, int cantidadPasajeros, boolean cocheCama)
+            empresa.agregarVehiculo(new ColectivoLarga("Scania K400", 45, true));
+            empresa.agregarVehiculo(new ColectivoLarga("Marcopolo Paradiso 1200", 50, false));
+            empresa.agregarVehiculo(new ColectivoLarga("Busscar Panorâmico", 42, true));
+
+            // Camion(String modelo, double tara, double cargaMax)
+            empresa.agregarVehiculo(new Camion("Iveco Stralis", 8.0, 30.0));
+            empresa.agregarVehiculo(new Camion("Scania R500 V8", 9.0, 28.0));
+            empresa.agregarVehiculo(new Camion("Mercedes-Benz Actros", 8.5, 26.0));
+            empresa.agregarVehiculo(new Camion("Volvo FH 540", 9.2, 32.0));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // 4. Lanzamiento de la interfaz gráfica
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                VentanaPrincipal ventana = new VentanaPrincipal(empresa);
+                ventana.setVisible(true);
+            }
+        });
+    }
+}

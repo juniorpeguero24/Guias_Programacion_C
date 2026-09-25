@@ -1,0 +1,9 @@
+package paquete;
+
+public class Mazo {
+	private static Mazo instancia=null;
+	private ArrayList<Personaje> personajes;
+	private Mazo() {
+		
+	}
+}

@@ -1,0 +1,256 @@
+package paquete;
+
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.BorderFactory;
+import javax.swing.DefaultListModel;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
+import javax.swing.ListSelectionModel;
+
+public class VentanaPrincipal extends JFrame {
+
+    private Empresa empresa;
+
+    // Componentes para Choferes
+    private JList<Chofer> listaChoferes;
+    private DefaultListModel<Chofer> modeloChoferes;
+    private JTextField txtNombreChofer;
+    private JComboBox<Categoria> cmbCategorias;
+    private JButton btnAgregarChofer;
+
+    // Componentes para Vehículos
+    private JList<Vehiculo> listaVehiculos;
+    private DefaultListModel<Vehiculo> modeloVehiculos;
+    private JTextField txtModeloVehiculo;
+    private JComboBox<String> cmbTipoVehiculo;
+    private JTextField txtDatoExtra; // Pasajeros o Carga Máx según el caso
+    private JButton btnAgregarVehiculo;
+
+    // Botones de acción
+    private JButton btnVincular;
+    private JButton btnDesvincular;
+
+    public VentanaPrincipal(Empresa empresa) {
+        super("Gestión de Empresa de Transporte");
+        this.empresa = empresa;
+
+        this.setSize(950, 600);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setLocationRelativeTo(null);
+        this.setLayout(new BorderLayout(10, 10));
+
+        // 1. Inicializar listas y modelos
+        modeloChoferes = new DefaultListModel<>();
+        for (Chofer c : empresa.getChoferes()) {
+            modeloChoferes.addElement(c);
+        }
+        listaChoferes = new JList<>(modeloChoferes);
+        listaChoferes.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+
+        modeloVehiculos = new DefaultListModel<>();
+        for (Vehiculo v : empresa.getVehiculos()) {
+            modeloVehiculos.addElement(v);
+        }
+        listaVehiculos = new JList<>(modeloVehiculos);
+        listaVehiculos.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+
+        // 2. Construir paneles
+        construirPanelAltas();
+        construirPanelListas();
+        construirPanelBotones();
+
+        // 3. Activar escuchadores de eventos
+        configurarEventos();
+    }
+
+    private void construirPanelAltas() {
+        JPanel panelSuperior = new JPanel(new GridLayout(1, 2, 10, 10));
+
+        // Formulario Alta Chofer
+        JPanel panelAltaChofer = new JPanel(new GridLayout(3, 2, 5, 5));
+        panelAltaChofer.setBorder(BorderFactory.createTitledBorder("Alta de Chofer"));
+        
+        txtNombreChofer = new JTextField();
+        cmbCategorias = new JComboBox<>();
+        for (Categoria cat : empresa.getCategorias()) {
+            cmbCategorias.addItem(cat);
+        }
+        btnAgregarChofer = new JButton("Agregar Chofer");
+
+        panelAltaChofer.add(new JLabel("Nombre:"));
+        panelAltaChofer.add(txtNombreChofer);
+        panelAltaChofer.add(new JLabel("Categoría:"));
+        panelAltaChofer.add(cmbCategorias);
+        panelAltaChofer.add(new JLabel(""));
+        panelAltaChofer.add(btnAgregarChofer);
+
+        // Formulario Alta Vehículo
+        JPanel panelAltaVehiculo = new JPanel(new GridLayout(4, 2, 5, 5));
+        panelAltaVehiculo.setBorder(BorderFactory.createTitledBorder("Alta de Vehículo"));
+
+        txtModeloVehiculo = new JTextField();
+        cmbTipoVehiculo = new JComboBox<>(new String[]{
+            "Colectivo Línea", "Colectivo Larga (Cama)", "Camión"
+        });
+        txtDatoExtra = new JTextField();
+        btnAgregarVehiculo = new JButton("Agregar Vehículo");
+
+        panelAltaVehiculo.add(new JLabel("Modelo:"));
+        panelAltaVehiculo.add(txtModeloVehiculo);
+        panelAltaVehiculo.add(new JLabel("Tipo:"));
+        panelAltaVehiculo.add(cmbTipoVehiculo);
+        panelAltaVehiculo.add(new JLabel("Pasajeros / Carga (tn):"));
+        panelAltaVehiculo.add(txtDatoExtra);
+        panelAltaVehiculo.add(new JLabel(""));
+        panelAltaVehiculo.add(btnAgregarVehiculo);
+
+        panelSuperior.add(panelAltaChofer);
+        panelSuperior.add(panelAltaVehiculo);
+        this.add(panelSuperior, BorderLayout.NORTH);
+    }
+
+    private void construirPanelListas() {
+        JPanel panelListas = new JPanel(new GridLayout(1, 2, 10, 10));
+
+        JPanel panelColChoferes = new JPanel(new BorderLayout());
+        panelColChoferes.setBorder(BorderFactory.createTitledBorder("Choferes Registrados"));
+        panelColChoferes.add(new JScrollPane(listaChoferes), BorderLayout.CENTER);
+
+        JPanel panelColVehiculos = new JPanel(new BorderLayout());
+        panelColVehiculos.setBorder(BorderFactory.createTitledBorder("Vehículos de la Flota"));
+        panelColVehiculos.add(new JScrollPane(listaVehiculos), BorderLayout.CENTER);
+
+        panelListas.add(panelColChoferes);
+        panelListas.add(panelColVehiculos);
+        this.add(panelListas, BorderLayout.CENTER);
+    }
+
+    private void construirPanelBotones() {
+        JPanel panelBotones = new JPanel();
+        btnVincular = new JButton("Vincular Chofer a Vehículo");
+        btnDesvincular = new JButton("Desvincular Chofer");
+
+        panelBotones.add(btnVincular);
+        panelBotones.add(btnDesvincular);
+        this.add(panelBotones, BorderLayout.SOUTH);
+    }
+
+    private void configurarEventos() {
+        // Alta de Chofer
+        btnAgregarChofer.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String nombre = txtNombreChofer.getText().trim();
+                Categoria cat = (Categoria) cmbCategorias.getSelectedItem();
+
+                if (nombre.isEmpty() || cat == null) {
+                    JOptionPane.showMessageDialog(VentanaPrincipal.this, 
+                        "Ingrese un nombre válido y seleccione una categoría.", "Error", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
+
+                Chofer nuevoChofer = new Chofer(nombre, cat);
+                empresa.agregarChofer(nuevoChofer);
+                modeloChoferes.addElement(nuevoChofer);
+                txtNombreChofer.setText("");
+            }
+        });
+
+        // Alta de Vehículo
+        btnAgregarVehiculo.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String modelo = txtModeloVehiculo.getText().trim();
+                String tipo = (String) cmbTipoVehiculo.getSelectedItem();
+                String datoTexto = txtDatoExtra.getText().trim();
+
+                if (modelo.isEmpty() || datoTexto.isEmpty()) {
+                    JOptionPane.showMessageDialog(VentanaPrincipal.this, 
+                        "Complete todos los campos del vehículo.", "Error", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
+
+                try {
+                    Vehiculo nuevoVehiculo = null;
+
+                    if ("Colectivo Línea".equals(tipo)) {
+                        int pasajeros = Integer.parseInt(datoTexto);
+                        nuevoVehiculo = new ColectivoLinea(modelo, pasajeros);
+                    } else if ("Colectivo Larga (Cama)".equals(tipo)) {
+                        int pasajeros = Integer.parseInt(datoTexto);
+                        nuevoVehiculo = new ColectivoLarga(modelo, pasajeros, true);
+                    } else if ("Camión".equals(tipo)) {
+                        double carga = Double.parseDouble(datoTexto);
+                        nuevoVehiculo = new Camion(modelo, 8.0, carga); // Tara por defecto 8.0tn
+                    }
+
+                    if (nuevoVehiculo != null) {
+                        empresa.agregarVehiculo(nuevoVehiculo);
+                        modeloVehiculos.addElement(nuevoVehiculo);
+                        txtModeloVehiculo.setText("");
+                        txtDatoExtra.setText("");
+                    }
+                } catch (NumberFormatException ex) {
+                    JOptionPane.showMessageDialog(VentanaPrincipal.this, 
+                        "El dato numérico ingresado no es válido.", "Error", JOptionPane.ERROR_MESSAGE);
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(VentanaPrincipal.this, 
+                        ex.getMessage(), "Error al crear", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        });
+
+        // Vincular
+        btnVincular.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Chofer chofer = listaChoferes.getSelectedValue();
+                Vehiculo vehiculo = listaVehiculos.getSelectedValue();
+
+                if (chofer == null || vehiculo == null) {
+                    JOptionPane.showMessageDialog(VentanaPrincipal.this, 
+                        "Seleccione un chofer y un vehículo.", "Aviso", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
+
+                if (empresa.vincularChoferVehiculo(chofer, vehiculo)) {
+                    JOptionPane.showMessageDialog(VentanaPrincipal.this, 
+                        "¡Chofer vinculado correctamente!", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+                    listaChoferes.repaint();
+                } else {
+                    JOptionPane.showMessageDialog(VentanaPrincipal.this, 
+                        "No se puede vincular: La categoría del chofer no habilita este vehículo.", 
+                        "Habilitación no válida", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        });
+
+        // Desvincular
+        btnDesvincular.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Chofer chofer = listaChoferes.getSelectedValue();
+                if (chofer == null) {
+                    JOptionPane.showMessageDialog(VentanaPrincipal.this, 
+                        "Seleccione un chofer para desvincular.", "Aviso", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
+
+                empresa.desvincularChofer(chofer);
+                JOptionPane.showMessageDialog(VentanaPrincipal.this, 
+                    "Chofer desvinculado.", "Información", JOptionPane.INFORMATION_MESSAGE);
+                listaChoferes.repaint();
+            }
+        });
+    }
+}

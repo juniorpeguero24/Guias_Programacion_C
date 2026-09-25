@@ -1,0 +1,6 @@
+package paquete;
+
+public abstract class Cofre {
+
+	public abstract void recibePersonaje(Personaje p);
+}

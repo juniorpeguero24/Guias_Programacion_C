@@ -1,0 +1,15 @@
+package paquete;
+
+public class Zafiro extends Gema {
+
+	@Override
+	protected String combinar(Gema otra) {
+		return otra.combinarConZafiro(this);
+	}
+
+	@Override
+	protected String combinarConRubi(Gema otra) {
+		return null;
+	}
+
+}

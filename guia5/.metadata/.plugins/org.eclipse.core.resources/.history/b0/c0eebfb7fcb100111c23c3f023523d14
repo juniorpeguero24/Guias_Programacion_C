@@ -1,0 +1,31 @@
+package paquete;
+
+import interfaces.Trabajable;
+
+public abstract class Artesano implements Trabajable {
+	protected String nombre;
+	
+	public Artesano(String nombre) {
+		this.nombre = nombre;
+	}
+
+	@Override
+	public String conMadera(Material mat) {
+		return null;
+	}
+
+	@Override
+	public String conMetal(Material mat) {
+		return null;
+	}
+
+	@Override
+	public String trabajar(Material mat) {
+		return null;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+}

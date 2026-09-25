@@ -1,0 +1,5 @@
+package paquete;
+
+public class Madera extends Material {
+	protected String tipo;
+}

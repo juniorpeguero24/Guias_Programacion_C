@@ -1,0 +1,17 @@
+package paquete;
+
+import java.util.HashMap;
+
+public class Equipo {
+	private HashMap<String,Jugador> jugadores;
+	
+	public Equipo() {
+		jugadores=new HashMap<>();
+	}
+
+	
+	public HashMap<String, Jugador> getJugadores() {
+		return jugadores;
+	}
+	
+}

@@ -1,0 +1,26 @@
+package paquete;
+
+public class Tierra extends ElementoDecorator {
+
+	public Tierra(Personaje personajeEvoltorio) {
+		super(personajeEvoltorio);
+	}
+
+	@Override
+	protected double getArmadura() {
+		return super.getArmadura()*1.25;
+	}
+
+	@Override
+	protected double getAtaqueDistante() {
+		return super.getAtaqueDistante()*0.7;
+	}
+
+	@Override
+	protected double getAtaqueCorto() {
+		return super.getAtaqueCorto()*0.8;
+	}
+	
+	
+
+}

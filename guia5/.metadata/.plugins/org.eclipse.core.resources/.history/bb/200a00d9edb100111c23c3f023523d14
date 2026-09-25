@@ -1,0 +1,8 @@
+package interfaces;
+
+public interface Movible {
+	double getPosx();
+	double getPosy();
+	void setXY(double ,double);
+	void incrementaPos()
+}

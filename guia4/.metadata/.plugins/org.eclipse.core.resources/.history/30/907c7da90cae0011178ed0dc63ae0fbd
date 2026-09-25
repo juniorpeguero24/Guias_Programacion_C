@@ -1,0 +1,47 @@
+package paquete;
+
+public class Camion extends Vehiculo{
+	protected double tara,cargaMax;
+	protected Acoplado acoplado=null;
+	
+	public Camion(String modelo,double tara,double cargaMax) throws Exception {
+		super(modelo);
+		//tengo paja de hacer Throw Excepcion pero suponete que hay
+		this.tara=tara;
+		this.cargaMax=cargaMax;
+	}
+
+	public void asignarAcoplado(Acoplado a) {
+		if (acoplado != null && !a.isEnUso()) {
+			acoplado=a;
+			acoplado.setEnUso(true);
+		}
+	}
+	
+	public void desacoplar() {
+		if (acoplado != null) {
+			acoplado.setEnUso(false);
+			acoplado=null;
+		}
+	}
+
+	@Override
+	public boolean aceptoChofer(Chofer c) {
+		if (c == null || c.getCategoria() == null)
+			return false;
+		return c.getCategoria().isHabilitaCamion();
+	}
+
+	public double getTara() {
+		return tara;
+	}
+
+	public double getCargaMax() {
+		return cargaMax;
+	}
+
+	public Acoplado getAcoplado() {
+		return acoplado;
+	}
+		
+}

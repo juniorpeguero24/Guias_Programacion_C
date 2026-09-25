@@ -1,0 +1,5 @@
+package modelo;
+
+public class Libro extends Padre implements Prestable{
+
+}

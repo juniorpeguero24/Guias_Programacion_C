@@ -1,0 +1,21 @@
+package paquete;
+
+public class Mago extends Personaje {
+
+	@Override
+	protected double getArmadura() {
+		return 500;
+	}
+
+	@Override
+	protected double getAtaqueDistante() {
+		return 70;
+	}
+
+	@Override
+	protected double getAtaqueCorto() {
+		return 50;
+	}
+	@Override
+	public String toString() { return "Mago"; }
+}

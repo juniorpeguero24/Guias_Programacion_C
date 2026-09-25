@@ -1,0 +1,34 @@
+package paquete;
+
+public class Rubi extends Gema {
+
+	public Rubi(String tipo) {
+		super(tipo);
+	}
+
+	@Override
+	public String combinar(Gema otra) {
+		return otra.combinarConRubi(this);
+	}
+
+	@Override
+	protected String combinarConRubi(Rubi rubi) {
+		return "Lluvia de fuego";
+	}
+
+	@Override
+	protected String combinarConZafiro(Zafiro zafiro) {
+		return "Erupcion volcanica";
+	}
+
+	@Override
+	protected String combinarConEsmeralda(Esmeralda esmeralda) {
+		return "Terremoto";
+	}
+
+	@Override
+	protected String combinarConDiamante(Diamante diamante) {
+		return "Tormenta de rayos";
+	}
+	
+}

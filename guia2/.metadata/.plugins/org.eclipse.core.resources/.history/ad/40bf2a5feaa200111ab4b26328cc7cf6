@@ -1,0 +1,7 @@
+package paquete;
+
+import java.util.HashMap;
+
+public class Agenda {
+	private HashMap<String,Contacto> contacto;
+}

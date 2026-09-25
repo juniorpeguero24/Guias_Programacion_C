@@ -1,0 +1,45 @@
+package paquete;
+
+public abstract class Automovil {
+	private String patente;
+	protected double velocidad;
+	protected double velocidadMaxima;
+	private int marcha;
+	
+	public Automovil(String patente,double velmax) {
+		this.patente=patente;
+		this.velocidadMaxima=velmax;
+		this.velocidad=0;
+		this.marcha=0;
+	}
+	
+	public Automovil(String patente) {
+		this(patente,160.0);
+	}
+
+	public int getMarcha() {
+		return marcha;
+	}
+
+	protected void setMarcha(int nuevaMarcha) {
+		if (nuevaMarcha >= -1 && nuevaMarcha<=5)
+			this.marcha = nuevaMarcha;
+	}
+
+	public String getPatente() {
+		return patente;
+	}
+
+	public double getVelocidad() {
+		return velocidad;
+	}
+	
+	public abstract void acelerar(double vel);
+	
+	public abstract void frenar(double vel);
+	
+	@Override
+	public String toString() {
+	    return "Patente: " + patente + " | Velocidad: " + velocidad + " km/h | Marcha: " + marcha;
+	}
+}

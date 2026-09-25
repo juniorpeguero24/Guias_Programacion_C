@@ -1,0 +1,5 @@
+package paquete;
+
+public class Juguetero extends Artesano{
+
+}
