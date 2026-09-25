@@ -13,6 +13,7 @@ public class CuentaBancaria {
         if (titular == null || titular.isEmpty())
             throw new TitularInvalidoException("Titular distinto de nulo o vacio.");
         this.titular=titular;
+        this.saldo=0;
     }
 
     public void depositar(double cantidad) throws DepositoInvalidoException {
@@ -32,6 +33,12 @@ public class CuentaBancaria {
 
     public double getSaldo() {
         return saldo;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Titular: "+titular+" Saldo: $"+saldo;
     }
 
     public String getTitular() {

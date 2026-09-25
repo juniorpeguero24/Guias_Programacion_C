@@ -25,5 +25,6 @@
    <list n="listOfChildren">
       <hash><url n="URL" path="ej1/ej1.jpr"/></hash>
       <hash><url n="URL" path="ej2/ej2.jpr"/></hash>
+      <hash><url n="URL" path="ej3/ej3.jpr"/></hash>
    </list>
 </jws:workspace>
