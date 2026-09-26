@@ -26,5 +26,9 @@
       <hash><url n="URL" path="ej1/ej1.jpr"/></hash>
       <hash><url n="URL" path="ej2/ej2.jpr"/></hash>
       <hash><url n="URL" path="ej3/ej3.jpr"/></hash>
+      <hash><url n="URL" path="ej4/ej4.jpr"/></hash>
+      <hash><url n="URL" path="ej5/ej5.jpr"/></hash>
+      <hash><url n="URL" path="ej6/ej6.jpr"/></hash>
+      <hash><url n="URL" path="ej7/ej7.jpr"/></hash>
    </list>
 </jws:workspace>
