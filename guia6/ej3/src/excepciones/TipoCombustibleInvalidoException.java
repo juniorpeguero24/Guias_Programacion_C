@@ -1,10 +1,11 @@
 package excepciones;
 
-public class TipoCombustibleInvalidoException extends Exception{
-    @SuppressWarnings("compatibility:1517111347901476305")
+public class TipoCombustibleInvalidoException extends CargaInvalidaException{
+    @SuppressWarnings("compatibility:-4484771662921236666")
     private static final long serialVersionUID = 1L;
 
-    public TipoCombustibleInvalidoException(String string) {
-        super("\n[ERROR] Combustible desconocido: "+string);
+
+    public TipoCombustibleInvalidoException(String msj, String combustible, double cantidaRequerida,double cantidaDisponible) {
+        super(msj, combustible, cantidaRequerida, cantidaDisponible);
     }
 }

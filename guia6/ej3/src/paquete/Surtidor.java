@@ -1,6 +1,7 @@
 package paquete;
 
 import excepciones.CargaInvalidaException;
+import excepciones.FaltaCombustibleException;
 import excepciones.TipoCombustibleInvalidoException;
 
 public class Surtidor {
@@ -11,27 +12,83 @@ public class Surtidor {
     private final double MAX=20000;
 
     public Surtidor() {
-        this.cantDiesel=this.cantPremium=this.cantSuper=MAX;
+        this.cantDiesel=MAX;
+        this.cantPremium=MAX;
+        this.cantSuper=MAX;
     }
     
-    public void cargarCombustible(String combustible,double cantidad) throws TipoCombustibleInvalidoException,
+    public void cargarCombustible(String combustible,double cantidad)throws TipoCombustibleInvalidoException,
                                                                               CargaInvalidaException {
         if (combustible.toUpperCase().equals("DIESEL"))
-            cargaDiesel(cantidad);
+            cargaDiesel(cantidad,combustible);
         else if (combustible.toUpperCase().equals("PREMIUM"))
-            cargaPremium(cantidad);
+            cargaPremium(cantidad,combustible); 
         else if (combustible.toUpperCase().equals("SUPER"))
-            cargaSuper(cantidad);
+            cargaSuper(cantidad,combustible);
         else
-            throw new TipoCombustibleInvalidoException(combustible);
+            throw new TipoCombustibleInvalidoException("\n[ERROR] Combustible invalido. ",combustible,cantidad,0);
     }
 
-    private void cargaDiesel(double cantidad) {
+    private void cargaDiesel(double cantidad, String combustible) throws CargaInvalidaException {
+        if (cantidad <= 0)
+            throw new CargaInvalidaException("\n[ERROR] Carga Invalida. ",combustible,cantidad,this.cantDiesel);
+        if (cantidad > this.cantDiesel){
+            double disponible = this.cantDiesel;
+            this.cantDiesel=0;
+            throw new FaltaCombustibleException("\n[ERROR] Falta combustible. ",combustible,cantidad,disponible);
+        }
+        this.cantDiesel -= cantidad;
     }
 
-    private void cargaPremium(double cantidad) {
+    private void cargaPremium(double cantidad, String combustible) throws CargaInvalidaException {
+        if (cantidad <= 0)
+            throw new CargaInvalidaException("\n[ERROR] Carga Invalida. ",combustible,cantidad,this.cantPremium);
+        if (cantidad > this.cantPremium){
+            double disponible=this.cantPremium;
+            this.cantPremium=0;
+            throw new FaltaCombustibleException("\n[ERROR] Falta combustible. ",combustible,cantidad,disponible);
+        }
+        this.cantPremium -= cantidad;
     }
 
-    private void cargaSuper(double cantidad) {
+    private void cargaSuper(double cantidad, String combustible) throws CargaInvalidaException {
+        if (cantidad <= 0)
+            throw new CargaInvalidaException("\n[ERROR] Carga Invalida. ",combustible,cantidad,this.cantSuper);
+        if (cantidad > this.cantSuper){
+            double disponible=this.cantSuper;
+            this.cantSuper=0;
+            throw new FaltaCombustibleException("\n[ERROR] Falta combustible. ",combustible,cantidad,disponible);
+        }
+        this.cantSuper -= cantidad;
+    }
+    
+    public void llenarDiesel(){
+        this.cantDiesel=MAX;
+    }
+    public void llenarPremium() {
+        this.cantPremium = MAX;
+    }
+    public void llenarSuper(){
+        this.cantSuper=MAX;
+    }
+
+    public double getCantDiesel() {
+        return cantDiesel;
+    }
+
+    public double getCantPremium() {
+        return cantPremium;
+    }
+
+    public double getCantSuper() {
+        return cantSuper;
+    }
+
+
+    @Override
+    public String toString() {
+        return "\nDiesel: "+cantDiesel+"\n"+
+            "\nSuper: "+cantSuper+"\n"+
+            "\nPremium: "+cantPremium+"\n";
     }
 }
