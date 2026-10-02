@@ -1,6 +1,6 @@
 package paquete;
 
-public class CuentaUniversitaria extends Cuenta_Bancaria{
+public class CuentaUniversitaria extends CuentaBancaria {
 	private static final double tope=1000;
 	private double diarioExtraido;
 	

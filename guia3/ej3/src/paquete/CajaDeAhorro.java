@@ -1,6 +1,6 @@
 package paquete;
 
-public class CajaDeAhorro extends Cuenta_Bancaria{
+public class CajaDeAhorro extends CuentaBancaria {
 	private static final int cantExtractMax=10;
 	private int cantActual;
 	

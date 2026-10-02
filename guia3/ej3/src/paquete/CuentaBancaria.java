@@ -1,10 +1,10 @@
 package paquete;
 
-public abstract class Cuenta_Bancaria {
+public abstract class CuentaBancaria {
 		private final String titular;
 		protected double saldo;
 		
-		public Cuenta_Bancaria(String titular) {
+		public CuentaBancaria(String titular) {
 			this.titular=titular;
 			this.saldo=0.0;
 		}

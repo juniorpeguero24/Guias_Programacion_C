@@ -1,6 +1,6 @@
 package paquete;
 
-public class CuentaCorriente extends Cuenta_Bancaria{
+public class CuentaCorriente extends CuentaBancaria {
 	private double topeDesc;
 	
 	public CuentaCorriente(String titular,double topeDesc) {
