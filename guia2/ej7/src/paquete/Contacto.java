@@ -33,7 +33,9 @@ public class Contacto {
 	}
 	
 	public String toString() {
-		return ("Contacto: "+nombre+" Telefono: "+telefono+" Celulares: "+celulares.toString());
+		return ("Contacto: "+nombre
+				+"\nTelefono: "+telefono
+				+"\nCelulares: "+celulares);
 	}
 	
 }

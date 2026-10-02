@@ -7,8 +7,7 @@ public class Surtidor {
 	private final int maximaCarga=20000;
 	
 	public Surtidor() {
-		siguienteNro++;
-		this.nroS=siguienteNro;
+		this.nroS=++siguienteNro;
 		this.cantGasoil=this.cantPremium=this.cantSuper=maximaCarga;
 		this.ventGasoil=this.ventPremium=this.ventSuper=0;
 	}
@@ -92,6 +91,12 @@ public class Surtidor {
 	public int getNroS() {
 		return nroS;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "Surtidor " + nroS +
+				"\ncantGasoil=" + cantGasoil +
+				"\ncantPremium=" + cantPremium +
+				"\ncantSuper=" + cantSuper;
+	}
 }

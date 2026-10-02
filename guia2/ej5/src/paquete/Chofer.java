@@ -1,8 +1,8 @@
 package paquete;
 
 public class Chofer {
-	private Categoria categoria;
-	private Domicilio domicilio;
+	private final Categoria categoria;
+	private final Domicilio domicilio;
 	private String nombre;
 	private Colectivo colectivo;
 	
@@ -21,18 +21,12 @@ public class Chofer {
 	public void desvincularColectivo() {
 		this.colectivo=null;
 	}
-	
+
 	public Categoria getCategoria() {
 		return categoria;
 	}
-	public void setCategoria(Categoria categoria) {
-		this.categoria = categoria;
-	}
 	public Domicilio getDomicilio() {
 		return domicilio;
-	}
-	public void setDomicilio(Domicilio domicilio) {
-		this.domicilio = domicilio;
 	}
 	public Colectivo getColectivo() {
 		return colectivo;
@@ -47,7 +41,8 @@ public class Chofer {
 	@Override
 	public String toString() {
 		String infoColectivo=(colectivo != null) ? colectivo.toString(): "Sin colectivo asignado";
-		return "Chofer [categoria=" + categoria + ", domicilio=" + domicilio + ", nombre=" + nombre + " | "+infoColectivo;
+		return "Categoria= " + categoria + ", domicilio= "
+				+ domicilio + ", nombre = " + nombre + " | "+infoColectivo;
 	}
 	
 	

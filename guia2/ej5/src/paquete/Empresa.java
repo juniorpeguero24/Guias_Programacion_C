@@ -3,12 +3,18 @@ package paquete;
 import java.util.ArrayList;
 
 public class Empresa {
-	public ArrayList<Colectivo> colectivos;
-	public ArrayList<Chofer> choferes;
+	private ArrayList<Colectivo> colectivos;
+	private ArrayList<Chofer> choferes;
+	private ArrayList<Categoria> categorias;
 	
 	public Empresa(){
 		this.colectivos=new ArrayList<>();
 		this.choferes=new ArrayList<>();
+		this.categorias = new ArrayList<>();
+	}
+
+	public void agregarCategoria(Categoria categoria) {
+		this.categorias.add(categoria);
 	}
 	
 	public void agregarColectivo(Colectivo c) {
@@ -28,7 +34,15 @@ public class Empresa {
 		}
 		return cont;
 	}
-	
+
+	public void asignarColectivoAChofer(Chofer chof,Colectivo col) {
+		chof.asignarColectivo(col);
+	}
+
+	public void desvincularColectivoDeChofer(Chofer chofer) {
+		chofer.desvincularColectivo();
+	}
+
 	public int totalColectivos() {
 		return colectivos.size();
 	}
@@ -42,9 +56,9 @@ public class Empresa {
 		}
 	}
 	
-	public void mostrarCategoriaSueldoSuperior(double monto,ArrayList<Categoria> categorias) {
+	public void mostrarCategoriaSueldoSuperior(double monto) {
 		System.out.println("Categorias con sueldo superior a $"+monto);
-		for(Categoria cat:categorias) {
+		for(Categoria cat: this.categorias) {
 			if (cat.getSueldo()>monto) {
 				System.out.println(cat.getNombrecategoria()+" $"+cat.getSueldo());
 			}
@@ -65,5 +79,17 @@ public class Empresa {
 		for (Chofer ch:choferes) {
 			System.out.println(ch);
 		}
+	}
+
+	public ArrayList<Colectivo> getColectivos() {
+		return colectivos;
+	}
+
+	public ArrayList<Chofer> getChoferes() {
+		return choferes;
+	}
+
+	public ArrayList<Categoria> getCategorias() {
+		return categorias;
 	}
 }

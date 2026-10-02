@@ -30,4 +30,11 @@ public class Empleado {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	public String toString() {
+		return "Empleado " +
+				"nombre='" + nombre + '\'' +
+				", telefono='" + telefono + '\'' +
+				", email='" + email + '\'';
+	}
 }

@@ -4,7 +4,7 @@ public class Producto {
 	
 	private int cod;
 	private String descripcion;
-	private double precio;
+	private double precioUnitario;
 	
 	
 	
@@ -12,7 +12,7 @@ public class Producto {
 		super();
 		this.cod = cod;
 		this.descripcion = descripcion;
-		this.precio = precio;
+		this.precioUnitario = precio;
 	}
 
 
@@ -35,14 +35,14 @@ public class Producto {
 
 
 
-	public double getPrecio() {
-		return precio;
+	public double getPrecioUnitario() {
+		return precioUnitario;
 	}
 
 
 
-	public void setPrecio(double precio) {
-		this.precio = precio;
+	public void setPrecioUnitario(double precioUnitario) {
+		this.precioUnitario = precioUnitario;
 	}
 
 
@@ -57,4 +57,10 @@ public class Producto {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	public String toString() {
+		return "cod=" + cod +
+				", descripcion='" + descripcion + '\'' +
+				", precioUnitario=" + precioUnitario;
+	}
 }

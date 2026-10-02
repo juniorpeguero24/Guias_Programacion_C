@@ -6,9 +6,8 @@ public class Colectivo {
 	private int numerointerno;
 	
 	public Colectivo(String modelo) {
-		siguienteNro++;
 		this.modelo=modelo;
-		this.numerointerno=siguienteNro;
+		this.numerointerno=++siguienteNro;
 	}
 	
 	public static int getSiguienteNro() {
@@ -22,7 +21,7 @@ public class Colectivo {
 	}
 	
 	public String toString(){
-		return "Colectivo [Interno: "+numerointerno+", Modelo: "+modelo+"]";
+		return "Interno: "+numerointerno+", Modelo: "+modelo;
 	}
 	
 }
