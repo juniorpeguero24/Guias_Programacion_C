@@ -2,7 +2,7 @@ package modelo;
 
 import javax.swing.SwingUtilities;
 
-import vista.VentanaPrincipal;
+import guia6.ej7.src.vista.VentanaPrincipal;
 
 import java.util.ArrayList;
 
@@ -10,16 +10,16 @@ public class Main {
     public static void main(String[] args) {
         Empresa empresa = new Empresa();
 
-        // 1. Choferes (usando las 4 categorías que ya inicializa Empresa en su constructor)
+        // 1. Choferes (usando las 4 categorï¿½as que ya inicializa Empresa en su constructor)
         ArrayList<Categoria> cats = empresa.getCategorias();
-        empresa.agregarChofer(new Chofer("Carlos Gómez", cats.get(0)));
-        empresa.agregarChofer(new Chofer("Martín Rodríguez", cats.get(0)));
-        empresa.agregarChofer(new Chofer("Lucas Benítez", cats.get(1)));
+        empresa.agregarChofer(new Chofer("Carlos Gï¿½mez", cats.get(0)));
+        empresa.agregarChofer(new Chofer("Martï¿½n Rodrï¿½guez", cats.get(0)));
+        empresa.agregarChofer(new Chofer("Lucas Benï¿½tez", cats.get(1)));
         empresa.agregarChofer(new Chofer("Esteban Quito", cats.get(1)));
-        empresa.agregarChofer(new Chofer("Gonzalo Fernández", cats.get(2)));
+        empresa.agregarChofer(new Chofer("Gonzalo Fernï¿½ndez", cats.get(2)));
         empresa.agregarChofer(new Chofer("Facundo Morales", cats.get(2)));
-        empresa.agregarChofer(new Chofer("Matías Rossi", cats.get(3)));
-        empresa.agregarChofer(new Chofer("Federico Domínguez", cats.get(3)));
+        empresa.agregarChofer(new Chofer("Matï¿½as Rossi", cats.get(3)));
+        empresa.agregarChofer(new Chofer("Federico Domï¿½nguez", cats.get(3)));
 
         // 2. Acoplados: (int tara, int cargaMaxima, int numeroAcoplado, boolean refrigerado)
         empresa.agregarAcoplado(new Acoplado(4, 18, 101, false));
@@ -28,7 +28,7 @@ public class Main {
         empresa.agregarAcoplado(new Acoplado(6, 25, 104, true));
         empresa.agregarAcoplado(new Acoplado(3, 12, 105, false));
 
-        // 3. Vehículos (ColectivoLinea, ColectivoLarga y Camion manejan excepciones)
+        // 3. Vehï¿½culos (ColectivoLinea, ColectivoLarga y Camion manejan excepciones)
         try {
             // ColectivoLinea(String modelo, int cantidadPasajeros)
             empresa.agregarVehiculo(new ColectivoLinea("Mercedes Benz OF1418", 32));
@@ -38,7 +38,7 @@ public class Main {
             // ColectivoLarga(String modelo, int cantidadPasajeros, boolean cocheCama)
             empresa.agregarVehiculo(new ColectivoLarga("Scania K400", 45, true));
             empresa.agregarVehiculo(new ColectivoLarga("Marcopolo Paradiso 1200", 50, false));
-            empresa.agregarVehiculo(new ColectivoLarga("Busscar Panorâmico", 42, true));
+            empresa.agregarVehiculo(new ColectivoLarga("Busscar Panorï¿½mico", 42, true));
 
             // Camion(String modelo, double tara, double cargaMax)
             empresa.agregarVehiculo(new Camion("Iveco Stralis", 8.0, 30.0));
@@ -49,7 +49,7 @@ public class Main {
             e.printStackTrace();
         }
 
-        // 4. Lanzamiento de la interfaz gráfica
+        // 4. Lanzamiento de la interfaz grï¿½fica
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {

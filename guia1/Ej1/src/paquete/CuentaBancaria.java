@@ -5,7 +5,6 @@ public class CuentaBancaria {
 	private double saldo;
 	private String titular;
 	
-	
 	public CuentaBancaria(double saldo, String titular) {
 		super();
 		this.saldo = saldo;
@@ -22,26 +21,32 @@ public class CuentaBancaria {
 		this.saldo = saldo;
 	}
 
-
 	public String getTitular() {
 		return titular;
 	}
 
-
 	public void setTitular(String titular) {
-		this.titular = titular;
+		if (titular != null) {
+			this.titular = titular;
+		}else
+			throw new IllegalArgumentException("\nERROR titular distinto de null.");
 	}
 
 	public void depositar(double cantidad) {
-		this.saldo = this.saldo + cantidad;
+		if (cantidad > 0) {
+			this.saldo = this.saldo + cantidad;
+		}else
+			throw new IllegalArgumentException("\nERROR cantidad menor a cero.");
+
 	}
 	
 	public void extraer(double cantidad) {
+
 		this.saldo = this.saldo - cantidad;
 	}
 	
 	public CuentaBancaria() {
-		// TODO Auto-generated constructor stub
+		this.saldo=0;
+		this.titular="";
 	}
-
 }

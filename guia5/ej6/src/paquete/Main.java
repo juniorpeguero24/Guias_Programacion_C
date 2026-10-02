@@ -2,7 +2,7 @@ package paquete;
 
 import java.util.ArrayList;
 import javax.swing.SwingUtilities;
-import vista.VentanaPrincipal;
+import guia6.ej7.src.vista.VentanaPrincipal;
 
 public class Main {
 

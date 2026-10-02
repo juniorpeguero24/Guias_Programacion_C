@@ -31,8 +31,7 @@ public class Imagen {
     }
 
     public void etiquetarPersona(Persona participante) {
-        this.personasenfoto[this.cantidaPersonas] = participante;
-        this.cantidaPersonas++;
+        this.personasenfoto[this.cantidaPersonas++] = participante;
     }
 
     public int getCantidaPersonas() {

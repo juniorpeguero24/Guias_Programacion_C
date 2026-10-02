@@ -3,11 +3,13 @@ package paquete;
 public class Principal {
 
 	public static void main(String[] args) {
-		
-		i1.etiquetarPersona(p1);
+
+        Imagen i1;
+        Persona p1;
+        i1.etiquetarPersona(p1);
 		i1.etiquetarPersona(p2);
-		
-		i3.agregarComentario("Que hermosa foto");
+
+        i3.agregarComentario("Que hermosa foto");
 		
 		int min= Math.min(p1.getEdad(), p2.getEdad(), p3.getEdad());
 		

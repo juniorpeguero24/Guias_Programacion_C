@@ -3,7 +3,7 @@ package paquete;
 public class Principal {
 
 	public static void main(String[] args) {
-		CuentaBancaria unaCuenta = new CuentaBancaria(0.0, "Sin Titular");
+		CuentaBancaria unaCuenta = new CuentaBancaria();
 		
 		unaCuenta.depositar(1250);
 		
