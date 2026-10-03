@@ -126,7 +126,7 @@ public class Empresa {
 		return choferes;
 	}
 
-	public ArrayList<Vehiculo> getVehiculos() {
+	public ArrayList<Vehiculo> agregarColectivo() {
 		return vehiculos;
 	}
 

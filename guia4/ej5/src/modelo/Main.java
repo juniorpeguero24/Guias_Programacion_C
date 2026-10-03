@@ -1,9 +1,5 @@
 package modelo;
 
-import javax.swing.SwingUtilities;
-
-import ventana.VentanaPrincipal;
-
 import java.util.ArrayList;
 
 public class Main {
@@ -31,20 +27,20 @@ public class Main {
         // 3. Veh�culos (ColectivoLinea, ColectivoLarga y Camion manejan excepciones)
         try {
             // ColectivoLinea(String modelo, int cantidadPasajeros)
-            empresa.agregarVehiculo(new ColectivoLinea("Mercedes Benz OF1418", 32));
-            empresa.agregarVehiculo(new ColectivoLinea("Agrale MT 17.0", 28));
-            empresa.agregarVehiculo(new ColectivoLinea("Scania K250 UB", 35));
+            empresa.agregarColectivo(new ColectivoLinea("Mercedes Benz OF1418", 32));
+            empresa.agregarColectivo(new ColectivoLinea("Agrale MT 17.0", 28));
+            empresa.agregarColectivo(new ColectivoLinea("Scania K250 UB", 35));
 
             // ColectivoLarga(String modelo, int cantidadPasajeros, boolean cocheCama)
-            empresa.agregarVehiculo(new ColectivoLarga("Scania K400", 45, true));
-            empresa.agregarVehiculo(new ColectivoLarga("Marcopolo Paradiso 1200", 50, false));
-            empresa.agregarVehiculo(new ColectivoLarga("Busscar Panor�mico", 42, true));
+            empresa.agregarColectivo(new ColectivoLarga("Scania K400", 45, true));
+            empresa.agregarColectivo(new ColectivoLarga("Marcopolo Paradiso 1200", 50, false));
+            empresa.agregarColectivo(new ColectivoLarga("Busscar Panor�mico", 42, true));
 
             // Camion(String modelo, double tara, double cargaMax)
-            empresa.agregarVehiculo(new Camion("Iveco Stralis", 8.0, 30.0));
-            empresa.agregarVehiculo(new Camion("Scania R500 V8", 9.0, 28.0));
-            empresa.agregarVehiculo(new Camion("Mercedes-Benz Actros", 8.5, 26.0));
-            empresa.agregarVehiculo(new Camion("Volvo FH 540", 9.2, 32.0));
+            empresa.agregarCamion(new Camion("Iveco Stralis", 8.0, 30.0));
+            empresa.agregarCamion(new Camion("Scania R500 V8", 9.0, 28.0));
+            empresa.agregarCamion(new Camion("Mercedes-Benz Actros", 8.5, 26.0));
+            empresa.agregarCamion(new Camion("Volvo FH 540", 9.2, 32.0));
         } catch (Exception e) {
             e.printStackTrace();
         }
