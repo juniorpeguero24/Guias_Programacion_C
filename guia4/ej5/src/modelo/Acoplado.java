@@ -1,10 +1,21 @@
 package modelo;
 
 public class Acoplado {
-	public int tara, cargaMaxima,numeroAcoplado;
+	public double tara, cargaMaxima;
+	public int numeroAcoplado;
 	public boolean refrigerado,enUso=false;
-	
-	public Acoplado(int tara, int cargaMaxima, int numeroAcoplado, boolean refrigerado) {
+
+    /**
+	 * pre: los enteros mayores a cero
+	 *
+	 * post: acoplado creado
+	 *
+     * @param tara peso
+     * @param cargaMaxima carga maxima
+     * @param numeroAcoplado numero identificatorio del acoplado
+     * @param refrigerado si es refrigerator o no
+     */
+	public Acoplado(double tara, double cargaMaxima, int numeroAcoplado, boolean refrigerado) {
 		this.tara = tara;
 		this.cargaMaxima = cargaMaxima;
 		this.numeroAcoplado = numeroAcoplado;
@@ -15,11 +26,11 @@ public class Acoplado {
 		this.enUso = enUso;
 	}
 
-	public int getTara() {
+	public double getTara() {
 		return tara;
 	}
 
-	public int getCargaMaxima() {
+	public double getCargaMaxima() {
 		return cargaMaxima;
 	}
 

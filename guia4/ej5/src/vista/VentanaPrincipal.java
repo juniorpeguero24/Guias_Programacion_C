@@ -1,4 +1,6 @@
-package ventana;
+package vista;
+
+import modelo.Empresa;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -7,7 +9,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.GridLayout;
-import java.awt.FlowLayout;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
@@ -15,7 +16,6 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.border.TitledBorder;
 import javax.swing.JRadioButton;
-import javax.swing.JTabbedPane;
 
 public class VentanaPrincipal extends JFrame {
 
@@ -74,27 +74,13 @@ public class VentanaPrincipal extends JFrame {
 	private JPanel panel_22;
 	private JPanel panel_23;
 	private JPanel panel_24;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					VentanaPrincipal frame = new VentanaPrincipal();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	private Empresa empresa;
 
 	/**
 	 * Create the frame.
 	 */
-	public VentanaPrincipal() {
+	public VentanaPrincipal(Empresa empresa) {
+		this.empresa = empresa;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 907, 635);
 		this.contentPane = new JPanel();

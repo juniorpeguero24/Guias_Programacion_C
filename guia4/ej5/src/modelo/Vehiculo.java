@@ -10,7 +10,7 @@ public abstract class Vehiculo {
 	 * <b>Pre:<\b> Modelo es distinto de NULL y vacio.
 	 * <b>Post:<\b> Se ha creado un nuevo vehiculo con modelo y numero de interno.
 	 * 
-	 * @param modelo
+	 * @param modelo modelo identificatorio del vehiculo
 	 */
 	public Vehiculo(String modelo) throws Exception{
 		if (modelo != null && modelo != "") {

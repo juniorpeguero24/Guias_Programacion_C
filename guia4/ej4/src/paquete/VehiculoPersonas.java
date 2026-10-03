@@ -8,7 +8,6 @@ public abstract class VehiculoPersonas extends Vehiculo {
 
     /**
      * Inicializa los atributos comunes para vehiculos de pasajeros.
-     * 
      * <b>Precondicion:</b> La patente no debe ser nula ni vacia; plazas debe ser mayor a 0.
      * <b>Postcondicion:</b> Vehiculo creado con su capacidad de asientos establecida.
      * 

@@ -2,7 +2,7 @@ package modelo;
 
 import javax.swing.SwingUtilities;
 
-import guia6.ej7.src.vista.VentanaPrincipal;
+import ventana.VentanaPrincipal;
 
 import java.util.ArrayList;
 
@@ -49,13 +49,6 @@ public class Main {
             e.printStackTrace();
         }
 
-        // 4. Lanzamiento de la interfaz gr�fica
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                VentanaPrincipal ventana = new VentanaPrincipal(empresa);
-                ventana.setVisible(true);
-            }
-        });
+
     }
 }

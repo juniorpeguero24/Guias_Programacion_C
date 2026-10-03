@@ -3,6 +3,7 @@ package paquete;
 public abstract class Permanente extends Empleado{
 		protected int antiguedad;
 		protected double sueldoBase;
+
 		private static final double APORTE_JUBILATORIO = 0.11;
 	    private static final double OBRA_SOCIAL = 0.06;
 		

@@ -12,41 +12,10 @@ public class Equipo {
         this.jugadores = new ArrayList<>();
     }
 
-    private String validarRango(String tipo, double velocidad, double potencia) {
-        if (velocidad < 0.0 || velocidad > 1.0) {
-            return "Imposible crear un " + tipo + " con velocidad = " + velocidad;
+    public void agregarJugador(Jugador jugador) {
+        if (jugador != null) {
+            this.jugadores.add(jugador);
         }
-        if (potencia < 0.0 || potencia > 1.0) {
-            return "Imposible crear un " + tipo + " con potencia = " + potencia;
-        }
-        return null;
-    }
-
-    public String agregaDelantero(String nombre, double velocidad, double potencia) {
-        String error = validarRango("delantero", velocidad, potencia);
-        if (error != null) {
-            return error;
-        }
-        jugadores.add(new Delantero(nombre, velocidad, potencia));
-        return "Jugador agregado";
-    }
-
-    public String agregaDefensor(String nombre, double velocidad, double potencia) {
-        String error = validarRango("defensor", velocidad, potencia);
-        if (error != null) {
-            return error;
-        }
-        jugadores.add(new Defensor(nombre, velocidad, potencia));
-        return "Jugador agregado";
-    }
-
-    public String agregaArquero(String nombre, double velocidad, double potencia) {
-        String error = validarRango("arquero", velocidad, potencia);
-        if (error != null) {
-            return error;
-        }
-        jugadores.add(new Arquero(nombre, velocidad, potencia));
-        return "Jugador agregado";
     }
 
     public void eliminaJugador(Jugador jugador) {

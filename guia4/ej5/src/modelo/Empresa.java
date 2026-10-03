@@ -4,22 +4,32 @@ import java.util.ArrayList;
 
 public class Empresa {
 	protected ArrayList<Chofer> choferes;
-	protected ArrayList<Vehiculo> vehiculos;
+	protected ArrayList<Colectivo> colectivos;
+	protected ArrayList<Camion> camiones;
 	protected ArrayList<Categoria> categorias;
 	protected ArrayList<Acoplado> acoplados;
 	
 	public Empresa() {
 		choferes=new ArrayList<>();
-		vehiculos=new ArrayList<>();
+		colectivos=new ArrayList<>();
 		categorias=new ArrayList<>();
 		acoplados=new ArrayList<>();
+		camiones = new ArrayList<>();
 		// Creamos las 4 categorias fijas del sistema
 	    categorias.add(new Categoria("Categoría 1", 10000.0, true, false, false));
 	    categorias.add(new Categoria("Categoría 2", 15000.0, true, true, false));
 	    categorias.add(new Categoria("Categoría 3", 15000.0, false, false, true));
 	    categorias.add(new Categoria("Categoría 4", 17000.0, true, true, true));
 	}
-	
+
+	public ArrayList<Colectivo> getColectivos() {
+		return colectivos;
+	}
+
+	public ArrayList<Camion> getCamiones() {
+		return camiones;
+	}
+
 	public int cuantosChoferesCat(Categoria c) {
 		int tot=0;
 		for (Chofer e: choferes)
@@ -35,9 +45,13 @@ public class Empresa {
 				tot++;
 		return tot;
 	}
+
+	public void agregarCamion(Camion c) {
+		camiones.add(c);
+	}
 	
-	public int cantVehiculos() {
-		return vehiculos.size();
+	public int cantColectivos() {
+		return colectivos.size();
 	}
 	
 	public int cantAcoplados() {
@@ -48,8 +62,8 @@ public class Empresa {
 		choferes.add(c);
 	}
 	
-	public void agregarVehiculo(Vehiculo v) {
-		vehiculos.add(v);
+	public void agregarColectivo(Colectivo v) {
+		colectivos.add(v);
 	}
 	
 	public void agregarCategoria(Categoria c) {
@@ -64,8 +78,8 @@ public class Empresa {
 		choferes.remove(c);
 	}
 	
-	public void eliminarVehiculo(Vehiculo v) {
-		vehiculos.remove(v);
+	public void eliminarColectivo(Colectivo v) {
+		colectivos.remove(v);
 	}
 	
 	public void eliminarCategoria(Categoria c) {

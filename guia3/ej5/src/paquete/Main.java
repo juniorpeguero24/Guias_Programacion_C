@@ -1,6 +1,6 @@
 package paquete;
 
-public class Main {
+public class    Main {
 
     public static void main(String[] args) {
         Automovil manual = new AutomovilManual("ABC-123", 180.0);
