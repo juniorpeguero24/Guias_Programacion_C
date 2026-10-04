@@ -10,7 +10,7 @@ public class Arquero extends Personaje{
 	@Override
 	public boolean ataca(Personaje p) {
 		double dist = this.posicion.distancia(p.getPosicion());
- 		if (dist <= 100 && this.cantFlechas > 0) {
+ 		if (dist <= 100 && this.cantFlechas > 0 && !this.equals(p)) {
 			p.recibeDanio(15);
 			this.cantFlechas--;
 			return true;

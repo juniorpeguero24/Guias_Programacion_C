@@ -126,10 +126,6 @@ public class Empresa {
 		return choferes;
 	}
 
-	public ArrayList<Vehiculo> agregarColectivo() {
-		return vehiculos;
-	}
-
 	public ArrayList<Categoria> getCategorias() {
 		return categorias;
 	}
@@ -140,7 +136,7 @@ public class Empresa {
 
 	@Override
 	public String toString() {
-		return "Empresa [choferes=" + choferes + ", vehiculos=" + vehiculos + ", categorias=" 
+		return "Empresa [choferes=" + choferes + ", colectivos=" + colectivos +", camiones: "+camiones+ ", categorias="
 				+ categorias + ", acoplados=" + acoplados + "]";
 	}
 	

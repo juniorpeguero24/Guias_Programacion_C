@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class VentanaPrincipal {
+public class VentanaPrincipal extends JFrame{
     private JPanel panel1;
     private JButton btnChofer;
     private JButton camionAcopladoButton;
@@ -24,6 +24,11 @@ public class VentanaPrincipal {
     private DefaultListModel<Camion> modeloListaCamion;
 
     public VentanaPrincipal(Empresa empresa) {
+        setContentPane(panel1);
+        setTitle("Empresa");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        pack();
+        setLocationRelativeTo(null);
         this.empresa = empresa;
         this.modeloListaChofer = new DefaultListModel<>();
         this.listChoferes.setModel(modeloListaChofer);
@@ -68,6 +73,7 @@ public class VentanaPrincipal {
                 Camion camion= listCamiones.getSelectedValue();
                 Acoplado acoplado = listAcoplados.getSelectedValue();
                 empresa.engancharAcoplado(camion, acoplado);
+                actualizarListas();
             }
         });
         asignarButton.addActionListener(new ActionListener() {
@@ -81,11 +87,12 @@ public class VentanaPrincipal {
                     Colectivo colectivo = listColectivos.getSelectedValue();
                     empresa.vincularChoferVehiculo(chofer, colectivo);
                 }else {
-                    JOptionPane.showMessageDialog(null,
+                    JOptionPane.showMessageDialog(VentanaPrincipal.this,
                             "Error, seleccione un vehiculo.",
                             "Error",
                             JOptionPane.ERROR_MESSAGE);
                 }
+                actualizarListas();
             }
         });
     }

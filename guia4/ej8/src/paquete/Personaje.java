@@ -1,13 +1,11 @@
 package paquete;
 
-import interfaces.Movible;
-
 public abstract class Personaje {
 	protected String nombre;
 	protected int vitalidad=500;
-	protected Movible posicion;
+	protected Posicion posicion;
 	
-	public Personaje(String nombre, Movible posicion) {
+	public Personaje(String nombre, Posicion posicion) {
 		this.nombre = nombre;
 		this.posicion = posicion;
 	}
@@ -20,7 +18,7 @@ public abstract class Personaje {
 		return vitalidad;
 	}
 
-	public Movible getPosicion() {
+	public Posicion getPosicion() {
 		return posicion;
 	}
 	
@@ -34,6 +32,5 @@ public abstract class Personaje {
 	public String toString() {
 		return nombre + " HP=" + vitalidad + " Pos=" +posicion;
 	}
-	
-	
+
 }

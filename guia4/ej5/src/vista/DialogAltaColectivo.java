@@ -136,7 +136,7 @@ public class DialogAltaColectivo extends JDialog {
 									}
 								}
 						if (nuevo != null) {
-							empresa.agregarVehiculo(nuevo);
+							empresa.agregarColectivo(nuevo);
 							dispose();
 						}
 					}

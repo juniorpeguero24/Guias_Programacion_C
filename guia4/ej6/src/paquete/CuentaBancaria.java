@@ -1,31 +1,36 @@
 package paquete;
 
+import excepciones.MontoInvalidoException;
+
 public abstract class CuentaBancaria {
-	protected String titular; //quizas persona pero esto si se agranda el sitema
+	protected String titular;
 	protected double saldo=0;
 	
-	public CuentaBancaria(String nombre) throws Exception {
-		if (nombre != null && nombre != "")
+	public CuentaBancaria(String nombre) {
+		if (nombre != null && !nombre.isEmpty())
 			titular=nombre;
 		else
-			throw new Exception("Nombre incorrecto");
+			throw new RuntimeException("Nombre incorrecto");
 	}
 	
-	public final boolean extraer(double monto) {
+	public final boolean extraer(double monto) throws MontoInvalidoException {
 		if (monto > 0 && validaExtraccion(monto)) {
 			saldo -= monto;
 			notificarExtraccion(monto);
 			return true;
-		}
-		return false;
-	}
+		}else
+			throw new MontoInvalidoException("\n ERROR Monto invalido.", monto, this.saldo,this.titular);
+    }
 	
 	protected abstract void notificarExtraccion(double monto);
 
 	protected abstract boolean validaExtraccion(double monto);
 	
-	public void depositar(double monto) {
-		saldo+=monto;
+	public void depositar(double monto) throws MontoInvalidoException {
+        if (monto >= 0) {
+			saldo+=monto;
+        }else
+			throw new MontoInvalidoException("\nERROR Monto invalido", monto, this.titular);
 	}
 
 	public String getTitular() {

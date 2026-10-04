@@ -11,7 +11,7 @@ public class Guerrero extends Personaje{
 
 	@Override
 	public boolean ataca(Personaje p) {
-		if (this.posicion.distancia(p.getPosicion()) <= 5) {
+		if (this.posicion.distancia(p.getPosicion()) <= 5 && !this.equals(p)) {
 			p.recibeDanio(10);
 			return true;
 		}
@@ -28,6 +28,7 @@ public class Guerrero extends Personaje{
 			super.recibeDanio(restante);
 		}
 	}
+
 
 	public int getArmadura() {
 		return armadura;

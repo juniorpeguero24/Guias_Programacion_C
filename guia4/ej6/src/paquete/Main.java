@@ -1,8 +1,8 @@
 package paquete;
 
-import java.awt.EventQueue;
+import ventana.VentanaPrincipal;
 
-import vista.VentanaCuenta;
+import javax.swing.*;
 
 public class Main {
 
@@ -53,22 +53,16 @@ public class Main {
         } catch (Exception e) {
             System.err.println("Error: " + e.getMessage());
         }
-        
-        /**
-    	 * Launch the application.
-    	 */
-    	EventQueue.invokeLater(new Runnable() {
-    		public void run() {
-    			try {
-    				VentanaCuenta frame = new VentanaCuenta(banco);
-    				frame.setVisible(true);
-    			} catch (Exception e) {
-    				e.printStackTrace();
-    			}
-    		}
-    	});
-    	}
 
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                VentanaPrincipal ventana = new VentanaPrincipal(banco);
+                ventana.setVisible(true);
+            }
+        });
     }
+
+}
     
     

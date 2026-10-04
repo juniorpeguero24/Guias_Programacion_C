@@ -12,8 +12,7 @@ public class CuentaCorriente extends CuentaBancaria{
 	}
 	
 	public CuentaCorriente(String nombre) throws Exception {
-		super(nombre);
-		this.topeDescubierto=10000;
+		this(nombre, 10000);
 	}
 
 	@Override
@@ -31,8 +30,10 @@ public class CuentaCorriente extends CuentaBancaria{
 
 	@Override
 	protected void notificarExtraccion(double monto) {
-		// TODO Auto-generated method stub
-		
+        if (monto > saldo) {
+            this.saldo=0;
+			this.topeDescubierto -= (monto - saldo);
+        }
 	}
 
 	@Override

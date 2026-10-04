@@ -1,5 +1,8 @@
 package modelo;
 
+import ventana.VentanaPrincipal;
+
+import javax.swing.*;
 import java.util.ArrayList;
 
 public class Main {
@@ -44,6 +47,15 @@ public class Main {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+
+            SwingUtilities.invokeLater(new Runnable() {
+                @Override
+                public void run() {
+                    VentanaPrincipal ventana = new VentanaPrincipal(empresa);
+                    ventana.setVisible(true);
+                }
+            });
 
 
     }

@@ -8,7 +8,7 @@ public class Caballero extends Personaje{
 
 	@Override
 	public boolean ataca(Personaje p) {
-		if (this.posicion.distancia(p.getPosicion()) <= 10) {
+		if (this.posicion.distancia(p.getPosicion()) <= 10 && !this.equals(p)) {
 			p.recibeDanio(10);
 			return true;
 		}
