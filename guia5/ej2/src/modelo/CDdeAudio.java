@@ -60,5 +60,4 @@ public class CDdeAudio implements Prestable,Comparable<CDdeAudio> {
 		return (res != 0 ? res: (this.titulo.compareTo(arg0.getTitulo())));
 	}
 	
-	
 }

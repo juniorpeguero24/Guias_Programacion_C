@@ -1,0 +1,33 @@
+package paquete;
+
+import interfaces.Movible;
+
+public class Arquero extends Personaje{
+	protected int cantFlechas = 20;
+	
+	public Arquero(String nombre, Movible posicion) {
+		super(nombre, posicion);
+	}
+
+	@Override
+	public boolean ataca(Personaje p) {
+		double dist = this.posicion.distancia(p.getPosicion());
+ 		if (dist <= 100 && this.cantFlechas > 0 && !this.equals(p)) {
+			p.recibeDanio(15);
+			this.cantFlechas--;
+			return true;
+		}else
+			if (dist <= 5) {
+				p.recibeDanio(5);
+				return true;
+			}
+		return false;
+	}
+
+	@Override
+	public String toString() {
+		return "Arquero" + super.toString() + "Flechas=" + cantFlechas ;
+	}
+	
+	
+}

@@ -9,7 +9,7 @@ import javax.swing.border.EmptyBorder;
 
 import paquete.Personaje;
 import paquete.PersonajeFactory;
-import paquete.Posicion;
+import paquete.Movible;
 
 import javax.swing.JScrollPane;
 import javax.swing.JList;

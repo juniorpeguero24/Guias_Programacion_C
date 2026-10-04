@@ -5,6 +5,8 @@ import excepciones.FaltaCombustibleException;
 import excepciones.TipoCombustibleInvalidoException;
 
 public class Surtidor {
+    public static int nro=0;
+    private int ns;
     private double cantDiesel;
     private double cantPremium;
     private double cantSuper;
@@ -12,6 +14,7 @@ public class Surtidor {
     private final double MAX=20000;
 
     public Surtidor() {
+        this.ns = ++nro;
         this.cantDiesel=MAX;
         this.cantPremium=MAX;
         this.cantSuper=MAX;
@@ -19,11 +22,11 @@ public class Surtidor {
     
     public void cargarCombustible(String combustible,double cantidad)throws TipoCombustibleInvalidoException,
                                                                               CargaInvalidaException {
-        if (combustible.toUpperCase().equals("DIESEL"))
+        if (combustible.equalsIgnoreCase("DIESEL"))
             cargaDiesel(cantidad,combustible);
-        else if (combustible.toUpperCase().equals("PREMIUM"))
+        else if (combustible.equalsIgnoreCase("PREMIUM"))
             cargaPremium(cantidad,combustible); 
-        else if (combustible.toUpperCase().equals("SUPER"))
+        else if (combustible.equalsIgnoreCase("SUPER"))
             cargaSuper(cantidad,combustible);
         else
             throw new TipoCombustibleInvalidoException("\n[ERROR] Combustible invalido. ",combustible,cantidad,0);
@@ -84,10 +87,14 @@ public class Surtidor {
         return cantSuper;
     }
 
+    public int getNs() {
+        return ns;
+    }
 
     @Override
     public String toString() {
-        return "\nDiesel: "+cantDiesel+"\n"+
+        return "\nSurtidor "+ns
+                +"\nDiesel: "+cantDiesel+"\n"+
             "\nSuper: "+cantSuper+"\n"+
             "\nPremium: "+cantPremium+"\n";
     }
