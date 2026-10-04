@@ -1,16 +1,20 @@
-# Compiled class file
+# ===============================
+# Compilados y Bytecode
+# ===============================
 *.class
+bin/
+out/
+build/
+classes/
+deploy/
+temp/
 
-# Log file
+# Logs y crash reports
 *.log
+hs_err_pid*
+replay_pid*
 
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
+# Empaquetados
 *.jar
 *.war
 *.nar
@@ -19,15 +23,23 @@
 *.tar.gz
 *.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-replay_pid*
+# ===============================
+# Archivos de Eclipse
+# ===============================
+.metadata/
+.settings/
+.classpath
+.project
 
-# JDeveloper
-classes/
-deploy/
-temp/
-.data/
-*.cws
-*.jpr.bak
-*.jws.bak
+# ===============================
+# Archivos de IntelliJ IDEA
+# ===============================
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/usage.statistics.xml
+.idea/shelf/
+*.iws
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
