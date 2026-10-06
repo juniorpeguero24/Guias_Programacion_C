@@ -1,7 +1,7 @@
 package paquete;
 
-import paquete.excepciones.ContraseniaInvalidaException;
-import paquete.excepciones.NombreInvalidoException;
+import excepciones.ContraseniaInvalidaException;
+import excepciones.NombreInvalidoException;
 
 public class Usuario {
     private String nombre; 
@@ -21,9 +21,9 @@ public class Usuario {
 
     public void setContrasenia(String contrasenia) throws ContraseniaInvalidaException {
         if (contrasenia == null)
-            throw new ContraseniaInvalidaException("Contraseña distinta de null.");
+            throw new ContraseniaInvalidaException("Contraseï¿½a distinta de null.");
         if (contrasenia.length() <= 6)
-            throw new ContraseniaInvalidaException("La contraseña debe tener mas de 6 caracteres.");
+            throw new ContraseniaInvalidaException("La contraseï¿½a debe tener mas de 6 caracteres.");
         if (!Character.isLetter(contrasenia.charAt(0)))
             throw new ContraseniaInvalidaException("El primer caracter debe ser una letra");
         this.contrasenia = contrasenia;

@@ -1,7 +1,5 @@
 package paquete;
 
-import java.util.Arrays;
-
 public class ConjuntoNumeros implements Cloneable {
     private Numero[] celda;
     private int largo;
@@ -22,7 +20,7 @@ public class ConjuntoNumeros implements Cloneable {
         try{
             ConjuntoNumeros nObj=(ConjuntoNumeros)super.clone();
             nObj.celda=new Numero[this.celda.length];
-            for (int i=0;i<this.celda.length;i++)
+            for (int i=0;i<this.getLargo();i++)
                 nObj.celda[i]=new Numero(this.celda[i].getDato());
             return nObj;
         }catch (CloneNotSupportedException e){

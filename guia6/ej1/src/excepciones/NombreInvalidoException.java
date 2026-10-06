@@ -1,4 +1,4 @@
-package paquete.excepciones;
+package excepciones;
 
 public class NombreInvalidoException extends Exception {
     @SuppressWarnings("compatibility:-7354536345914014285")

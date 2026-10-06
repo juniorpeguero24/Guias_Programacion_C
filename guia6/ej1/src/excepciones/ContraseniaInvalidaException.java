@@ -1,4 +1,4 @@
-package paquete.excepciones;
+package excepciones;
 
 public class ContraseniaInvalidaException extends Exception{
     @SuppressWarnings("compatibility:-4444272410079146975")

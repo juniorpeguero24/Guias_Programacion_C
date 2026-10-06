@@ -1,7 +1,7 @@
 package paquete;
 
-import paquete.excepciones.ContraseniaInvalidaException;
-import paquete.excepciones.NombreInvalidoException;
+import excepciones.ContraseniaInvalidaException;
+import excepciones.NombreInvalidoException;
 
 public class Main {
     public static void main(String[] args){
@@ -9,18 +9,18 @@ public class Main {
             Usuario user = new Usuario("Junior","chonapeguero");
             System.out.println("Usuario "+user.getNombre()+" creado con exito.");
         } catch (ContraseniaInvalidaException e) {
-            System.out.println("Error en la contraseña: "+e.getMessage());
+            System.out.println("Error en la contraseï¿½a: "+e.getMessage());
         } catch (NombreInvalidoException e) {
-            System.out.println("Error en la contraseña: "+e.getMessage());
+            System.out.println("Error en el nombre: "+e.getMessage());
         }
         
         try {
             Usuario user2 = new Usuario(null, "chonapeguero");
             System.out.println("Usuario "+user2.getNombre()+" creado con exito.");
         } catch (ContraseniaInvalidaException e) {
-            System.out.println("Error en la contraseña: "+e.getMessage());
+            System.out.println("Error en la contraseï¿½a: "+e.getMessage());
         } catch (NombreInvalidoException e) {
-            System.out.println("Error en la contraseña: "+e.getMessage());
+            System.out.println("Error en el nombre: "+e.getMessage());
         }
         
         try {
@@ -33,6 +33,7 @@ public class Main {
         
         try {
             Usuario user4 = new Usuario("Lucas", "9contrasenia");
+            System.out.println("Usuario "+user4.getNombre()+" creado con exito.");
         } catch (NombreInvalidoException e) {
             System.out.println("Error en nombre: " + e.getMessage());
         } catch (ContraseniaInvalidaException e) {

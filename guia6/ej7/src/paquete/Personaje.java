@@ -114,14 +114,18 @@ public abstract class Personaje implements Movible,Comparable<Personaje>,Cloneab
     
     @Override
     public Object clone() throws CloneNotSupportedException {
-        Personaje obj=(Personaje)super.clone();
-        if (this.posicion != null)
-            obj.posicion = (Movible) ((Posicion)this.posicion).clone();
-        if (this.gemas != null){
-            obj.gemas=new ArrayList<>();
-            for (Gema g: this.gemas)
-                obj.gemas.add((Gema) g.clone());
+        try {
+            Personaje obj=(Personaje)super.clone();
+            if (this.posicion != null)
+                obj.posicion = (Movible) ((Posicion)this.posicion).clone();
+            if (this.gemas != null){
+                obj.gemas=new ArrayList<>();
+                for (Gema g: this.gemas)
+                    obj.gemas.add((Gema) g.clone());
+            }
+            return obj;
+        } catch (CloneNotSupportedException e) {
+            throw new InternalError(e.getMessage());
         }
-        return obj;
     }   
 }
