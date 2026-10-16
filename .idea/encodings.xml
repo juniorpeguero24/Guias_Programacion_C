@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/ejemplos_clase/Ejemplo_Interfaces_2020_Naves/src/modelo/Representacion3DConcreta.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/ejemplos_clase/Ejemplo_Interfaces_2020_Naves/src/modelo/RepresetancionTipo80Sprites.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/guia2/ej7/src/paquete/Main.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/guia2/ej8/src/paquete/Main.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/guia2/ej8/src/paquete/Partido.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/guia2/ej8/src/paquete/Torneo.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/guia2/ej9/src/paquete/Equipo.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/guia2/ej9/src/paquete/Main.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/guia2/ej9/src/paquete/Torneo.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/guia3/ej5/src/paquete/AutomovilAutomatico.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/guia3/ej5/src/paquete/Main.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/guia3/ej6/src/paquete/Archivo.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/guia3/ej6/src/paquete/ArchivoComprimido.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/guia3/ej6/src/paquete/Directorio.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/guia3/ej6/src/paquete/Elemento.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/guia3/ej6/src/paquete/Link.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/guia3/ej6/src/paquete/PruebaFS.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/guia4/ej4/src/paquete/Prueba.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/guia4/ej5/src/modelo/Acoplado.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/guia4/ej5/src/modelo/Chofer.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/guia4/ej5/src/modelo/Empresa.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/guia6/ej5/src/paquete/Prueba.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/guia6/ej7/src/paquete/Mapa.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/guia6/ej7/src/vista/VentanaPrincipal.java" charset="windows-1252" />
+  </component>
+</project>
