@@ -3,8 +3,8 @@ package ventana;
 import excepciones.CargaInvalidaException;
 import excepciones.DatoCargaInvalido;
 import excepciones.TipoCombustibleInvalidoException;
-import paquete.Estacion;
-import paquete.Surtidor;
+import modelo.Estacion;
+import modelo.Surtidor;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

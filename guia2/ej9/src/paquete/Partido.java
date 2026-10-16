@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
@@ -17,7 +17,7 @@ public class Partido {
     }
 
     public boolean agregarJugador(Jugador j, int numEquipo) {
-        // Validación: Un jugador no puede estar en ambos equipos
+        // Validaciï¿½n: Un jugador no puede estar en ambos equipos
         if (eq1.contieneJugador(j.getNombre()) || eq2.contieneJugador(j.getNombre())) {
             return false;
         }
@@ -27,7 +27,7 @@ public class Partido {
     }
 
     public boolean esValidoParaJugar() {
-        // Restricción: Mínimo 4 jugadores por equipo
+        // Restricciï¿½n: Mï¿½nimo 4 jugadores por equipo
         return eq1.cantidadJugadores() >= 4 && eq2.cantidadJugadores() >= 4;
     }
 

@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 import interfaces.Emisor_de_Sonido;
 

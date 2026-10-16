@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 import excepciones.AtaqueImposibleException;
 import excepciones.IncrementoImposibleException;

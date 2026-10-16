@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 public class Surtidor {
 	public static int siguienteNro=0;

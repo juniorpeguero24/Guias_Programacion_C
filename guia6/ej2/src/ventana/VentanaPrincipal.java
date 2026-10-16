@@ -4,7 +4,7 @@ import excepciones.DatoInvalido;
 import excepciones.DepositoInvalidoException;
 import excepciones.ExtraccionInvalidadException;
 import excepciones.TitularInvalidoException;
-import paquete.CuentaBancaria;
+import modelo.CuentaBancaria;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

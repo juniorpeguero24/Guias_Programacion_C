@@ -7,9 +7,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import paquete.Personaje;
-import paquete.PersonajeFactory;
-import paquete.Posicion;
+import modelo.Personaje;
+import modelo.PersonajeFactory;
+import modelo.Posicion;
 
 import javax.swing.JScrollPane;
 import javax.swing.JList;
@@ -230,7 +230,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
 				double x = Double.parseDouble(this.textX.getText().trim());
 				double y = Double.parseDouble(this.textY.getText().trim());
 				obj.incrementaPos(x, y);
-				this.textAreaDetalles.append(obj.getNombre() + " se movió a x: " +obj.getPosx() + " y: "+obj.getPosy()+".\n");
+				this.textAreaDetalles.append(obj.getNombre() + " se moviï¿½ a x: " +obj.getPosx() + " y: "+obj.getPosy()+".\n");
 				this.listL1.repaint();
 				this.listL2.repaint();
 			}

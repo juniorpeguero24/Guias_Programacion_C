@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 public class CuentaUniversitaria extends CuentaBancaria {
 	private static final double tope=1000;

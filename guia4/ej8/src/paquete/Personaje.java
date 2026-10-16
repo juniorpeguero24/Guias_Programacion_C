@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 public abstract class Personaje {
 	protected String nombre;

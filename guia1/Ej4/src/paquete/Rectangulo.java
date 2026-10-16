@@ -1,9 +1,9 @@
-package paquete;
+package modelo;
 
 public class Rectangulo {
     private int x1, x2, y1, y2;
 
-    // Constructor sin parámetros
+    // Constructor sin parï¿½metros
     public Rectangulo() {
         this.x1 = -1;
         this.x2 = 1;
@@ -19,7 +19,7 @@ public class Rectangulo {
         this.y2 = alto;
     }
 
-    // Constructor con los 4 vértices
+    // Constructor con los 4 vï¿½rtices
     public Rectangulo(int x1, int y1, int x2, int y2) {
         this.x1 = x1;
         this.y1 = y1;
@@ -27,7 +27,7 @@ public class Rectangulo {
         this.y2 = y2;
     }
 
-    // Métodos de cálculo de dimensiones
+    // Mï¿½todos de cï¿½lculo de dimensiones
     public int ancho() {
         return this.x2 - this.x1;
     }

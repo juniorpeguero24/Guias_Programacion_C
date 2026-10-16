@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 public abstract class Gema implements Cloneable{
 	protected String tipo;

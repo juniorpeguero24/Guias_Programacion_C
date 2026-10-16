@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 import ventana.VentanaPrincipal;
 
@@ -11,24 +11,24 @@ public class Main {
 
         try {
             // Cajas de Ahorro
-            CajaDeAhorro ca1 = new CajaDeAhorro("Lucía Méndez");
+            CajaDeAhorro ca1 = new CajaDeAhorro("Lucï¿½a Mï¿½ndez");
             ca1.depositar(45000.0);
 
-            CajaDeAhorro ca2 = new CajaDeAhorro("Martín Gómez");
+            CajaDeAhorro ca2 = new CajaDeAhorro("Martï¿½n Gï¿½mez");
             ca2.depositar(12000.0);
 
             // Cuentas Corrientes (tope por defecto de 10000 y tope personalizado)
-            CuentaCorriente cc1 = new CuentaCorriente("Juan Pérez");
+            CuentaCorriente cc1 = new CuentaCorriente("Juan Pï¿½rez");
             cc1.depositar(25000.0);
 
             CuentaCorriente cc2 = new CuentaCorriente("Empresa Transporte SRL", 50000.0);
             cc2.depositar(80000.0);
 
             // Cuentas Universitarias
-            CuentaUniversitaria cu1 = new CuentaUniversitaria("Sofía Rossi");
+            CuentaUniversitaria cu1 = new CuentaUniversitaria("Sofï¿½a Rossi");
             cu1.depositar(5000.0);
 
-            CuentaUniversitaria cu2 = new CuentaUniversitaria("Mateo Fernández");
+            CuentaUniversitaria cu2 = new CuentaUniversitaria("Mateo Fernï¿½ndez");
             cu2.depositar(3500.0);
 
             // Agregamos al banco
@@ -42,8 +42,8 @@ public class Main {
             // Extracciones
             ca1.extraer(5000.0);
             cc1.extraer(30000.0); // Usa 5000 de descubierto
-            cu1.extraer(800.0);   // Dentro del límite diario
-            cu1.extraer(500.0);   // Supera el límite diario de 1000
+            cu1.extraer(800.0);   // Dentro del lï¿½mite diario
+            cu1.extraer(500.0);   // Supera el lï¿½mite diario de 1000
 
             // Salida por consola
             for (CuentaBancaria c : banco.getCuentas()) {

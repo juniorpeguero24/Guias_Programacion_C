@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 public class Tierra extends ElementoDecorator {
 

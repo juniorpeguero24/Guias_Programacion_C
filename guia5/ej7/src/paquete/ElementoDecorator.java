@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 public abstract class ElementoDecorator extends Personaje {
 	protected Personaje envoltorio;

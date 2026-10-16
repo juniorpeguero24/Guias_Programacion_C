@@ -7,5 +7,5 @@
 <fullyQualifiedTypeName name="interfaces.IHostil"/>
 <fullyQualifiedTypeName name="interfaces.IMovible"/>
 <fullyQualifiedTypeName name="interfaces.IPosicionable"/>
-<fullyQualifiedTypeName name="interfaces.Movible"/>
+<fullyQualifiedTypeName name="modelo.Movible"/>
 </qualifiedTypeNameHistroy>

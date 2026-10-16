@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 public class Principal {
     public static void main(String[] args) {

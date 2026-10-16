@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 public class Zafiro extends Gema {
 

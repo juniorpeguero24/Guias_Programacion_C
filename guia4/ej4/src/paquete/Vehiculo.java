@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 /**
  * Representa un vehiculo generico dentro del sistema de alquiler de la empresa.

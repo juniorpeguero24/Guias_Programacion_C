@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 /**
  * Clase abstracta que agrupa a los vehiculos destinados al transporte de pasajeros.

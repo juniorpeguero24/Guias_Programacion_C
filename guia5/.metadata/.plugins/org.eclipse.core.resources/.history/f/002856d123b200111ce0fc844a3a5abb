@@ -2,7 +2,7 @@ package paquete;
 
 import java.util.ArrayList;
 
-import interfaces.Movible;
+import modelo.Movible;
 
 public abstract class Personaje implements Movible{
 	protected String nombre;

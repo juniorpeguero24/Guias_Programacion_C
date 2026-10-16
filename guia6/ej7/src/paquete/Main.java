@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 import javax.swing.SwingUtilities;
 import vista.VentanaPrincipal;

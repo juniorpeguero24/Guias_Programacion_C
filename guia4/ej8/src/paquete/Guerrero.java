@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 public class Guerrero extends Personaje{
 	protected int armadura;

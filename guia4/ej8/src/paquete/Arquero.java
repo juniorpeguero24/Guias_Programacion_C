@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 public class Arquero extends Personaje{
 	protected int cantFlechas = 20;

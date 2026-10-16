@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 public class Metal extends Material {
 	protected String nombre;

@@ -16,11 +16,11 @@ import javax.swing.JButton;
 import javax.swing.border.TitledBorder;
 
 
-import paquete.Banco;
-import paquete.CajaDeAhorro;
-import paquete.CuentaBancaria;
-import paquete.CuentaCorriente;
-import paquete.CuentaUniversitaria;
+import modelo.Banco;
+import modelo.CajaDeAhorro;
+import modelo.CuentaBancaria;
+import modelo.CuentaCorriente;
+import modelo.CuentaUniversitaria;
 
 import java.awt.event.ActionListener;
 import java.util.Iterator;
@@ -286,7 +286,7 @@ public class VentanaCuenta extends JFrame implements ActionListener {
 			        double tope = Double.parseDouble(text);
 			        cuenta = new CuentaCorriente(titular, tope);
 			    } catch (NumberFormatException ex) {
-			        this.textAreaDetalle.append("Error: El tope debe ser un número válido.\n");
+			        this.textAreaDetalle.append("Error: El tope debe ser un nï¿½mero vï¿½lido.\n");
 			        return;
 			    }
 			}else

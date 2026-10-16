@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 public class ConjuntoNumeros implements Cloneable {
     private Numero[] celda;

@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 public class Empleado {
 	private String nombre;
@@ -55,7 +55,7 @@ public class Empleado {
 	}
 
 	String detalle() {
-		String retorno= "Nombre: " + this.nombre + "\nAntiguedad: " + this.antiguedad + "años\nHoras trabajadas: " + this.hstrabajadas + "\nTipo de categoria: " + this.cat.getNombrecategoria() + "\nSueldo por hora: " + this.cat.getSueldoporhora() + "\nSueldo a cobrar: " + this.getsueldo() + "\n";
+		String retorno= "Nombre: " + this.nombre + "\nAntiguedad: " + this.antiguedad + "aï¿½os\nHoras trabajadas: " + this.hstrabajadas + "\nTipo de categoria: " + this.cat.getNombrecategoria() + "\nSueldo por hora: " + this.cat.getSueldoporhora() + "\nSueldo a cobrar: " + this.getsueldo() + "\n";
 		
 		return retorno;
 	}

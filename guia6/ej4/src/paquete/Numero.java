@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 public class Numero {
     private int dato;

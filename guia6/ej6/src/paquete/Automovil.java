@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 public class Automovil implements Cloneable{
     private String marca,modelo,patente;

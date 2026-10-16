@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 import excepciones.DatoInvalido;
 import excepciones.DepositoInvalidoException;

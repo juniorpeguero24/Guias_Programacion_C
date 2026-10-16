@@ -8,7 +8,7 @@ import excepciones.TitularInvalidoException;
 
 import javax.swing.JOptionPane;
 
-import paquete.CuentaBancaria;
+import modelo.CuentaBancaria;
 /**
  *
  * @author Junior

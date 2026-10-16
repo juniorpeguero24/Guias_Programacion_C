@@ -1,6 +1,6 @@
 package paquete;
 
-import interfaces.Movible;
+import modelo.Movible;
 
 public class Arquero extends Personaje{
 	protected int cantFlechas = 20;

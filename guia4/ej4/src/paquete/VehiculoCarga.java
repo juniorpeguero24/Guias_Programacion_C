@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 public abstract class VehiculoCarga extends Vehiculo{
 	protected double PMA;

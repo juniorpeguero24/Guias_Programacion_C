@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 public abstract class Infusion {
 
@@ -6,10 +6,10 @@ public abstract class Infusion {
         System.out.println("Calentando el agua");
     }
 
-    // Paso obligatorio: cada infusión pone lo suyo
+    // Paso obligatorio: cada infusiï¿½n pone lo suyo
     protected abstract void agregarTipoInfusion();
 
-    // MÉTODO HOOK: comportamiento por defecto (amargo)
+    // Mï¿½TODO HOOK: comportamiento por defecto (amargo)
     protected void endulzar() {
         System.out.println("La bebida se tomara amarga");
     }

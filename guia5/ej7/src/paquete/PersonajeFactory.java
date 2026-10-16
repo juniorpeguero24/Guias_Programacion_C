@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 public class PersonajeFactory {
 	public static Personaje crearPersonaje(String tipoPersonaje,String elemento) {

@@ -1,6 +1,6 @@
 package paquete;
 
-import interfaces.Movible;
+import modelo.Movible;
 
 public class Posicion implements Movible{
 	protected double x,y;

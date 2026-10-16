@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 public abstract class Vehiculo {
 	public String patente;

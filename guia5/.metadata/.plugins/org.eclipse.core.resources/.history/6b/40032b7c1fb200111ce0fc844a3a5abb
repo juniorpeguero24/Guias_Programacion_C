@@ -1,6 +1,6 @@
 package paquete;
 
-import interfaces.Movible;
+import modelo.Movible;
 
 public class Dragon extends Personaje {
 	protected int poderDeFuego;

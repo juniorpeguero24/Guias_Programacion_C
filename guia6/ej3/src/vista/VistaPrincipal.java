@@ -8,7 +8,7 @@ import excepciones.TipoCombustibleInvalidoException;
 
 import javax.swing.JOptionPane;
 
-import paquete.Surtidor;
+import modelo.Surtidor;
 
 /**
  *

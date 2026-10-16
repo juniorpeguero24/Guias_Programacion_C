@@ -1,7 +1,7 @@
 package excepciones;
 
-import paquete.Arquero;
-import paquete.Personaje;
+import modelo.Arquero;
+import modelo.Personaje;
 
 public class AtaqueImposibleException extends Exception{
     @SuppressWarnings("compatibility:166376295984548934")

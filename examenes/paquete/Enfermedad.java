@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 public class Enfermedad implements Cloneable{
     private int tipo;

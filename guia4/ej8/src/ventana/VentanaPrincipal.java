@@ -1,9 +1,9 @@
 package ventana;
 
-import paquete.Personaje;
-import paquete.PersonajeFactory;
-import paquete.Posicion;
-import paquete.Universo;
+import modelo.Personaje;
+import modelo.PersonajeFactory;
+import modelo.Posicion;
+import modelo.Universo;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

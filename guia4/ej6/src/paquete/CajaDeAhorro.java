@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 public class CajaDeAhorro extends CuentaBancaria{
 	protected final int MaxExtracciones=10;

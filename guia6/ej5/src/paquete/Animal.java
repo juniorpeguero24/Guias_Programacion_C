@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 public class Animal implements Cloneable{
     private int esperanzadevida;

@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 public class Clase3 extends Clase2{
 	public int atributo=3;

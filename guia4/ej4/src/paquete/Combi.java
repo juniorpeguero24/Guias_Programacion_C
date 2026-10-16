@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 /**
  * Representa una combi de transporte de personas.

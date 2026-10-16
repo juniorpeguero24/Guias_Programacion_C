@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 public class Motor implements Cloneable{
     private String fabricante,nSerie;

@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 public class Clase1 {
 	public int atributo=1;

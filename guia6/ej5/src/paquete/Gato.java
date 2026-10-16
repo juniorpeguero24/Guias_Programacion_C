@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 public class Gato extends Animal{
     public Gato(String nombre,int i){

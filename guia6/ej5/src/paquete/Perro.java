@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 public class Perro extends Animal implements Cloneable {
     public Perro(String nombre,int i) {

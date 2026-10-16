@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 public class Domicilio implements Cloneable{
     private String calle;

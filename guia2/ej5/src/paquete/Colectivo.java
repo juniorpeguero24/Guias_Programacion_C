@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 public class Colectivo {
 	private static int siguienteNro=0;

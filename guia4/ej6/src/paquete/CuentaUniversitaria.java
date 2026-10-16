@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 public class CuentaUniversitaria extends CuentaBancaria{	
 	private final double MAXDIARIO=1000.0;

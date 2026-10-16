@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 import ventana.VentanaPrincipal;
 import javax.swing.SwingUtilities;

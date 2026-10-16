@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 public abstract class Jugador {
     private String nombre;

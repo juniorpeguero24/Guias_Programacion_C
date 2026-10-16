@@ -1,7 +1,7 @@
 package ventana;
 
 import excepciones.MontoInvalidoException;
-import paquete.*;
+import modelo.*;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

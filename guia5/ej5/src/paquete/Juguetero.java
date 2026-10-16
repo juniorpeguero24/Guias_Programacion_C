@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 public class Juguetero extends Artesano{
 
@@ -8,7 +8,7 @@ public class Juguetero extends Artesano{
 
 	@Override
 	public String conMadera(Material mat) {
-		return this.nombre+" fabrico un muñequito de "+mat;
+		return this.nombre+" fabrico un muï¿½equito de "+mat;
 	}
 
 	@Override

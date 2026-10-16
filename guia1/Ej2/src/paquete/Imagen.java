@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 import java.util.Date;
 
@@ -11,16 +11,16 @@ public class Imagen {
     private Persona[] personasenfoto;
     private Persona propietario;
 
-    // Constructor sin parámetros (inicializa el arreglo para evitar errores)
+    // Constructor sin parï¿½metros (inicializa el arreglo para evitar errores)
     public Imagen() {
         this.cantidaPersonas = 0;
         this.personasenfoto = new Persona[10];
         this.comentarios = "";
     }
 
-    // Constructor práctico
+    // Constructor prï¿½ctico
     public Imagen(Persona propietario, Lugar lugar, Date fecha) {
-        this(); // Llama al constructor vacío para inicializar arreglo y contador
+        this(); // Llama al constructor vacï¿½o para inicializar arreglo y contador
         this.propietario = propietario;
         this.lugar = lugar;
         this.fecha = fecha;

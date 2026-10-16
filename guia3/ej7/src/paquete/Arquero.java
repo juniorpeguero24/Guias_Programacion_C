@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 public class Arquero extends Jugador {
     private double efectividad;

@@ -9,9 +9,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import paquete.Personaje;
-import paquete.PersonajeFactory;
-import paquete.Posicion;
+import modelo.Personaje;
+import modelo.PersonajeFactory;
+import modelo.Posicion;
 
 import javax.swing.JScrollPane;
 import javax.swing.JList;
@@ -25,7 +25,7 @@ import javax.swing.JTextArea;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-import paquete.Mapa;
+import modelo.Mapa;
 
 public class VentanaPrincipal extends JFrame implements ActionListener {
 

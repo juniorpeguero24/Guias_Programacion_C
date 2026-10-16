@@ -1,4 +1,4 @@
-package paquete;
+package modelo;
 
 public abstract class Material {
 	protected String color;

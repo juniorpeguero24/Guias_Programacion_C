@@ -1,7 +1,7 @@
-package paquete;
+package modelo;
 
 public class Socio {
-    // Declaración de constantes según la consigna
+    // Declaraciï¿½n de constantes segï¿½n la consigna
     private static final double CUOTA_BASE = 500.0;
     private static final double DESCUENTO_MAYOR = 0.50;  // 50% de descuento
     private static final double DESCUENTO_JUVENIL = 0.25; // 25% de descuento
@@ -14,7 +14,7 @@ public class Socio {
         this.torneos = torneos;
     }
 
-    // El método no recibe parámetros, utiliza los atributos de la propia instancia
+    // El mï¿½todo no recibe parï¿½metros, utiliza los atributos de la propia instancia
     public double calcularCuota() {
         double cuota = CUOTA_BASE;
 
