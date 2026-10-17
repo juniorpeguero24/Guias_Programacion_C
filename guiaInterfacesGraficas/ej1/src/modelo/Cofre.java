@@ -1,0 +1,9 @@
+package modelo;
+
+public abstract class Cofre {
+
+	public abstract void afectar(Caballero c);
+    public abstract void afectar(Arquero a);
+    public abstract void afectar(Guerrero g);
+	public abstract void afectar(Dragon d);
+}
