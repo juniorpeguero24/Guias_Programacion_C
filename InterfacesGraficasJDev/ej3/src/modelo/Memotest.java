@@ -24,10 +24,10 @@ public class Memotest {
         this.turnoActual = (this.turnoActual + 1) % this.jugadores.size();
     }
 
-    public void agregar(Jugador j) {
-        this.jugadores.add(j);
+    public void agregar(String n) {
+        if (n != null )
+            this.jugadores.add(new Jugador(n));
     }
-
 
     public Tablero getTablero() {
         return tablero;
@@ -35,5 +35,19 @@ public class Memotest {
 
     public ArrayList<Jugador> getArreglo() {
         return jugadores;
+    }
+
+    public String getGanador() {
+        int max=0;
+        String nom = "";
+        for (Jugador j : this.jugadores) {
+            if (j.getAciertos()>max) {
+                max = j.getAciertos();
+                nom = j.getNombre();
+            } else if (j.getAciertos() == max) {
+                nom += " y "+ j.getNombre();
+            }
+        }
+        return nom;
     }
 }
