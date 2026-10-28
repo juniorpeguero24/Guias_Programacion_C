@@ -66,13 +66,11 @@ public class Persona implements Comparable<Persona>{
     }
 
     @Override
-    public int compareTo(Persona o) {
-        int rta=0;
-        if (o.nombre.equals(this.nombre) && o.apellido.equals(this.apellido)) {
-            rta = 1;
-        } else {
-            rta = -1;
+    public int compareTo(Persona otro) {
+        int cmp = this.apellido.compareTo(otro.apellido);
+        if (cmp != 0) {
+            return cmp;
         }
-        return rta;
+        return this.nombre.compareTo(otro.nombre);
     }
 }
