@@ -39,6 +39,12 @@ public class Controlador implements ActionListener {
             } catch (OperacionConjuntosException ex) {
                 this.vista.mensaje("No se pudo eliminar "+ex.getElemento().toString());
             }
+        } else if (cmd.equals("Detalle")) {
+            String detalle = this.modelo.detalle();
+            this.vista.mostrarDetalle(detalle);
+        } else if (cmd.equals("Precio Total")) {
+            double precioTotal = this.modelo.precioTotal();
+            this.vista.mostrarPrecioTotal(precioTotal);
         }
     }
 }

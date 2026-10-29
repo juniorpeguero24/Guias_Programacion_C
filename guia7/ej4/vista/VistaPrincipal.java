@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class VistaPrincipal extends JFrame{
     private JPanel panel1;
     private JTextArea txtAreaDetalle;
-    private JSpinner spinner1;
+    private JSpinner spnCant;
     private JComboBox<Producto> cmbProducto;
     private JButton agregarButton;
     private JButton eliminarButton;
@@ -25,7 +25,11 @@ public class VistaPrincipal extends JFrame{
     }
 
     public void arranca() {
-
+        setContentPane(panel1);
+        pack();
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setVisible(true);
     }
 
     public void cargarProductosCombo(ArrayList<Producto> catalogo) {
@@ -35,7 +39,7 @@ public class VistaPrincipal extends JFrame{
     }
 
     public int getCantidad(){
-        return Integer.parseInt(this.spinner1.toString());
+        return (int) this.spnCant.getValue();
     }
 
     public Producto getProductoSeleccionado() {
@@ -44,5 +48,13 @@ public class VistaPrincipal extends JFrame{
 
     public void mensaje(String s) {
         this.txtAreaInfo.append("\n"+s+"\n");
+    }
+
+    public void mostrarDetalle(String detalle) {
+        this.txtAreaDetalle.append(detalle+"\n");
+    }
+
+    public void mostrarPrecioTotal(double precioTotal) {
+        this.txtAreaDetalle.append("Precio total: $"+precioTotal+"\n");
     }
 }

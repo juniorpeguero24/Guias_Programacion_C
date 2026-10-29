@@ -26,5 +26,6 @@
       <hash><url n="URL" path="Client/Client.jpr"/></hash>
       <hash><url n="URL" path="ej2/ej2.jpr"/></hash>
       <hash><url n="URL" path="ej3/ej3.jpr"/></hash>
+      <hash><url n="URL" path="ej4_guia4/ej4_guia4.jpr"/></hash>
    </list>
 </jws:workspace>
