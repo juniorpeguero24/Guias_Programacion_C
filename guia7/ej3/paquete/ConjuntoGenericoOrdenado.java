@@ -26,17 +26,25 @@ public class ConjuntoGenericoOrdenado<T extends Comparable> implements IConjunto
         this.elementos.remove(elemento);
     }
 
-    @Override
-    public int getCardinal() {
+    public int cantidad(){
         return this.elementos.size();
     }
 
     @Override
-    public Iterator getIterator() {
+    public int getCardinal() {
+        return this.cantidad();
+    }
+
+    @Override
+    public Iterator<T> getIterator() {
         return this.elementos.iterator();
     }
 
     public T getMayor(){
+        return this.elementos.last();
+    }
 
+    public T getMenor(){
+        return this.elementos.first();
     }
 }
