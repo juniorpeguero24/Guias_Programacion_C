@@ -1,5 +1,6 @@
 package paquete;
 
+import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
 
 public class Llamado implements Comparable<Llamado> {
@@ -39,12 +40,16 @@ public class Llamado implements Comparable<Llamado> {
 
     @Override
     public String toString() {
-        return "Llamado{" +
-                "fechahoraAtendido=" + fechahoraAtendido +
-                ", FechahoraPedido=" + FechahoraPedido +
-                ", prioridad=" + prioridad +
-                ", socio=" + socio +
-                '}';
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        String pedidoStr = (FechahoraPedido != null) ? sdf.format(FechahoraPedido.getTime()) : "Pendiente";
+        String atendidoStr = (fechahoraAtendido != null) ? sdf.format(fechahoraAtendido.getTime()) : "Sin atender";
+
+        return "Llamado [" +
+                "Prioridad: " + prioridad +
+                " | Pedido: " + pedidoStr +
+                " | Atendido: " + atendidoStr +
+                " | Socio: " + socio.getNombre() + " (DNI: " + socio.getDni() + ")" +
+                " | Domicilio: " + socio.getDomicilio() + "]";
     }
 
     @Override

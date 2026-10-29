@@ -1,5 +1,7 @@
 package paquete;
 
+import java.util.Objects;
+
 public class Socio {
     private int dni;
     private String domicilio;
@@ -37,6 +39,18 @@ public class Socio {
         this.nombre = nombre;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Socio)) return false;
+        Socio socio = (Socio) o;
+        return this.dni == socio.dni;
+    }
+
+    @Override
+    public int hashCode() {
+        return Integer.hashCode(this.dni);
+    }
     @Override
     public String toString() {
         return "Socio{" +
