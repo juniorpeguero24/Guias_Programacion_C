@@ -10,6 +10,7 @@ public class Mesa {
     private ArrayList<Integer> cartas;
     private int[] puntajes;
     private int[] victorias;
+    private boolean rondaAnulada=false;
 
     public Mesa(int cantPersonas) {
         this.cantPersonas = cantPersonas;
@@ -31,17 +32,16 @@ public class Mesa {
         Collections.shuffle(this.cartas);
     }
 
-    public synchronized void atender(int turno) {
+    public synchronized boolean atender(int turno) throws InterruptedException {
         while (turnoActual != turno && !juegoTerminado) {
-            try {
-                System.out.println("Turno actual: "+this.turnoActual+" Turno de espera: "+turno);
-                wait();
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-            }
+            wait();
         }
-        System.out.println("Turno " + turno + " esta jugando.");
+        if (juegoTerminado) {
+            return false;
+        }
+        System.out.println("Jugador " + turno + " esta jugando.");
         jugarTurno(turno);
+        return true;
     }
 
     private void jugarTurno(int id) {
@@ -49,46 +49,64 @@ public class Mesa {
         while (!this.cartas.isEmpty() && puntaje < 16) {
             puntaje += this.cartas.remove(0);
         }
-        if (puntaje > 21) {
-            this.puntajes[id] = -1;
-        } else {
-            this.puntajes[id] = puntaje;
-        }
+        boolean seplanto = puntaje >= 16;
+        this.puntajes[id] = (puntaje > 21) ? -1 : puntaje;
+
         if (this.cartas.isEmpty()) {
             this.juegoTerminado = true;
-            if (id == (this.cantPersonas - 1)) {
-                System.out.println("No alcanzaron las cartas, ronda anulada.");
-                // Y aca finalizar todo no?
+            if (!seplanto || id != this.cantPersonas - 1) {
+                this.rondaAnulada = true;
             }
         }
     }
 
     public synchronized void despachar(int turno) {
-        if (turno == this.cantPersonas - 1) {
+        System.out.println("Jugador " + turno + " termino su turno.");
+        if (this.rondaAnulada) {
+            System.out.println("No alcanzaron las cartas, ronda anulada");
+        }else if (turno == this.cantPersonas - 1) {
             ganador();
         }
         this.turnoActual = (this.turnoActual+1)%this.cantPersonas;
-        System.out.println("Turno " + turno + " termino su turno.");
         notifyAll();
     }
 
     private void ganador() {
-        int max=-111;
+        int max=-1;
         int idMax = -1;
-        boolean doble = false;
+        boolean empate = false;
 
         for (int i = 0; i < this.cantPersonas; i++) {
             if (this.puntajes[i] > max) {
                 max = this.puntajes[i];
                 idMax = i;
-                doble = false;
+                empate = false;
             } else if (this.puntajes[i] == max) {
-                doble = true;
+                empate = true;
             }
         }
-        if (!doble) {
+        if (!empate && max > 0) {
             this.victorias[idMax]++;
+            System.out.println(">> Gana la mano el jugador "+idMax+" con "+max);
+        }else{
+            System.out.println(">> Mano sin ganador");
         }
+    }
+
+    public synchronized void mostrarResultados() {
+        int max = -1, idMax = -1;
+        boolean empate = false;
+        for (int i = 0; i < this.cantPersonas; i++) {
+            System.out.println("Jugador " + i + ": " + victorias[i] + " manos ganadas");
+            if (victorias[i] > max) {
+                max = victorias[i];
+                idMax = i;
+                empate = false;
+            } else if (victorias[i] == max) {
+                empate = true;
+            }
+        }
+        System.out.println(empate ? "Empate general" : "Ganador: jugador " + idMax);
     }
 
     public int getCantPersonas() {

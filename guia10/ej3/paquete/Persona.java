@@ -15,11 +15,16 @@ public class Persona implements Runnable{
 
     @Override
     public void run() {
-        try{
-            Thread.sleep(random.nextInt(1000));
-            this.mesa.atender(this.id);
-            Thread.sleep(1500);
-            this.mesa.despachar(this.id);
+        try {
+            boolean sigue = true;
+            while (sigue) {
+                Thread.sleep(random.nextInt(1000));
+                sigue = mesa.atender(id);
+                if (sigue) {
+                    Thread.sleep(500);
+                    mesa.despachar(id);
+                }
+            }
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
