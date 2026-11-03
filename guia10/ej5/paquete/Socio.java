@@ -17,16 +17,11 @@ public class Socio implements Runnable {
         try {
             while (true) {
                 Thread.sleep(random.nextInt(2000));
-                int id = random.nextInt(Libro.getSig());
+                int id = random.nextInt(biblioteca.getCantidadLibros());
                 System.out.println(this.nombre + " quiere el libro " + id);
-
                 Libro libro = this.biblioteca.retirar(this.nombre, id);
-                System.out.println(this.nombre+" retiro: "+libro.getTitulo());
-
                 Thread.sleep(3000);
-
-                this.biblioteca.devolver(libro);
-                System.out.println(this.nombre+" devolvio: "+libro.getTitulo());
+                this.biblioteca.devolver(this.nombre,libro);
             }
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();

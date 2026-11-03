@@ -27,7 +27,7 @@ public class Libro extends Padre implements Prestable{
 
 	@Override
 	public String toString() {
-		return "Libro ["+super.toString()+" prestado=" + (prestado ? "Si":"No") + "]";
+		return "Prestable ["+super.toString()+" prestado=" + (prestado ? "Si":"No") + "]";
 	}
 
 	

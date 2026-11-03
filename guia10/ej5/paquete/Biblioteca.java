@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 public class Biblioteca {
     private HashMap<Integer, Libro> libros;
+    private final int capacidad_maxima = 10;
 
     public Biblioteca() {
         this.libros = new HashMap<>();
@@ -23,16 +24,34 @@ public class Biblioteca {
         this.libros.put(l5.getIdLibro(),l5);
     }
 
+    public synchronized int getCantidadLibros() {
+        return Libro.getSig();
+    }
+
+    public synchronized void donar(String titulo) throws InterruptedException {
+        while (this.libros.size() >= capacidad_maxima) {
+            System.out.println(" Estanteria llena, en espera la donacion.");
+            wait();
+        }
+        Libro libro = new Libro(titulo);
+        this.libros.put(libro.getIdLibro(), libro);
+        System.out.println("Prestable donado: "+libro.getTitulo()+" id "+libro.getIdLibro());
+    }
+
     public synchronized Libro retirar(String nombre,int id) throws InterruptedException {
         while (!this.libros.containsKey(id)) {
             System.out.println("   " + nombre + " espera el libro " + id + " (está prestado)");
             wait();
         }
-        return this.libros.remove(id);
+        Libro libro = this.libros.remove(id);
+        System.out.println(nombre + " retiro: " + libro.getTitulo());
+        this.notifyAll();
+        return libro;
     }
 
-    public synchronized void devolver(Libro libro) {
+    public synchronized void devolver(String nombre,Libro libro) {
         this.libros.put(libro.getIdLibro(),libro);
+        System.out.println(nombre + " devolvio: " + libro.getTitulo());
         this.notifyAll();
     }
 }
