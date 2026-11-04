@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="27.0.1.0.3" class="java.beans.XMLDecoder">
+ <object class="paquete.Flota" id="Flota0">
+  <void property="automoviles">
+   <void method="add">
+    <object class="paquete.Automovil">
+     <void property="anio_fabricacion">
+      <int>2018</int>
+     </void>
+     <void property="marca">
+      <string>Volkswagen</string>
+     </void>
+     <void property="modelo">
+      <string>Gol Trend</string>
+     </void>
+     <void property="motor">
+      <object class="paquete.Motor">
+       <void property="combustible">
+        <string>Nafta</string>
+       </void>
+       <void property="n_serie">
+        <string>VW-EA211-55821</string>
+       </void>
+      </object>
+     </void>
+     <void property="n_Chasis">
+      <string>9BWZZZ377VT004251</string>
+     </void>
+     <void property="patente">
+      <string>AC123FD</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="paquete.Automovil">
+     <void property="anio_fabricacion">
+      <int>2021</int>
+     </void>
+     <void property="marca">
+      <string>Ford</string>
+     </void>
+     <void property="modelo">
+      <string>Ranger</string>
+     </void>
+     <void property="motor">
+      <object class="paquete.Motor">
+       <void property="combustible">
+        <string>Diesel</string>
+       </void>
+       <void property="n_serie">
+        <string>FD-PUMA-90314</string>
+       </void>
+      </object>
+     </void>
+     <void property="n_Chasis">
+      <string>8AFDR5AD6C6034417</string>
+     </void>
+     <void property="patente">
+      <string>AE456KL</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="paquete.Automovil">
+     <void property="anio_fabricacion">
+      <int>2015</int>
+     </void>
+     <void property="marca">
+      <string>Renault</string>
+     </void>
+     <void property="modelo">
+      <string>Kangoo</string>
+     </void>
+     <void property="motor">
+      <object class="paquete.Motor">
+       <void property="combustible">
+        <string>GNC</string>
+       </void>
+       <void property="n_serie">
+        <string>RN-K7M-40277</string>
+       </void>
+      </object>
+     </void>
+     <void property="n_Chasis">
+      <string>93YRBB00X5J774102</string>
+     </void>
+     <void property="patente">
+      <string>OPQ782</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="paquete.Automovil">
+     <void property="anio_fabricacion">
+      <int>2023</int>
+     </void>
+     <void property="marca">
+      <string>Fiat</string>
+     </void>
+     <void property="modelo">
+      <string>Cronos</string>
+     </void>
+     <void property="motor">
+      <object class="paquete.Motor">
+       <void property="combustible">
+        <string>Nafta</string>
+       </void>
+       <void property="n_serie">
+        <string>FT-FIRE-13560</string>
+       </void>
+      </object>
+     </void>
+     <void property="n_Chasis">
+      <string>9BD19573NE1144909</string>
+     </void>
+     <void property="patente">
+      <string>AF789TZ</string>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="nombre">
+   <string>Transportes del Atlantico</string>
+  </void>
+ </object>
+</java>
