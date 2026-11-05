@@ -14,7 +14,7 @@ public class Prueba {
 		p1.agregarLinea(new LineaDePedido(arroz,2));
 		p1.agregarLinea(new LineaDePedido(fideos,3));;
 		
-		System.out.println("Empleado a cargo: "+ p1.getEmp().getNombre());
+		System.out.println("Proveedor a cargo: "+ p1.getEmp().getNombre());
 		System.out.println("Fecha del pedido: "+p1.getFecha());
 		System.out.println("Costo total del pedido: $"+p1.calcularTotal());
 	}

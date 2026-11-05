@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="27.0.1.0.3" class="java.beans.XMLDecoder">
+ <object class="paquete.Empresa" id="Empresa0">
+  <void id="OperadoraEmergencias0" property="operadora">
+   <void property="elementos">
+    <void method="add">
+     <object class="paquete.Llamado">
+      <void property="fechahoraPedido">
+       <object class="java.util.GregorianCalendar" id="GregorianCalendar0">
+        <void property="time">
+         <object class="java.util.Date">
+          <long>1793880600000</long>
+         </object>
+        </void>
+        <void id="Integer0" property="firstDayOfWeek"/>
+        <void id="Integer1" property="minimalDaysInFirstWeek"/>
+       </object>
+      </void>
+      <void property="prioridad">
+       <object idref="Integer0"/>
+      </void>
+      <void property="socio">
+       <object class="paquete.Socio" id="Socio0">
+        <void property="dni">
+         <int>22333111</int>
+        </void>
+        <void property="domicilio">
+         <string>Juan B. Justo 4410</string>
+        </void>
+        <void property="nombre">
+         <string>Elena Sosa</string>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="paquete.Llamado">
+      <void property="fechahoraPedido">
+       <object class="java.util.GregorianCalendar">
+        <void property="time">
+         <object class="java.util.Date">
+          <long>1793877120000</long>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="prioridad">
+       <object idref="Integer1"/>
+      </void>
+      <void property="socio">
+       <object class="paquete.Socio" id="Socio1">
+        <void property="dni">
+         <int>30111222</int>
+        </void>
+        <void property="domicilio">
+         <string>Av. Colon 2450</string>
+        </void>
+        <void property="nombre">
+         <string>Mariana Rios</string>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="paquete.Llamado">
+      <void property="fechahoraPedido">
+       <object class="java.util.GregorianCalendar">
+        <void property="time">
+         <object class="java.util.Date">
+          <long>1793879100000</long>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="prioridad">
+       <object idref="Integer1"/>
+      </void>
+      <void property="socio">
+       <object class="paquete.Socio" id="Socio2">
+        <void property="dni">
+         <int>41222333</int>
+        </void>
+        <void property="domicilio">
+         <string>San Martin 1875</string>
+        </void>
+        <void property="nombre">
+         <string>Camila Ferreyra</string>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="paquete.Llamado">
+      <void property="fechahoraPedido">
+       <object class="java.util.GregorianCalendar">
+        <void property="time">
+         <object class="java.util.Date">
+          <long>1793881500000</long>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="prioridad">
+       <object idref="Integer1"/>
+      </void>
+      <void property="socio">
+       <object class="paquete.Socio" id="Socio3">
+        <void property="dni">
+         <int>27555888</int>
+        </void>
+        <void property="domicilio">
+         <string>Guemes 3120</string>
+        </void>
+        <void property="nombre">
+         <string>Hector Benitez</string>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+   </void>
+   <void property="listaAtendidos">
+    <void method="add">
+     <object class="paquete.Llamado">
+      <void property="fechahoraAtendido">
+       <object class="java.util.GregorianCalendar">
+        <void property="time">
+         <object class="java.util.Date">
+          <long>1793919105303</long>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="fechahoraPedido">
+       <object class="java.util.GregorianCalendar">
+        <void property="time">
+         <object class="java.util.Date">
+          <long>1793877600000</long>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="prioridad">
+       <int>3</int>
+      </void>
+      <void property="socio">
+       <object idref="Socio0"/>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="paquete.Llamado">
+      <void property="fechahoraAtendido">
+       <object class="java.util.GregorianCalendar">
+        <void property="time">
+         <object class="java.util.Date">
+          <long>1793919105303</long>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="fechahoraPedido">
+       <object class="java.util.GregorianCalendar">
+        <void property="time">
+         <object class="java.util.Date">
+          <long>1793878260000</long>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="prioridad">
+       <int>3</int>
+      </void>
+      <void property="socio">
+       <object idref="Socio3"/>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="paquete.Llamado">
+      <void property="fechahoraAtendido">
+       <object class="java.util.GregorianCalendar">
+        <void property="time">
+         <object class="java.util.Date">
+          <long>1793919105303</long>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="fechahoraPedido">
+       <object class="java.util.GregorianCalendar">
+        <void property="time">
+         <object class="java.util.Date">
+          <long>1793876700000</long>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="prioridad">
+       <object idref="Integer0"/>
+      </void>
+      <void property="socio">
+       <object idref="Socio3"/>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="paquete.Llamado">
+      <void property="fechahoraAtendido">
+       <object class="java.util.GregorianCalendar">
+        <void property="time">
+         <object class="java.util.Date">
+          <long>1793919105303</long>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="fechahoraPedido">
+       <object class="java.util.GregorianCalendar">
+        <void property="time">
+         <object class="java.util.Date">
+          <long>1793880120000</long>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void property="prioridad">
+       <object idref="Integer0"/>
+      </void>
+      <void property="socio">
+       <object class="paquete.Socio" id="Socio4">
+        <void property="dni">
+         <int>35999444</int>
+        </void>
+        <void property="domicilio">
+         <string>Independencia 980</string>
+        </void>
+        <void property="nombre">
+         <string>Ramiro Ledesma</string>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+   </void>
+  </void>
+  <void property="socios">
+   <void method="add">
+    <object idref="Socio1"/>
+   </void>
+   <void method="add">
+    <object idref="Socio3"/>
+   </void>
+   <void method="add">
+    <object idref="Socio2"/>
+   </void>
+   <void method="add">
+    <object idref="Socio4"/>
+   </void>
+   <void method="add">
+    <object idref="Socio0"/>
+   </void>
+  </void>
+ </object>
+</java>

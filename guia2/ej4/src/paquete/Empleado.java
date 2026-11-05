@@ -32,7 +32,7 @@ public class Empleado {
 
 	@Override
 	public String toString() {
-		return "Empleado " +
+		return "Proveedor " +
 				"nombre='" + nombre + '\'' +
 				", telefono='" + telefono + '\'' +
 				", email='" + email + '\'';

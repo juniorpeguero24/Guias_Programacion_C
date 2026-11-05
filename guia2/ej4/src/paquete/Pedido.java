@@ -61,7 +61,7 @@ public class Pedido {
 	@Override
 	public String toString() {
 		return "Pedido realizado por" +
-				"\nEmpleado=" + emp +
+				"\nProveedor=" + emp +
 				"\nFecha='" + fecha +
 				"\nPedido=" + lineas;
 	}

@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="27.0.1.0.3" class="java.beans.XMLDecoder">
+ <object class="paquete.Negocio" id="Negocio0">
+  <void property="pedidos">
+   <void method="add">
+    <object class="paquete.Pedido" id="Pedido0">
+     <void property="elementos">
+      <void method="add">
+       <object class="paquete.LineaDePedido">
+        <void property="cantidad">
+         <int>10</int>
+        </void>
+        <void property="producto">
+         <object class="paquete.Producto" id="Producto0">
+          <void property="codigo">
+           <int>101</int>
+          </void>
+          <void property="descripcion">
+           <string>Cuaderno espiral A4</string>
+          </void>
+          <void property="precioUnitario">
+           <double>4500.0</double>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="paquete.LineaDePedido">
+        <void property="cantidad">
+         <int>50</int>
+        </void>
+        <void property="producto">
+         <object class="paquete.Producto" id="Producto1">
+          <void property="codigo">
+           <int>102</int>
+          </void>
+          <void property="descripcion">
+           <string>Lapicera trazo fino azul</string>
+          </void>
+          <void property="precioUnitario">
+           <double>850.0</double>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+     </void>
+     <void property="entregado">
+      <boolean>true</boolean>
+     </void>
+     <void property="fecha">
+      <object class="java.util.Date">
+       <long>1793915464435</long>
+      </object>
+     </void>
+     <void property="proveedor">
+      <object class="paquete.Proveedor" id="Proveedor0">
+       <void property="email">
+        <string>ventas@papelerasur.com.ar</string>
+       </void>
+       <void property="nombre">
+        <string>Distribuidora Papelera Sur</string>
+       </void>
+       <void property="telefono">
+        <string>2234561234</string>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="paquete.Pedido" id="Pedido1">
+     <void property="elementos">
+      <void method="add">
+       <object class="paquete.LineaDePedido">
+        <void property="cantidad">
+         <int>20</int>
+        </void>
+        <void property="producto">
+         <object class="paquete.Producto" id="Producto2">
+          <void property="codigo">
+           <int>103</int>
+          </void>
+          <void property="descripcion">
+           <string>Resma A4 75g</string>
+          </void>
+          <void property="precioUnitario">
+           <double>8200.0</double>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+     </void>
+     <void property="fecha">
+      <object class="java.util.Date">
+       <long>1793915464435</long>
+      </object>
+     </void>
+     <void property="proveedor">
+      <object idref="Proveedor0"/>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="paquete.Pedido" id="Pedido2">
+     <void property="elementos">
+      <void method="add">
+       <object class="paquete.LineaDePedido">
+        <void property="cantidad">
+         <int>5</int>
+        </void>
+        <void property="producto">
+         <object class="paquete.Producto" id="Producto3">
+          <void property="codigo">
+           <int>104</int>
+          </void>
+          <void property="descripcion">
+           <string>Marcador permanente negro</string>
+          </void>
+          <void property="precioUnitario">
+           <double>1400.0</double>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="paquete.LineaDePedido">
+        <void property="cantidad">
+         <int>5</int>
+        </void>
+        <void property="producto">
+         <object class="paquete.Producto" id="Producto4">
+          <void property="codigo">
+           <int>105</int>
+          </void>
+          <void property="descripcion">
+           <string>Corrector liquido 20ml</string>
+          </void>
+          <void property="precioUnitario">
+           <double>1200.0</double>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="paquete.LineaDePedido">
+        <void property="cantidad">
+         <int>10</int>
+        </void>
+        <void property="producto">
+         <object class="paquete.Producto" id="Producto5">
+          <void property="codigo">
+           <int>108</int>
+          </void>
+          <void property="descripcion">
+           <string>Cinta adhesiva 18mm</string>
+          </void>
+          <void property="precioUnitario">
+           <double>650.0</double>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+     </void>
+     <void property="entregado">
+      <boolean>true</boolean>
+     </void>
+     <void property="fecha">
+      <object class="java.util.Date">
+       <long>1793915464435</long>
+      </object>
+     </void>
+     <void property="proveedor">
+      <object class="paquete.Proveedor" id="Proveedor1">
+       <void property="email">
+        <string>pedidos@lmcentro.com.ar</string>
+       </void>
+       <void property="nombre">
+        <string>Libreria Mayorista Centro</string>
+       </void>
+       <void property="telefono">
+        <string>2234789012</string>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="paquete.Pedido" id="Pedido3">
+     <void property="elementos">
+      <void method="add">
+       <object class="paquete.LineaDePedido">
+        <void property="cantidad">
+         <int>15</int>
+        </void>
+        <void property="producto">
+         <object class="paquete.Producto" id="Producto6">
+          <void property="codigo">
+           <int>106</int>
+          </void>
+          <void property="descripcion">
+           <string>Carpeta A4 3 anillos</string>
+          </void>
+          <void property="precioUnitario">
+           <double>3900.0</double>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="paquete.LineaDePedido">
+        <void property="cantidad">
+         <int>2</int>
+        </void>
+        <void property="producto">
+         <object class="paquete.Producto" id="Producto7">
+          <void property="codigo">
+           <int>107</int>
+          </void>
+          <void property="descripcion">
+           <string>Abrochadora metalica</string>
+          </void>
+          <void property="precioUnitario">
+           <double>7600.0</double>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+     </void>
+     <void property="fecha">
+      <object class="java.util.Date">
+       <long>1793915464435</long>
+      </object>
+     </void>
+     <void property="proveedor">
+      <object class="paquete.Proveedor" id="Proveedor2">
+       <void property="email">
+        <string>contacto@ioatlantica.com.ar</string>
+       </void>
+       <void property="nombre">
+        <string>Insumos de Oficina Atlantica</string>
+       </void>
+       <void property="telefono">
+        <string>2235123456</string>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="paquete.Pedido" id="Pedido4">
+     <void property="elementos">
+      <void method="add">
+       <object class="paquete.LineaDePedido">
+        <void property="cantidad">
+         <int>30</int>
+        </void>
+        <void property="producto">
+         <object idref="Producto1"/>
+        </void>
+       </object>
+      </void>
+     </void>
+     <void property="entregado">
+      <boolean>true</boolean>
+     </void>
+     <void property="fecha">
+      <object class="java.util.Date">
+       <long>1793915464435</long>
+      </object>
+     </void>
+     <void property="proveedor">
+      <object idref="Proveedor2"/>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="paquete.Pedido" id="Pedido5">
+     <void property="elementos">
+      <void method="add">
+       <object class="paquete.LineaDePedido">
+        <void property="cantidad">
+         <int>8</int>
+        </void>
+        <void property="producto">
+         <object idref="Producto0"/>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="paquete.LineaDePedido">
+        <void property="cantidad">
+         <int>3</int>
+        </void>
+        <void property="producto">
+         <object idref="Producto2"/>
+        </void>
+       </object>
+      </void>
+     </void>
+     <void property="entregado">
+      <boolean>true</boolean>
+     </void>
+     <void property="fecha">
+      <object class="java.util.Date">
+       <long>1793915464435</long>
+      </object>
+     </void>
+     <void property="proveedor">
+      <object class="paquete.Proveedor" id="Proveedor3">
+       <void property="email">
+        <string>info@losandes.com.ar</string>
+       </void>
+       <void property="nombre">
+        <string>Comercial Los Andes</string>
+       </void>
+       <void property="telefono">
+        <string>2236347890</string>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="productos">
+   <void method="add">
+    <object idref="Producto0"/>
+   </void>
+   <void method="add">
+    <object idref="Producto1"/>
+   </void>
+   <void method="add">
+    <object idref="Producto2"/>
+   </void>
+   <void method="add">
+    <object idref="Producto3"/>
+   </void>
+   <void method="add">
+    <object idref="Producto4"/>
+   </void>
+   <void method="add">
+    <object idref="Producto6"/>
+   </void>
+   <void method="add">
+    <object idref="Producto7"/>
+   </void>
+   <void method="add">
+    <object idref="Producto5"/>
+   </void>
+  </void>
+  <void property="proveedores">
+   <void method="add">
+    <object idref="Proveedor0"/>
+   </void>
+   <void method="add">
+    <object idref="Proveedor1"/>
+   </void>
+   <void method="add">
+    <object idref="Proveedor2"/>
+   </void>
+   <void method="add">
+    <object idref="Proveedor3"/>
+   </void>
+  </void>
+ </object>
+</java>

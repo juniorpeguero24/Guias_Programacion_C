@@ -17,7 +17,7 @@ public class Pedido extends ConjuntoGenericoOrdenado<LineaDePedido> {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         String fecha = (this.fecha != null) ? sdf.format(this.fecha.getTime()):"Sin fecha";
         String detalle= "Fecha: "+fecha+"\n"+
-                "Empleado: "+empleado.toString() +"\n"+
+                "Proveedor: "+empleado.toString() +"\n"+
                 "Pedido: \n";
         Iterator<LineaDePedido> it = this.getIterator();
         while (it.hasNext()) {

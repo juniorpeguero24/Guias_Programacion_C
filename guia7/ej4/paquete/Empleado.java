@@ -20,7 +20,7 @@ public class Empleado {
 
     @Override
     public String toString() {
-        return "Empleado{" +
+        return "Proveedor{" +
                 "nroInterno=" + nroInterno +
                 ", nombre='" + nombre + '\'' +
                 '}';

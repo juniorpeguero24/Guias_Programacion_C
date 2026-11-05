@@ -22,7 +22,7 @@ public class Departamento {
 	public void imprimirPlanillaSueldos() {
 		System.out.println("Departamento de "+nombre);
 		for (Empleado e : empleados) {
-			System.out.println("Empleado: "+e.getNombre()+" Sueldo Neto: $"+e.calcularSueldoNeto());
+			System.out.println("Proveedor: "+e.getNombre()+" Sueldo Neto: $"+e.calcularSueldoNeto());
 		}
 	}
 	
