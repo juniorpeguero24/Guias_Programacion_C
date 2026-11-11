@@ -1,8 +1,8 @@
 package paquete;
 
-import persistencia.IPersistencia;
-import persistencia.PersistenciaBin;
-import persistencia.PersistenciaXML;
+import dao.IPersistencia;
+import dao.PersistenciaBin;
+import dao.PersistenciaXML;
 
 import java.io.IOException;
 import java.util.GregorianCalendar;

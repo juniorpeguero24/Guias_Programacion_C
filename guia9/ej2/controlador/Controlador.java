@@ -1,9 +1,9 @@
 package controlador;
 
 import paquete.Negocio;
-import persistencia.IPersistencia;
-import persistencia.PersistenciaBIN;
-import persistencia.PersistenciaXML;
+import dao.IPersistencia;
+import dao.PersistenciaBIN;
+import dao.PersistenciaXML;
 import vista.Vista;
 
 import java.awt.event.ActionEvent;

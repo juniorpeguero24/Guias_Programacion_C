@@ -1,4 +1,4 @@
-package persistencia;
+package dao;
 
 import java.util.ArrayList;
 

@@ -5,10 +5,10 @@ import java.util.ArrayList;
 
 import modelo.Escuela;
 import modelo.Profesor;
-import persistencia.EscuelaDTO;
-import persistencia.IPersistencia;
-import persistencia.PersistenciaXML;
-import persistencia.UtilEscuela;
+import dao.EscuelaDTO;
+import dao.IPersistencia;
+import dao.PersistenciaXML;
+import dao.UtilEscuela;
 
 public class PruebaLectura
 {

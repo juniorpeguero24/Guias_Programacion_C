@@ -8,11 +8,11 @@ import java.util.GregorianCalendar;
 import modelo.Asignatura;
 import modelo.Escuela;
 import modelo.Profesor;
-import persistencia.EscuelaDTO;
-import persistencia.IPersistencia;
-import persistencia.PersistenciaBIN;
-import persistencia.PersistenciaXML;
-import persistencia.UtilEscuela;
+import dao.EscuelaDTO;
+import dao.IPersistencia;
+import dao.PersistenciaBIN;
+import dao.PersistenciaXML;
+import dao.UtilEscuela;
 
 public class PruebaEscritura
 {
